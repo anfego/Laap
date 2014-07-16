@@ -9,31 +9,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
         <!-- CSS are placed here -->
-        {{ HTML::style('css/bootstrap.css') }}
-        <style>
-        @section('styles')
-            body {
-                padding-top: 60px;
-            }
-           {{ HTML::style('css/bootstrap-responsive.css') }}
-        @show
-        </style>
+        <!-- {{ HTML::style('css/bootstrap.css') }} -->
+        <!-- Custom styles for this template -->
+        <!-- {{ HTML::style "customCss/signin.css" rel="stylesheet"> -->
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/signin.css" rel="stylesheet">
+        
+
  
     </head>
  
     <body>
         <!-- Container -->
+        <div class="container">
         @include("layouts.header")
  
-        <div class="container">
+            @yield('navBar')
             <!-- Content -->
             @yield('content')
         </div>
         @include("layouts.footer")
  
-        <!-- Scripts are placed here -->
-        {{ HTML::script('js/jquery-1.10.1.min.js') }}
-        {{ HTML::script('js/bootstrap/bootstrap.min.js') }}
+
  
     </body>
 </html>

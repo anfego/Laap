@@ -15,40 +15,48 @@ class LoginController extends BaseController {
 	|
 	*/
 
-	public function getIndex()
+	public function login()
 	{
-		if ($this->isPostRequest()) {
-  		    $validator = $this->getLoginValidator();
-  		    
-  		    if ($validator->passes()) {
-				$credentials = $this->getLoginCredentials();
+	
+		if ($this->isPostRequest())
+		{
+			
+			$validator = $this -> getLoginValidator();
 
-				if (Auth::attempt($credentials)) {
+			if ($validator->passes()) 
+			{
+				 $credentials = $this->getLoginCredentials();
+
+				if (Auth::attempt($credentials))
+				{
 					return Redirect::route("user.apps");
 				}
+
 				return Redirect::back()->withErrors([
-					"password" => ["Credentials invalid."]
-				]);
-  				
-			} else {
+					"password" => ["Credentials invalid."]]);
+			}
+			else 
+			{
+				echo "Go back";
 				return Redirect::back()
 					->withInput()
 					->withErrors($validator);
 			}
 		}
-		
-		return View::make('user.login');
+
+  		return View::make("user.login");
 	}
 
 	protected function isPostRequest()
-	{
+	{	
+		
 		return Input::server("REQUEST_METHOD") == "POST";
 	}
 
 	protected function getLoginValidator()
 	{
 		return Validator::make(Input::all(), [
-			"miUsuario" => "required",
+			"username" => "required",
 			"password" => "required"
 		]);
 	}
@@ -56,12 +64,12 @@ class LoginController extends BaseController {
 	protected function getLoginCredentials()
   	{
     	return [
-			"miUsuario" => Input::get("miUsuario"),
+			"username" => Input::get("username"),
 			"password" => Input::get("password")
     	];
 	}
 
-	public function profile()
+	public function apps()
 	{
 		return View::make("user.apps");
 	}

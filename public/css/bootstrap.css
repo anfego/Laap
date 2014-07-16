@@ -947,7 +947,6 @@ img {
   width: 100% \9;
   max-width: 100%;
   height: auto;
-  padding: 4px;
   line-height: 1.42857143;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -4571,11 +4570,11 @@ a.list-group-item.active > .badge,
 @media screen and (min-width: 768px) {
   .jumbotron {
     padding-top: 48px;
-    padding-bottom: 48px;
+    padding-bottom: 0px;
   }
   .container .jumbotron {
-    padding-right: 60px;
-    padding-left: 60px;
+    padding-right: 0px;
+    padding-left: 0px;
   }
   .jumbotron h1,
   .jumbotron .h1 {
