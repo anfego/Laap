@@ -1,4 +1,5 @@
 @extends("layouts.noNavbar")
+
 @section("navBar")
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-header">
@@ -31,15 +32,66 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<!-- Este espacio puede ser usado para el login info -->
-				<li><a href="logout.php">Desconectar</a></li>
+				<li><a href="logout.php">{{ Auth::user()->username }}</a></li>
 			</ul>
 		</div> <!--/.nav-collapse -->
 	</div>
-	
-
 @stop
+
 @section("content")
-	
-<h2>Hola {{ Auth::user()->username }}</h2>
-	<p>Bienvenido  a Galería Optica Apps</p>
+	<div id='isotopes' class='clickable isotope clearfix'>
+		<div id='laboratorio' class='element'>
+			<h2 class='name'>
+				<i class = "icon-plus-sign"></i>
+					Laboratorio
+			</h2>
+		</div>
+		<div id='consultorio' class='element'>
+			<h2 class='name'>
+				<i class = "icon-plus-sign"></i>
+				Consultorio
+			</h2>
+		</div>
+		<div id='optica' class='element'>
+			<h2 class='name'>
+				<i class = "icon-plus-sign"></i>
+				Optica
+			</h2>
+		</div>
+		<!-- 
+		<div id='lista' class='element lanthanoid width1 height1 isotope-item' data-symbol='Hg' data-category='lanthanoid'>
+		<h2 class='name'>
+		<i class = "icon-plus-sign"></i>
+		Shopping List
+		</h2>
+		</div>
+	-->
+	</div> <!-- /isotope -->
+@stop
+@section("scripts")
+	<script>
+
+	$(document).ready(function()
+	{
+		$(".element").click(function()
+		{
+			var appName = $(this).attr('id');
+
+			switch(appName)
+			{
+				case "optica":
+					window.location.href = "/optica";
+					break;
+				case 'consultorio':
+					window.location.href = "/consultorio";
+					break;
+				case "laboratorio":
+					window.location.href = "/lab";
+					break;
+				default:
+					alert("ERROR: Accion no valida");
+			}
+		});
+	});
+	</script>
 @stop

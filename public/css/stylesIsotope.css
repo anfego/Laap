@@ -1,170 +1,5 @@
 
-#navBar  nav {
-        margin: 4px;
-        padding: 5px;
-        border: 1px solid #AAAAAA;
-        border-radius: 7pt;
-        background: #D9D929;
-        text-align: center;
-        min-width: 450px;
 
-      
-    }
-
- a:link{
-    
-    color:#AA00ff;
-    font-size: 14pt;
-
-}
- a:visited{
-    
-    color:#AA00ff;
-    font-size: 14pt;
-
-}
-#main {
-    min-height: 800px;
-    margin: 0px;
-    padding: 0px;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: flex;
-
-    flex-direction:row;
-    -webkit-flex-direction:row;
-    -moz-flex-direction:row;
-    justify-container:center;
-    -webkit-justify-container:center;
-    -moz-justify-container:center;
-    text-align: center;
-
-}
-
-#main  #container {
-    margin: 4px;
-    padding: 5px;
-    padding-left: 0px;
-    border: 0px solid #cccc33;
-    border-radius: 7pt;
-    background: #1F1E1D;
-
-    flex:3 2;
-    -webkit-flex:3 2;
-    -moz-flex:3 2;
-
-}
-
- #main  aside {
-    margin: 4px;
-    padding: 5px;
-    border: 1px solid #8888bb;
-    border-radius: 7pt;
-    background: #BBB;
-    min-width: 190px;
-    /*-webkit-flex: 1 6 20%;
-    -moz-flex: 1 6 20%;
-        flex: 1 6 20%;
-    -webkit-order: 3;*/
-    flex:1 1;
-    -webkit-flex:1 1;
-    -moz-flex:1 1;
-    -moz-order: 3;
-        order: 3;
-    }
-
-    /*header, footer {
-        display: block;
-        min-height: 100px;
-        padding: 10px;
-        border-radius: 7pt;
-        background: #2A4480;
-        
-    }
-    footer{
-      text-align: center;
-    }
-    header h1
-    {
-        color: #1F1E1D;
-        text-align: left;
-    }
-    */
-    #vignette{
-        background: #15AB30;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 10px;
-        margin-right: 10px;
-        border-radius: 5px;
-        
-        width: 350px;
-        
-        height: 400px;
-
-        padding: 5px;
-        float: left;
-/*        overflow: auto;
-        position: relative;*/
-        
-    }
-    #vignette > video {
-        
-        position: relative;
-        
-
-    }
-    #vignette > #caption
-    {
-        display: none;
-        
-
-    } 
-    
-    
-
-    #vignette:hover #caption
-    {
-        display: inline;
-    }
-    
-    #vignette:hover >  #videoTitle
-    {
-        display: none;
-    } 
-
-
-  
-    /* Too narrow to support three columns */
-    @media all and (max-width: 724px) {
-
-        #main{
-
-            flex-direction:column;
-            -webkit-flex-direction:column;
-            -moz-flex-direction:column;
-        }
-
-        #main > article, #main > aside {
-        /* Return them to document order */
-            -webkit-order: 0;
-            -moz-order: 0;
-            order: 0;
-
-        }
-
-        #main  aside{
-          min-width: 500px;
-        }
-
-        #main article, header{
-            min-height: 50px;
-            min-width: 450px;
-
-
-        }
-
-  }
 /* Start: Recommended Isotope styles */
 
 /**** Isotope Filtering ****/
@@ -239,7 +74,7 @@ abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
 small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
+aside, canvas, details, figcaption, figure,
 hgroup, menu,  section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -255,14 +90,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-body {
-  padding: 20px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
-  font-size: 13px;
-  line-height: 1.7em;
-  background: #1F1E1D;
-  color: #FFF;
-}
+
 
 h1, h2, h3, p, ul, ol, pre, dl {
   margin-bottom: 1.0em;
@@ -290,16 +118,9 @@ ul, ol {
   list-style: none;
 }
 
-a,
-a code {
-  color: #FB4;
-  text-decoration: none;
-}
 
-a:hover,
-a:hover code { 
-  color: #4BF; 
-}
+
+
 
 a:active,
 a:active code {
@@ -321,10 +142,6 @@ blockquote {
 /**** Isotope styles ****/
 
 /* required for containers to inherit vertical size from window */
-html,
-body {
-  height: 100%;
-}
 
 #container {
   border: 1px solid #666;
@@ -357,16 +174,34 @@ body {
 .element.halogen         { background: #F0F; background: hsl( 288, 100%, 50%); }
 .element.noble-gas       { background: #F08; background: hsl( 324, 100%, 50%); }
 
+/*Colores de elementos*/
+/*Ordenes*/
+.element.cancelada       { background: #F08; background: hsl( 238,   7%, 64%); }
+.element.pendiente       { background: #F08; background: hsl( 59,   91%, 41%); }
+.element.abierta         { background: #F08; background: hsl( 27,   91%, 38%); }
+/*links*/
+.element.agregar         { background: #F08; background: hsl( 110,  75%, 38%); }
+.element.cliente         { background: #F08; background: hsl( 217,  91%, 38%); }
+.element.paciente        { background: #F08; background: hsl( 217,  91%, 38%); }
+
 
 .element * {
   position: absolute;
   margin: 0;
 }
+.element #caption {
+
+  display: none;
+}
+.element #idCliente {
+
+  display: none;
+}
 
 .element .symbol {
-  left: 0.2em;
+  left: 5.0em;
   top: 0.4em;
-  font-size: 3.8em;
+  font-size: 2.5em;
   line-height: 1.0em;
   color: #FFF;
 }
@@ -380,11 +215,29 @@ body {
 
 .element .name {
   left: 0.5em;
-  bottom: 1.6em;
-  font-size: 0.8em;
+  top: 4.0em;
+  font-size: 1.8em;
+  color: #000;
+}
+.element .nombre {
+  left: 2.5em;
+  top: 7.5em;
+  font-size: 1.2em;
+  color: #000;
+}
+.element .apellido {
+  left: 0.5em;
+  top: 4.0em;
+  font-size: 1.8em;
+  color: #000;
 }
 
 .element .weight {
+  font-size: 0.9em;
+  left: 0.5em;
+  bottom: 0.5em;
+}
+.element .noId {
   font-size: 0.9em;
   left: 0.5em;
   bottom: 0.5em;
@@ -396,6 +249,14 @@ body {
   color: hsla(0,0%,0%,.5);
   right: 0.5em;
   top: 0.5em;
+}
+
+.element .edad {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: hsla(0,0%,0%,.5);
+  right: 0.5em;
+  top: 3.0em;
 }
 
 .variable-sizes .element.width2 { width: 320px; }
@@ -828,6 +689,9 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 
 
 /**** Sites using Isotope ****/
+#isotopes{
+  min-height: 600px;
+}
 
 #sites h2 {
   display: none;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <title>
             @section('title')
@@ -12,9 +12,10 @@
         <!-- {{ HTML::style('css/bootstrap.css') }} -->
         <!-- Custom styles for this template -->
         <!-- {{ HTML::style "customCss/signin.css" rel="stylesheet"> -->
+        <!-- Isotope -->
+        <link href="css/stylesIsotope.css" rel="stylesheet" type="text/css" >
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.css" rel="stylesheet">
-
         <!-- Custom styles for this template -->
         <link href="css/signin.css" rel="stylesheet">
         
@@ -36,4 +37,5 @@
 
  
     </body>
+    @yield('scripts')
 </html>

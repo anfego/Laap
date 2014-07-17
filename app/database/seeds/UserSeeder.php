@@ -1,7 +1,6 @@
 <?php
  
-class UserSeeder
-  extends DatabaseSeeder
+class UserSeeder extends DatabaseSeeder
 {
   public function run()
   {
