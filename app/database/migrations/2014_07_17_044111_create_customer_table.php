@@ -35,3 +35,5 @@ class CreateCustomerTable extends Migration {
 	}
 
 }
+
+

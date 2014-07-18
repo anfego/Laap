@@ -1,15 +1,18 @@
 <?php
 
-class LabController extends \BaseController {
+class LabController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
+	public $restful = true;
+
 	public function index()
 	{
-		//
+		$customers = DB::table("customer")->get();
+		return View::make("user.lab", array('customers' => $customers ));
 	}
 
 
@@ -56,6 +59,7 @@ class LabController extends \BaseController {
 	 */
 	public function show($id)
 	{
+		$orders = DB::table("order")->where('idCustomer','=', $id)->get();
 		//
 	}
 

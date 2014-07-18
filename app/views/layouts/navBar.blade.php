@@ -26,10 +26,9 @@
     <body>
         <!-- Container -->
         <div class="container">
-        @include("layouts.header")
- 
+            @include("layouts.header")
             @yield('navBar')
-            <!-- Content -->
+            
             @yield('content')
         </div>
         @include("layouts.footer")

@@ -25,13 +25,24 @@
 // Route::get('test', 'LoginController@getIndex');
 
 Route::any("/login", [
-	"as"   => "user.login",
-	"uses" => "LoginController@login"
+	"as"	=>	"user.login",
+	"uses"	=>	"LoginController@login"
 ]);
 Route::any("/apps", [
-	"as"   => "user.apps",
-	"uses" => "LoginController@apps"
+	"as"	=> 	"user.apps",
+	"uses"	=>	"LoginController@apps"
 ]);
+
+Route::any("/lab", [
+	"as"	=>	"user.lab",
+	"uses"	=>	"LabController@index"
+]);
+
+Route::get("lab/cliente/{id}", [
+	"as" 	=> 	"user.lab",
+	"uses"	=>	"LabController@show"
+]);
+
 // Route::get('/', 'HomeController@showWelcome');
 
 // Route::get('test', array('uses' => 'LoginController@index');

@@ -1,4 +1,6 @@
-@extends("layouts.noNavbar")
+@extends("layouts.navBar")
+
+
 @section("content")
 
 	{{ Form::open(array(
