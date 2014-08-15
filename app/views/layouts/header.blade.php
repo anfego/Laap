@@ -8,14 +8,14 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="#">
-				<img src="images/logo2014.png" alt="GaleriaOptica"  height="30" width="20">
+				<img src="images/logo2014.png" alt="GaleriaOptica.com"  height="30" width="20">
 			</a>
 		</div>
 	
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Inicio</a></li>
-				<li><a href="/public/apps">Apps</a></li>
+				<li><a href=" {{URL::to("apps") }} ">Apps</a></li>
 				<li><a href="#contact">Perfil</a></li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menú <b class="caret"></b></a>

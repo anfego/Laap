@@ -24,24 +24,35 @@
 
 // Route::get('test', 'LoginController@getIndex');
 
-Route::any("/login", [
+Route::any("/", [
 	"as"	=>	"user.login",
 	"uses"	=>	"LoginController@login"
 ]);
-Route::any("/apps", [
-	"as"	=> 	"user.apps",
-	"uses"	=>	"LoginController@apps"
-]);
+Route::group(["before" => "auth"], function() {
+});
+	Route::any("/apps", [
+		"as"	=> 	"user.apps",
+		"uses"	=>	"LoginController@apps"
+	]);
 
-Route::any("/lab", [
-	"as"	=>	"user.lab",
-	"uses"	=>	"LabController@index"
-]);
+	Route::any("/lab", [
+		"as"	=>	"user.lab",
+		"uses"	=>	"LabController@index"
+	]);
 
-Route::get("lab/cliente/{id}", [
-	"as" 	=> 	"user.lab",
-	"uses"	=>	"LabController@show"
-]);
+	Route::get("lab/cliente/{id}", [
+		"as" 	=> 	"user.lab",
+		"uses"	=>	"LabController@show"
+	]);
+	
+	Route::get("lab/nuevo", function(){
+		return View::make('lab.new');
+	});
+	Route::post("lab/nuevo", [
+		"as" 	=> 	"user.lab",
+		"uses"	=>	"LabController@create"
+	]);
+
 
 // Route::get('/', 'HomeController@showWelcome');
 

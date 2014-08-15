@@ -23,7 +23,14 @@ class LabController extends BaseController {
 	 */
 	public function create()
 	{
-		//
+		$new = new Customer;
+		$new->name = Input::get("name");
+		$new->address = Input::get("address");
+		$new->telephone = Input::get("telephone");
+		$new->email = Input::get("email");
+		$new->discount = Input::get("discount");
+		$new->save();
+		return Redirect::route("user.apps");
 	}
 
 

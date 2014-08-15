@@ -13,11 +13,11 @@
         <!-- Custom styles for this template -->
         <!-- {{ HTML::style "customCss/signin.css" rel="stylesheet"> -->
         <!-- Isotope -->
-        <link href="css/stylesIsotope.css" rel="stylesheet" type="text/css" >
+        <link href={{{URL::asset('css/stylesIsotope.css')}}} rel="stylesheet" type="text/css" >
         <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href={{{URL::asset('css/bootstrap.css')}}} rel="stylesheet">
         <!-- Custom styles for this template -->
-        <link href="css/signin.css" rel="stylesheet">
+        <link href={{{URL::asset('css/signin.css')}}} rel="stylesheet">
         
 
  
@@ -26,10 +26,16 @@
     <body>
         <!-- Container -->
         <div class="container">
+
             @include("layouts.header")
             @yield('navBar')
             
-            @yield('content')
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    @yield('content')
+                </div>    
+            </div>
         </div>
         @include("layouts.footer")
  

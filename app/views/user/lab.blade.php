@@ -1,6 +1,7 @@
 @extends("layouts.navBar")
 
 @section("content")
+	<a href="{{URL::to("lab/nuevo")}} " class="btn btn-success btn-lg active pull-right" role="button">Nuevo Cliente</a>
 	<div id='isotopes' class='clickable isotope clearfix'>
 	@foreach ($customers as $customer) 
 		<div id='cliente' class='element cliente' data-symbol='Hg' data-category='lanthanoid'>
