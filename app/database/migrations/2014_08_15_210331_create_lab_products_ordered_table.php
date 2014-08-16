@@ -16,6 +16,7 @@ class CreateLabProductsOrderedTable extends Migration {
 		{
 			$table-> integer("idOrder")->unsigned();
 			$table-> integer("idProduct")->unsigned();
+			$table-> enum("level", array('standard', 'special'));
 			$table-> integer("quantity");
 			$table-> decimal('price');
 			$table-> timestamps();

@@ -16,6 +16,8 @@ class CreateOrdersTable extends Migration {
 		{
 			$table-> increments("id");
 			$table-> integer("idCustomer")->unsigned();
+			$table-> decimal("discountStd", 3, 2);
+			$table-> decimal("discountSpc", 3, 2);
 			$table-> Timestamps();
 		});
 	}

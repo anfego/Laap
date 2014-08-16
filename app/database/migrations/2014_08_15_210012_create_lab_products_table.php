@@ -17,6 +17,7 @@ class CreateLabProductsTable extends Migration {
 			$table-> increments('id');
 			$table-> string('name');
 			$table-> decimal('price',6,2);
+			$table-> enum("level", array('standard', 'special'));
 			$table-> timestamps();
 		});
 	}

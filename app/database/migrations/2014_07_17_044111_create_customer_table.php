@@ -18,7 +18,8 @@ class CreateCustomerTable extends Migration {
 			$table->string("address");
 			$table->integer("telephone");
 			$table->string("email");
-			$table->decimal("discount");
+			$table->decimal("discountStd", 3, 2);
+			$table->decimal("discountSpc", 3, 2);
 			$table->timestamps();
 		});
 	}
