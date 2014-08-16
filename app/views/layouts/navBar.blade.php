@@ -8,11 +8,7 @@
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
-        <!-- CSS are placed here -->
-        <!-- {{ HTML::style('css/bootstrap.css') }} -->
-        <!-- Custom styles for this template -->
-        <!-- {{ HTML::style "customCss/signin.css" rel="stylesheet"> -->
-        <!-- Isotope -->
+       <!-- Isotope -->
         <link href={{{URL::asset('css/stylesIsotope.css')}}} rel="stylesheet" type="text/css" >
         <!-- Bootstrap core CSS -->
         <link href={{{URL::asset('css/bootstrap.css')}}} rel="stylesheet">

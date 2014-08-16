@@ -1,6 +1,7 @@
 @extends("layouts.navBar")
 
 @section("content")
+	Lab
 	<a href="{{URL::to("lab/nuevo")}} " class="btn btn-success btn-lg active pull-right" role="button">Nuevo Cliente</a>
 	<div id='isotopes' class='clickable isotope clearfix'>
 	@foreach ($customers as $customer) 
@@ -8,7 +9,7 @@
 			<h2 class='name'>{{ $customer->name }}</h2>
 			<p id='caption'>Direccion: {{ $customer->address }} </br>
 			Teléfono: {{ $customer->telephone }} </p>
-			<div id='idCliente'> {{ $customer->id }} </div>
+			<div id='idCliente'>{{ $customer->id }} </div>
 		</div>
 	@endforeach
 	</div>
@@ -29,7 +30,8 @@
 					case "cliente":
 						// redirije a la pagina del historial de ordenes del cliente
 						var clienteName = $(this).find('div').text();
-						var url = "cliente/";
+						var url = "{{URL::to("lab")}}" ;
+						url = url.concat('/');
 						url = url.concat(clienteName);
 						window.location.href = url;
 					break;
