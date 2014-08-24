@@ -12,7 +12,7 @@ class CreateFKeyOrders extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('orders', function(Blueprint $table)
+		Schema::table('lab_orders', function(Blueprint $table)
 		{
 			$table->foreign('idCustomer')->references('id')->on('customer');
 		});
@@ -25,9 +25,9 @@ class CreateFKeyOrders extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('orders', function(Blueprint $table)
+		Schema::table('lab_orders', function(Blueprint $table)
 		{
-			$table->dropForeign('orders_idcustomer_foreign');
+			$table->dropForeign('lab_orders_idcustomer_foreign');
 		});
 	}
 

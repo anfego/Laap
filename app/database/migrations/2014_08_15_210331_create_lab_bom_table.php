@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLabBOMTable extends Migration {
+class CreateLabBomTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -14,8 +14,8 @@ class CreateLabBOMTable extends Migration {
 	{
 		Schema::create('lab_bom', function(Blueprint $table)
 		{
-			$table-> integer("idOrder")->unsigned();
-			$table-> integer("idProduct")->unsigned();
+			$table-> integer("idOrder")		-> unsigned();
+			$table-> integer("idProduct")	-> unsigned();
 			$table-> integer("quantity");
 			$table-> decimal('price',4,2);
 			$table-> decimal('discount',3,2);

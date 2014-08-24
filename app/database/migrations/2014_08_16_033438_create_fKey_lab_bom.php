@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFKeyLabBOM extends Migration {
+class CreateFKeyLabBom extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -14,7 +14,7 @@ class CreateFKeyLabBOM extends Migration {
 	{
 		Schema::table('lab_bom', function(Blueprint $table)
 		{
-			$table-> foreign( 'idOrder' )	->references('id')-> on('orders');
+			$table-> foreign( 'idOrder' )	->references('id')-> on('lab_orders');
 			$table-> foreign( 'idProduct' )	->references('id')-> on('lab_products');
 		});
 	}
