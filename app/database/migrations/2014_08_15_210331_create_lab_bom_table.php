@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLabProductsOrderedTable extends Migration {
+class CreateLabBOMTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,13 @@ class CreateLabProductsOrderedTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('lab_products_ordered', function(Blueprint $table)
+		Schema::create('lab_bom', function(Blueprint $table)
 		{
 			$table-> integer("idOrder")->unsigned();
 			$table-> integer("idProduct")->unsigned();
-			$table-> enum("level", array('standard', 'special'));
 			$table-> integer("quantity");
-			$table-> decimal('price');
+			$table-> decimal('price',4,2);
+			$table-> decimal('discount',3,2);
 			$table-> timestamps();
 		});
 	}
@@ -30,7 +30,7 @@ class CreateLabProductsOrderedTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('lab_products_ordered');
+		Schema::drop('lab_bom');
 	}
 
 }

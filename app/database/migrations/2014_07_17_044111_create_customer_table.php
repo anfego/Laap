@@ -12,7 +12,8 @@ class CreateCustomerTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('customer', function($table){
+		Schema::create('customer', function($table)
+		{
 			$table->increments("id");
 			$table->string("name");
 			$table->string("address");
@@ -20,6 +21,7 @@ class CreateCustomerTable extends Migration {
 			$table->string("email");
 			$table->decimal("discountStd", 3, 2);
 			$table->decimal("discountSpc", 3, 2);
+			$table->string("updated_by");
 			$table->timestamps();
 		});
 	}
@@ -32,7 +34,6 @@ class CreateCustomerTable extends Migration {
 	public function down()
 	{
 		Schema::drop('customer');
-		
 	}
 
 }

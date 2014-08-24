@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFKeyLabPayments extends Migration {
+class CreateFKeyLabOrdersHistory extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateFKeyLabPayments extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('lab_orders_payments', function(Blueprint $table)
+		Schema::table('lab_orders_history', function(Blueprint $table)
 		{
 			$table->foreign('idOrder')->references('id')->on('orders');
 		});
@@ -25,9 +25,9 @@ class CreateFKeyLabPayments extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('lab_orders_payments', function(Blueprint $table)
+		Schema::table('lab_orders_history', function(Blueprint $table)
 		{
-			$table->dropForeign('lab_orders_payments_idorder_foreign');
+			$table->dropForeign('lab_orders_history_idorder_foreign');
 		});
 	}
 
