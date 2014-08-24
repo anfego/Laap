@@ -28,7 +28,8 @@ class LabController extends BaseController {
 		$new->address = Input::get("address");
 		$new->telephone = Input::get("telephone");
 		$new->email = Input::get("email");
-		$new->discount = Input::get("discount");
+		$new->discountStd = Input::get("discountStd");
+		$new->discountSpc = Input::get("discountSpc");
 		$new->save();
 		return Redirect::route("user.apps");
 	}

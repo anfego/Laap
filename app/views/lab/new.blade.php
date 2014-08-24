@@ -26,8 +26,13 @@
 	{{ Form::text('email', Input::old("email"), array(
 		'class'=>'form-control'))
 	}}
-	{{ Form::label("discount", "Descuento:") }}
-	{{ Form::text('discount', Input::old("discount"), array(
+	{{ Form::label("discountStd", "Descuento Productos Estandar:") }}
+	{{ Form::text('discountStd', Input::old("discountStd"), array(
+		'class'=>'form-control'))
+	}}
+	
+	{{ Form::label("discountSpc", "Descuento Productos Especiales:") }}
+	{{ Form::text('discountSpc', Input::old("discountSpc"), array(
 		'class'=>'form-control'))
 	}}
 
