@@ -15,10 +15,10 @@ class CreateOrdersTable extends Migration {
 		{
 			$table-> increments("id");
 			$table-> integer("idCustomer")->unsigned();
-			$table-> decimal("total",4,2);
+			$table-> decimal("total",6,2);
 			$table-> string("created_by");
 			$table-> date("delivery_date");
-			$table-> decimal("tax",3,2);
+			$table-> decimal("tax",5,2);
 			$table-> Timestamps();
 		});
 	}

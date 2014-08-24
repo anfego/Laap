@@ -8,7 +8,7 @@ class UserSeeder extends DatabaseSeeder
       [
         "username" => "andres.gomez",
         "password" => Hash::make("1234"),
-        "email"    => "andres@ep.com"
+        "email"    => "andresgreen@gmail.com"
       ]
     ];
   

@@ -5,7 +5,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Products extends Eloquent{
+class LabProducts extends Eloquent{
 
 
 	/**
@@ -13,7 +13,7 @@ class Products extends Eloquent{
 	 *
 	 * @var string
 	 */
-	protected $table = 'products';
+	protected $table = 'lab_products';
 
 	/**
 	 * The attributes excluded from the model's JSON form.

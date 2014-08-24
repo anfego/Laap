@@ -28,6 +28,10 @@ Route::any("/", [
 	"as"	=>	"user.login",
 	"uses"	=>	"LoginController@login"
 ]);
+Route::any("/login", [
+	"as"	=>	"user.login",
+	"uses"	=>	"LoginController@login"
+]);
 
 Route::group(["before" => "auth"], function() {
 });

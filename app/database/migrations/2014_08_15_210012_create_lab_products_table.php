@@ -19,7 +19,7 @@ class CreateLabProductsTable extends Migration {
 			$table-> decimal('price',6,2);
 			$table-> enum("level", array('standard', 'special'));
 			$table-> enum("status", array('active', 'inactive'));
-			$table-> string("create_by");
+			$table-> string("updated_by");
 			$table-> timestamps();
 		});
 	}
