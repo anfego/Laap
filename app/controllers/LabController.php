@@ -67,8 +67,10 @@ class LabController extends BaseController {
 	 */
 	public function show($id)
 	{
-		$orders_peding = DB::table("orders")->where('idCustomer','=', $id)->get();
-		return View::make("lab.customer", $orders_peding );
+		$orders_peding = DB::table("lab_orders")->where('idCustomer','=', $id)->get();
+		$customer = DB::table("customer")->where('id','=',$id)->get();
+		return View::make("lab.customer", array( "orders_peding" => $orders_peding,
+													"customer"	=> $customer) );
 	}
 
 
