@@ -34,6 +34,12 @@ class LabController extends BaseController {
 		return Redirect::route("user.apps");
 	}
 
+	public function addOrderTo($id)
+	{
+		$products = DB::table("lab_products")->where("status","=","active")->get();
+		return View::make("lab.newOrder",array( "products" => $products));
+	}
+
 
 	/**
 	 * Show the form for editing the specified resource.

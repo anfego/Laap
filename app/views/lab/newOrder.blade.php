@@ -1,6 +1,5 @@
-{{-- <?php --}}
 @extends("layouts.navBar")
-
+ 
 
 @section("content")
 
@@ -15,12 +14,13 @@
 	{{ Form::text('name', Input::old("name"), array(
 		'class'=>'form-control'))
 	}}
-	@foreach ($products as $product{
+	@foreach ($products as $product)
 		{{ Form::label("name", $product->name) }}
+		
 		{{ Form::text('quantity', Input::old("quantity"), array(
-		'class'=>'form-control'))
-	}}
-	}
+			'class'=>'form-control'))
+		}}
+	
 	@endforeach
 
 

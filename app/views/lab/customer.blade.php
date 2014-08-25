@@ -2,8 +2,8 @@
 @extends("layouts.navBar")
 
 @section("content")
-	<a href="{{URL::to("lab/nuevaOrden")}} " class="btn btn-success btn-lg active pull-right" role="button">Nuevo Orden</a>
 	@if(isset($customer))
+	<a href="{{ URL::current() }}/nuevaOrden" class="btn btn-success btn-lg active pull-right" role="button">Nuevo Orden</a>
 		<h1>{{ $customer[0]->name}}</h1>
 		<div id='isotopes' class='clickable isotope clearfix'>
 		@if(isset($orders_pending))
