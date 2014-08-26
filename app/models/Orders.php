@@ -5,7 +5,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Orders extends Eloquent{
+class LabOrder extends Eloquent{
 
 
 	/**
@@ -13,13 +13,22 @@ class Orders extends Eloquent{
 	 *
 	 * @var string
 	 */
-	protected $table = 'orders';
+	protected $table = 'lab_orders';
 
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
 	 * @var array
 	 */
-	// protected $hidden = array('password', 'remember_token');
-
+	
+	/**
+	 * Relationships with other tables
+	 *
+	 * @var array
+	 */
+	public function LabCustomer()
+	{
+		return $this-> belongsTo('LabCustomer','idCustomer','id');
+	}
+}
 }

@@ -5,7 +5,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Customer extends Eloquent{
+class LabCustomer extends Eloquent{
 
 
 	/**
@@ -20,6 +20,14 @@ class Customer extends Eloquent{
 	 *
 	 * @var array
 	 */
-	// protected $hidden = array('password', 'remember_token');
-
+	
+	/**
+	 * Relationships with other tables
+	 *
+	 * @var array
+	 */
+	public function orders()
+	{
+		return $this-> hasMany('LabOrder');
+	}
 }
