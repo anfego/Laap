@@ -36,8 +36,9 @@ class LabController extends BaseController {
 
 	public function addOrderTo($id)
 	{
-		$products = DB::table("lab_products")->where("status","=","active")->get();
-		return View::make("lab.newOrder",array( "products" => $products));
+		$newOrder = new LabOrder();
+		$customer = LabCustomer::find($id)-> orders()-> save($newOrder);
+		return $this-> show($id);
 	}
 
 
