@@ -31,4 +31,3 @@ class LabOrder extends Eloquent{
 		return $this-> belongsTo('LabCustomer','idCustomer','id');
 	}
 }
-}
