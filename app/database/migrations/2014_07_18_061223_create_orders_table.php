@@ -16,6 +16,7 @@ class CreateOrdersTable extends Migration {
 			$table-> increments("id");
 			$table-> integer("idCustomer")->unsigned();
 			$table-> decimal("total",6,2);
+			$table-> enum("status", array('open', 'closed', 'unpaid', 'paid'));
 			$table-> string("created_by");
 			$table-> date("delivery_date");
 			$table-> decimal("tax",5,2);
