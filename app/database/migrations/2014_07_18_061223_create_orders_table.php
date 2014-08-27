@@ -14,7 +14,7 @@ class CreateOrdersTable extends Migration {
 		Schema::create('lab_orders',function(Blueprint $table)
 		{
 			$table-> increments("id");
-			$table-> integer("idCustomer")->unsigned();
+			$table-> integer("idCustomer")-> unsigned();
 			$table-> decimal("total",6,2);
 			$table-> enum("status", array('open', 'closed', 'unpaid', 'paid'));
 			$table-> string("created_by");
