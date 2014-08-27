@@ -14,7 +14,7 @@ class CreateFKeyOrders extends Migration {
 	{
 		Schema::table('lab_orders', function(Blueprint $table)
 		{
-			$table->foreign('idCustomer')->references('id')->on('customer');
+			$table->foreign('idCustomer')->references('id')->on('lab_customer');
 		});
 	}
 

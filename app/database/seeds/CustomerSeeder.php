@@ -17,7 +17,7 @@ class CustomerSeeder extends DatabaseSeeder
     ];
 
     foreach ($customers as $customer) {
-      Customer::create($customer);
+      LabCustomer::create($customer);
     }
   }
 }

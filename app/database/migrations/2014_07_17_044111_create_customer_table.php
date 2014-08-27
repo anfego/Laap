@@ -12,7 +12,7 @@ class CreateCustomerTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('customer', function($table)
+		Schema::create('lab_customer', function($table)
 		{
 			$table->increments("id");
 			$table->string("name");
@@ -33,7 +33,7 @@ class CreateCustomerTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('customer');
+		Schema::drop('lab_customer');
 	}
 
 }

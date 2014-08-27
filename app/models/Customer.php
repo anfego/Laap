@@ -13,7 +13,7 @@ class LabCustomer extends Eloquent{
 	 *
 	 * @var string
 	 */
-	protected $table = 'customer';
+	protected $table = 'lab_customer';
 
 	/**
 	 * The attributes excluded from the model's JSON form.
