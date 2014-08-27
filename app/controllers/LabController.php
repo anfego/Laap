@@ -11,7 +11,7 @@ class LabController extends BaseController {
 
 	public function index()
 	{
-		$customers = DB::table("customer")->get();
+		$customers = LabCustomer::all();
 		return View::make("user.lab", array('customers' => $customers ));
 	}
 
@@ -23,7 +23,7 @@ class LabController extends BaseController {
 	 */
 	public function create()
 	{
-		$new = new Customer;
+		$new = new LabCustomer;
 		$new->name = Input::get("name");
 		$new->address = Input::get("address");
 		$new->telephone = Input::get("telephone");
@@ -31,12 +31,13 @@ class LabController extends BaseController {
 		$new->discountStd = Input::get("discountStd");
 		$new->discountSpc = Input::get("discountSpc");
 		$new->save();
-		return Redirect::route("user.apps");
+		return $this-> index();
 	}
 
 	public function addOrderTo($id)
 	{
 		$newOrder = new LabOrder();
+		$newOrder->status =  'open';
 		$customer = LabCustomer::find($id)-> orders()-> save($newOrder);
 		return $this-> show($id);
 	}
@@ -74,8 +75,8 @@ class LabController extends BaseController {
 	 */
 	public function show($id)
 	{
-		$orders_peding = DB::table("lab_orders")->where('idCustomer','=', $id)->get();
-		$customer = DB::table("customer")->where('id','=',$id)->get();
+		$orders_peding = LabCustomer::find($id)->orders()->get();
+		$customer = LabCustomer::find($id);
 		return View::make("lab.customer", array( "orders_peding" => $orders_peding,
 													"customer"	=> $customer) );
 	}

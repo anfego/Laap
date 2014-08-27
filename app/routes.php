@@ -46,10 +46,6 @@ Route::group(["before" => "auth"], function() {
 	]);
 
 	
-	Route::get("lab/{id}/nuevaOrden",[
-			"as" 	=> 	"user.newOrder",
-			"uses"	=>	"LabController@addOrderTo"
-	]);
 	Route::get("lab/nuevo", function(){
 		return View::make('lab.new');
 	});
@@ -61,4 +57,8 @@ Route::group(["before" => "auth"], function() {
 	Route::get("lab/{id}", [
 		"as" 	=> 	"lab.customer",
 		"uses"	=>	"LabController@show"
+	]);
+	Route::get("lab/{id}/nuevaOrden",[
+			"as" 	=> 	"user.newOrder",
+			"uses"	=>	"LabController@addOrderTo"
 	]);
