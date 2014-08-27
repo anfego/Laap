@@ -2,7 +2,7 @@
 
 
 @section("content")
-
+	<h1>Nuevo Cliente</h1>
 	{{ Form::open(array(
 		'url' => URL::to("lab/nuevo"),
 		'class' => 'form-signin',

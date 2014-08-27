@@ -1,9 +1,11 @@
 @extends("layouts.navBar")
 
 @section("content")
-	Lab
-	<a href="{{URL::to("lab/nuevo")}} " class="btn btn-success btn-lg active pull-right" role="button">Nuevo Cliente</a>
+	<h1>Laboratorio</h1>
 	<div id='isotopes' class='clickable isotope clearfix'>
+	<div class="center-block row btn-group" >
+	<a href="{{URL::to("lab/nuevo")}} " class="btn btn-success btn-lg active pull-left" role="button">Nuevo Cliente</a>
+	</div>
 	@foreach ($customers as $customer) 
 		<div id='cliente' class='element cliente' data-symbol='Hg' data-category='lanthanoid'>
 			<h2 class='name'>{{ $customer->name }}</h2>
