@@ -81,8 +81,8 @@ class LabController extends BaseController {
 	{
 		$orders_peding = LabCustomer::find($id)-> orders()-> get();
 		$customer = LabCustomer::find($id);
-		return View::make("lab.customer", array( "orders_peding" => $orders_peding,
-													"customer"	=> $customer) );
+		return View::make("lab.customer", array( "orders"	=> $orders_peding,
+												 "customer" => $customer) );
 	}
 
 
