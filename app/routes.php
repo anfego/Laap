@@ -34,7 +34,6 @@ Route::any("/login", [
 ]);
 
 Route::group(["before" => "auth"], function() {
-});
 	Route::any("/apps", [
 		"as"	=> 	"user.apps",
 		"uses"	=>	"LoginController@apps"
@@ -62,3 +61,4 @@ Route::group(["before" => "auth"], function() {
 			"as" 	=> 	"user.newOrder",
 			"uses"	=>	"LabController@addOrderTo"
 	]);
+});
