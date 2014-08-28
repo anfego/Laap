@@ -38,7 +38,7 @@
 				{
 					case "order":
 						var idOrder = $(this).find('div').text();
-						var url = "{{URL::to("lab")}}" ;
+						var url = "{{URL::to("lab/order")}}" ;
 						url = url.concat('/');
 						url = url.concat(idOrder);
 						window.location.href = url;

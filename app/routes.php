@@ -38,13 +38,10 @@ Route::group(["before" => "auth"], function() {
 		"as"	=> 	"user.apps",
 		"uses"	=>	"LoginController@apps"
 	]);
-
 	Route::any("/lab", [
 		"as"	=>	"user.lab",
 		"uses"	=>	"LabController@index"
 	]);
-
-	
 	Route::get("lab/nuevo", function(){
 		return View::make('lab.new');
 	});
@@ -52,7 +49,6 @@ Route::group(["before" => "auth"], function() {
 		"as" 	=> 	"user.lab",
 		"uses"	=>	"LabController@create"
 	]);
-	
 	Route::get("lab/{id}", [
 		"as" 	=> 	"lab.customer",
 		"uses"	=>	"LabController@show"
@@ -61,4 +57,7 @@ Route::group(["before" => "auth"], function() {
 			"as" 	=> 	"user.newOrder",
 			"uses"	=>	"LabController@addOrderTo"
 	]);
+	Route::get("lab/order/{id}", function(){
+		return View::make('lab.new');
+	});
 });

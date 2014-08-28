@@ -13,7 +13,10 @@
 	{{ Form::text('name', Input::old("name"), array(
 		'class'=>'form-control'))
 	}}
-
+ {{ Form::field([
+"name" => "numero",
+"type" => "number"
+])}}
 	{{ Form::label("telephone", "Teléfono:") }}
 	{{ Form::text('telephone', Input::old("telephone"), array(
 		'class'=>'form-control'))
