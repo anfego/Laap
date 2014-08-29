@@ -22,9 +22,21 @@ class LabOrder extends Eloquent{
 	 */
 	
 	/**
-	 * Relationships with other tables
+	 * The attributes protected for mass-assigment
 	 *
 	 * @var array
+	 */
+	protected $guarded = [
+		'id',
+		'created_by',
+		'created_at',
+		'updated_at'
+	];
+	
+	/**
+	 * Relationships with other tables
+	 *
+	 * @var string
 	 */
 	public function LabCustomer()
 	{
