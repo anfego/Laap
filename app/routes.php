@@ -54,10 +54,11 @@ Route::group(["before" => "auth"], function() {
 		"uses"	=>	"LabController@show"
 	]);
 	Route::get("lab/{id}/nuevaOrden",[
-			"as" 	=> 	"user.newOrder",
-			"uses"	=>	"LabController@addOrderTo"
+		"as" 	=> 	"user.newOrder",
+		"uses"	=>	"LabController@addOrderTo"
 	]);
-	Route::get("lab/order/{id}", function(){
-		return View::make('lab.new');
-	});
+	Route::get("lab/order/{id}", [
+		"as" 	=> 	"lab.formOrder",
+		"uses"	=>	"LabController@edit"
+	]);
 });
