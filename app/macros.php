@@ -109,6 +109,16 @@ Form::macro("field", function($options)
 
             break;
         }
+        case "email":
+        {
+            $markup .= Form::label($name, $label, [
+                "class" => "control-label"
+            ]);
+
+            $markup .= Form::input('email', $name, '', $parameters);
+
+            break;
+        }
 
         case "checkbox":
         {
