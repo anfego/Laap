@@ -69,13 +69,6 @@ class LabBOMItem extends Eloquent{
     {
         return ($this-> price)*($this-> quantity);
     }
-    // public static function find($order_id, $product_id)
-    // {
-    //     return LabBOMItem::where('order_id', '=', $order_id)
-    //         ->where('product_id', '=', $product_id)
-    //         ->first();
-    // }
-    // Allow for camelCased attribute access
     protected function getSubtotal()
     {
         return $this-> quantity * $this-> price - ($this-> quantity * $this-> price)*$this->discount/100.00 ;

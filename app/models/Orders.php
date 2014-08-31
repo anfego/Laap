@@ -67,7 +67,10 @@ class LabOrder extends Eloquent{
 		$total = $subtotal +  $subtotal * $this-> tax/100.00;
 		$order = LabOrder::find($this-> id);
 		$order-> total = $total;
-        $order-> save();
+		// only update if order is open
+		if ($order-> isOpen()) {
+        	$order-> save();
+		}
 		return $subtotal;
 	}
 	public function close()
