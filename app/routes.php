@@ -11,19 +11,6 @@
 |
 */
 
-
-// Route::get('/', function()
-// {
-//     return View::make('hello');
-// });
-
-// Route::get('/', function()
-// {
-//     return View::make('home');
-// });
-
-// Route::get('test', 'LoginController@getIndex');
-
 Route::any("/", [
 	"as"	=>	"user.login",
 	"uses"	=>	"LoginController@login"
@@ -57,7 +44,7 @@ Route::group(["before" => "auth"], function() {
 		"as" 	=> 	"user.newOrder",
 		"uses"	=>	"LabController@addOrderTo"
 	]);
-	Route::get("lab/order/{id}", [
+	Route::any("lab/order/{id}", [
 		"as" 	=> 	"lab.formOrder",
 		"uses"	=>	"LabController@edit"
 	]);

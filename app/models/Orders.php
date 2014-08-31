@@ -38,8 +38,35 @@ class LabOrder extends Eloquent{
 	 *
 	 * @var string
 	 */
-	public function LabCustomer()
+	public function customer()
 	{
-		return $this-> belongsTo('LabCustomer','idCustomer','id');
+		return $this-> belongsTo('LabCustomer','customer_id','id');
+	}
+	
+	public function products()
+	{
+		return $this-> hasMany('LabBOMItem','order_id','id');
+	}
+	/**
+	 * calculate, update order total and return its subtotal
+	 *
+	 * @var string
+	 */
+	public function getSubtotal()
+	{
+		$subtotal = "0.0";
+		if( count($this-> products()-> get()) )
+		{
+			$subtotal = LabBOMItem::select( DB::raw('SUM( (price * quantity) - (price * quantity)*(discount / 100.00)) as value'))
+			                       -> whereOrderId($this-> id)
+			                       -> groupBy('order_id')
+			                       -> first()
+			                       -> value;
+		}
+		$total = $subtotal +  $subtotal * $this-> tax/100.00;
+		$order = LabOrder::find($this-> id);
+		$order-> total = $total;
+        $order-> save();
+		return $subtotal;
 	}
 }

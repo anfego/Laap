@@ -55,7 +55,58 @@ class LabController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$form  = new BomForm();
+        $order = LabOrder::findOrFail($id);
+        $products = LabProducts::all();
+        $url = URL::full();
+        $bom = LabOrder::find($id)-> products()-> get();
+        $customer = LabCustomer::find($order-> customer_id)-> first();
+        $subTotal = 0.0;
+        if ($form-> isPosted()) {
+            foreach ($products as $product)
+            {
+                if (Input::get($product-> id) != '0' )
+                {
+                    $newBomProduct = LabBOMItem::whereOrderId($id)->whereProductId($product-> id)->first();
+                    if (count($newBomProduct))
+                    {
+                        $quantity = $newBomProduct-> quantity + Input::get($product-> id);
+                        if ($quantity <= '0') {
+                            LabBOMItem::whereOrderId($id)
+                                        -> whereProductId($product-> id)
+                                        -> delete();
+                        }else{
+                            LabBOMItem::whereOrderId($id)
+                                        -> whereProductId($product-> id)
+                                        -> update(array('quantity' => $quantity));
+                        }
+                    }else if(Input::get($product-> id) > 0){
+                        $newBomProduct = new LabBOMItem;
+                        $newBomProduct-> product_id = $product-> id;
+                        $newBomProduct-> quantity = Input::get($product-> id);
+                        $newBomProduct-> price = $product-> price;
+                        if($product-> level == 'standard'){
+                            $newBomProduct-> discount = $customer-> discountStd;
+                        }elseif ($product-> level == 'special') {
+                            $newBomProduct-> discount = $customer-> discountSpc;
+                        }
+                        LabOrder::find($id)-> products()-> save($newBomProduct);
+                    }
+                }
+            }
+            // update order total
+            $subTotal = LabOrder::find($id)->getSubtotal();
+            return Redirect::to($url)-> withInput([ "subTotal" => $subTotal]);
+        }
+        $subTotal = LabOrder::find($id)->getSubtotal();
+        return View::make("lab/formOrder", [
+            "form"      => $order,
+            "order"     => $order,
+            "products"  => $products,
+            "customer"  => $customer,
+            "subTotal"  => $subTotal,
+            "bom"       => $bom
+        ]);
 	}
 
 

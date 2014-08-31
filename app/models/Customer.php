@@ -28,6 +28,6 @@ class LabCustomer extends Eloquent{
 	 */
 	public function orders()
 	{
-		return $this-> hasMany('LabOrder', 'idCustomer', 'id');
+		return $this-> hasMany('LabOrder', 'customer_id', 'id');
 	}
 }
