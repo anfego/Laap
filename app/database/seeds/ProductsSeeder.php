@@ -18,6 +18,20 @@ class ProductsSeeder extends DatabaseSeeder
         "level"       =>  "special",
         "status"      =>  "active",
         "updated_by"  =>  "admin"
+      ],
+      [
+        "name"        =>  "3 Piezas",
+        "price"       =>  "1000.00",
+        "level"       =>  "special",
+        "status"      =>  "active",
+        "updated_by"  =>  "admin"
+      ],
+      [
+        "name"        =>  "Bisel Lente Especial",
+        "price"       =>  "300.00",
+        "level"       =>  "special",
+        "status"      =>  "active",
+        "updated_by"  =>  "admin"
       ]
     ];
 
