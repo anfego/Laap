@@ -14,7 +14,7 @@ class CreateLabOrdersHistoryTable extends Migration {
 	{
 		Schema::create('lab_orders_history', function(Blueprint $table)
 		{
-			$table-> integer('idOrder')-> unsigned();
+			$table-> integer('order_id')-> unsigned();
 			$table-> enum("action", array( 'payment', 'closed', 'opened', 'delivered'));
 			$table-> decimal('balance_old',6,2);
 			$table-> decimal('balance_new',6,2);

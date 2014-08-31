@@ -14,12 +14,13 @@ class CreateLabBomTable extends Migration {
 	{
 		Schema::create('lab_bom', function(Blueprint $table)
 		{
-			$table-> integer("idOrder")-> unsigned();
-			$table-> integer("idProduct")-> unsigned();
+			$table-> integer("order_id")-> unsigned();
+			$table-> integer("product_id")-> unsigned();
 			$table-> integer("quantity");
-			$table-> decimal('price',4,2);
-			$table-> decimal('discount',3,2);
+			$table-> decimal('price',7,2);
+			$table-> decimal('discount',4,2);
 			$table-> timestamps();
+			$table-> primary(array('order_id','product_id'));
 		});
 	}
 
