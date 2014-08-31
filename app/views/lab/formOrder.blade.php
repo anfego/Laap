@@ -12,7 +12,7 @@
                     </h3>
                 </div>
                 <div role="form" class="form-group">
-                <div id="collapseOne" class="panel-collapse collapse in">
+                <div id="collapseOne" class="panel-collapse collapse">
                     {{ Form::open([
                         "autocomplete"  => "off",
                         "URL"           => URL::full()
