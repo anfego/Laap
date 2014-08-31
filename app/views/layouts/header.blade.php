@@ -8,7 +8,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="#">
-				<img src="images/logo2014.png" alt="GaleriaOptica.com"  height="30" width="20">
+				<img src={{ asset('images/logo2014.png') }} alt="GaleriaOptica.com"  height="22" width="40">
 			</a>
 		</div>
 	

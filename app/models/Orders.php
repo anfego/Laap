@@ -28,6 +28,7 @@ class LabOrder extends Eloquent{
 	 */
 	protected $guarded = [
 		'id',
+		'status',
 		'created_by',
 		'created_at',
 		'updated_at'
@@ -69,4 +70,43 @@ class LabOrder extends Eloquent{
         $order-> save();
 		return $subtotal;
 	}
+	public function close()
+	{
+		$this-> status = 'closed';
+		$this-> save();
+	}
+	public function paid()
+	{
+		$this-> status = 'paid';
+		$this-> save();
+	}
+	public function delivered()
+	{
+		$this-> status = 'unpaid';
+		$this-> save();
+	}
+	public function open()
+	{
+		$this-> status = 'open';
+		$this-> save();
+	}
+
+	public function isClose()
+	{
+		return $this-> status == 'closed';
+		
+	}
+	public function isPaid()
+	{
+		return $this-> status == 'paid';
+	}
+	public function isDelivered()
+	{
+		return $this-> status == 'unpaid';
+	}
+	public function isOpen()
+	{
+		return $this-> status == 'open';
+	}
+
 }

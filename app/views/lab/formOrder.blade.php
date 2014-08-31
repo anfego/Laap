@@ -1,7 +1,9 @@
 @extends("layouts.navBar")
 @section("content")
-    <h2>{{ $customer-> name }}</h2>
-    @if($order-> status = 'open')
+    <a href="{{ URL::action('LabController@show', array('id' => $customer-> id)) }}">
+        <h2>{{ $customer-> name }}</h2>
+    </a>
+    @if($order-> status == 'open')
         <div class="panel-group" id="accordion">
             <div class="panel panel-default panel panel-success">
                 <div class="panel-heading">
@@ -39,7 +41,7 @@
     <table class="table table-striped">
         <thead>
             <tr><th>Order #</th><th>{{ $order-> id }}</th></tr>
-            <tr><th>Servicio</th><th>Descripcion</th><th>Cantidad</th><th>Precio Unidad</th><th>Sub Total</th></tr></thead>
+            <tr><th>Servicio</th><th>Descripcion</th><th>Cantidad</th><th>Precio Unidad</th><th>Subtotal</th></tr></thead>
         <tbody>
         @if( count( $bom ))
             @foreach($bom as $bomItem)
@@ -64,7 +66,14 @@
         </tfoot>
     </table>
     <p>
-      <button type="button" class="btn btn-default btn-lg pull-left">Anular</button>
-      <button type="button" class="btn btn-primary btn-lg pull-right">Cerrar</button>
+        @if( $order->status == 'open')
+        <a href= {{{ URL::action('LabController@deleteOrder', array('id' => $order-> id)) }}} class="btn btn-default btn-lg pull-left active" role="button">Anular</a>    
+            @if(count($bom))
+                <a href= {{{ URL::action('LabController@closeOrder', array('id' => $order-> id)) }}} class="btn btn-success btn-lg pull-right active" role="button">Cerrar</a>    
+            @endif
+        @elseif( $order-> status == 'closed')
+                <a href= {{{ URL::action('LabController@previewOrder', array('id' => $order-> id)) }}} class="btn btn-default btn-lg pull-left active" role="button">Imprimir</a>    
+                <a href= {{{ URL::action('LabController@deliverOrder', array('id' => $order-> id)) }}} class="btn btn-success btn-lg pull-right active" role="button">Entregada</a>    
+        @endif
     </p>
 @stop

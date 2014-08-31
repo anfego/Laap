@@ -48,4 +48,20 @@ Route::group(["before" => "auth"], function() {
 		"as" 	=> 	"lab.formOrder",
 		"uses"	=>	"LabController@edit"
 	]);
+	Route::any("lab/order/cerrar/{id}", [
+		"as" 	=> 	"lab.formOrder",
+		"uses"	=>	"LabController@closeOrder"
+	]);
+	Route::any("lab/order/entregar/{id}", [
+		"as" 	=> 	"lab.formOrder",
+		"uses"	=>	"LabController@deliverOrder"
+	]);
+	Route::any("lab/order/imprimir/{id}", [
+		"as" 	=> 	"lab.formOrder",
+		"uses"	=>	"LabController@previewOrder"
+	]);
+	Route::any("lab/order/anular/{id}", [
+		"as" 	=> 	"lab.formOrder",
+		"uses"	=>	"LabController@deleteOrder"
+	]);
 });

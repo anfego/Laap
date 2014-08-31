@@ -109,6 +109,62 @@ class LabController extends BaseController {
         ]);
 	}
 
+    /**
+     * Chage order status to closed
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function closeOrder($id)
+    {
+        $order = LabOrder::findOrFail($id);
+        if ($order-> isOpen()) {
+            $order-> close();
+        }
+        return Redirect::to(URL::action('LabController@edit', array('id' => $order-> id)));
+    }
+
+    /**
+     * Chage order status to unpaid
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function deliverOrder($id)
+    {
+        $order = LabOrder::findOrFail($id);
+        if ($order-> isClose()) {
+            $order-> delivered();
+        }
+        return Redirect::to(URL::action('LabController@edit', array('id' => $order-> id)));
+    }
+
+    /**
+     * Shows the order printing format
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function previewOrder($id)
+    {
+        $order = LabOrder::findOrFail($id);
+        return Redirect::to(URL::action('LabController@edit', array('id' => $order-> id)));
+    }
+
+    /**
+     * Remove the specified order
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function deleteOrder($id)
+    {
+        $order = LabOrder::findOrFail($id);
+        if ($order-> isOpen()) {
+            $order-> delete();
+        }
+        return Redirect::to(URL::action('LabController@show', array('id' => $order-> customer_id)));
+    }
 
 	/**
 	 * Remove the specified resource from storage.
