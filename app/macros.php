@@ -43,6 +43,12 @@ Form::macro("field", function($options)
     {
         $placeholder = $options["placeholder"];
     }
+    $step = "1";
+
+    if (!empty($options["step"]))
+    {
+        $step = $options["step"];
+    }
 
     $class = "";
 
@@ -57,9 +63,9 @@ Form::macro("field", function($options)
     ];
 
     $parametersNumber = [
-        "class"         => "form-control" . $class,
-        "id"            => $id        
-        
+        "class"     => "form-control" . $class,
+        "id"        => $id,
+        "step"      => $step
     ];
 
     $error = "";
