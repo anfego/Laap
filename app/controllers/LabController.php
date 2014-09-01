@@ -62,6 +62,7 @@ class LabController extends BaseController {
         $bom = LabOrder::find($id)-> products()-> get();
         $customer = LabCustomer::find($order-> customer_id)-> first();
         $subTotal = 0.0;
+        
         if ($form-> isPosted()) {
             foreach ($products as $product)
             {
@@ -98,14 +99,16 @@ class LabController extends BaseController {
             $subTotal = LabOrder::find($id)->getSubtotal();
             return Redirect::to($url)-> withInput([ "subTotal" => $subTotal]);
         }
-        $subTotal = LabOrder::find($id)->getSubtotal();
+        $subTotal = LabOrder::find($id)-> getSubtotal();
+        $transactions = LabOrder::find($id)-> transactions()-> get();
         return View::make("lab/formOrder", [
             "form"      => $order,
             "order"     => $order,
             "products"  => $products,
             "customer"  => $customer,
             "subTotal"  => $subTotal,
-            "bom"       => $bom
+            "bom"       => $bom,
+            "transactions" => $transactions
         ]);
 	}
 
