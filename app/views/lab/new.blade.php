@@ -37,13 +37,15 @@
         "name"        => "discountStd",
         "label"       => "Descuento Estandar",
         "placeholder" => "5.00",
-        "type"        => "text"
+        "step"        => "0.5",
+        "type"        => "number"
     ]) }}
     {{ Form::field([
         "name"        => "discountSpc",
         "label"       => "Descuento Especial",
         "placeholder" => "5.00",
-        "type"        => "text"
+        "step"        => "0.5",
+        "type"        => "number"
     ]) }}
 
 	{{ Form::submit('Crear', array(
