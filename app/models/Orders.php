@@ -48,6 +48,10 @@ class LabOrder extends Eloquent{
 	{
 		return $this-> hasMany('LabBOMItem','order_id','id');
 	}
+	public function transactions()
+	{
+		return $this-> hasMany('LabOrderTransaction','order_id','id');
+	}
 	/**
 	 * calculate, update order total and return its subtotal
 	 *
@@ -75,6 +79,9 @@ class LabOrder extends Eloquent{
 	}
 	public function close()
 	{
+		$id = $this-> id;
+		$transaction = new LabOrderTransaction;
+		$transaction-> recordCloseEvent($id);
 		$this-> status = 'closed';
 		$this-> save();
 	}

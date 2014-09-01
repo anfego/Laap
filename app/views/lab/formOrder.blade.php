@@ -3,12 +3,31 @@
     <a href="{{ URL::action('LabController@show', array('id' => $customer-> id)) }}">
         <h2>{{ $customer-> name }}</h2>
     </a>
+    @if($order-> status == 'closed')
+        <div>
+            {{ Form::open([
+                    "autocomplete"  => "off",
+                    "class"         => "form-inline pull-right",
+                    "URL"           => URL::full()
+                ]) }}
+                {{ Form::field([
+                    "name"          => "paid",
+                    "label"         => "Recibir Pago",
+                    "step"          => "50",
+                    "type"          => "number"
+                ]) }}
+                {{ Form::submit('Pago', array(
+                    'class' => 'btn btn-lg btn-success'))
+                }}
+            {{ Form::close() }}
+        </div>
+    @endif
     @if($order-> status == 'open')
         <div class="panel-group" id="accordion">
             <div class="panel panel-default panel panel-success">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                             Agregar Productos
                         </a>
                     </h3>
@@ -65,6 +84,9 @@
             <tr><td></td><td></td><td></td><td>Total</td><td>{{ number_format($order-> total, 2) }}</td></tr>
         </tfoot>
     </table>
+    @if( count($transactions))
+        @include('lab.historyOrder', array('transactions' => $transactions))
+    @endif
     <p>
         @if( $order->status == 'open')
         <a href= {{{ URL::action('LabController@deleteOrder', array('id' => $order-> id)) }}} class="btn btn-default btn-lg pull-left active" role="button">Anular</a>    
