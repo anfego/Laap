@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'Laboratorio',
-			'username'  => 'forge',
-			'password'  => 'forgeSql',
+			'host'      => 'us-cdbr-azure-central-a.cloudapp.net',
+			'database'  => 'anfegoAf1qsV5ApD',
+			'username'  => 'b999ab29d74cd9',
+			'password'  => '919671a6',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
