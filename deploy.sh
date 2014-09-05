@@ -69,7 +69,7 @@ echo "This Andres Deploy"
 # ----------
 
 echo Downloading Composer
-# curl -sS https://getcomposer.org/installer | php
+curl -sS https://getcomposer.org/installer | php
 
 ##################################################################################################################################
 # Deployment

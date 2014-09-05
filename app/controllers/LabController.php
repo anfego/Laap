@@ -42,6 +42,7 @@ class LabController extends BaseController {
 		$newOrder-> created_by = Auth::user()-> username;
 		$newOrder-> delivery_date = new DateTime('today');
 		$newOrder-> tax = '16.0';
+		$newOrder-> total = 0.0;
 		$customer = LabCustomer::find($id)-> orders()-> save($newOrder);
 		return $this-> show($id);
 	}
