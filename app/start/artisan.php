@@ -11,3 +11,7 @@
 |
 */
 
+Artisan::add(new MyEnvCommand);
+Artisan::add(new MyEnvGetCommand);
+Artisan::add(new MyEnvSetCommand);
+Artisan::add(new MyEnvRemoveCommand);

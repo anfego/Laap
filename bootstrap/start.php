@@ -24,11 +24,9 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
-
-	'develop' => array('galadriel'),
-
-));
+$env = $app->detectEnvironment(
+    require __DIR__ . "/../app/config/environment.php"
+);
 
 /*
 |--------------------------------------------------------------------------
@@ -69,5 +67,4 @@ require $framework.'/Illuminate/Foundation/start.php';
 | from the actual running of the application and sending responses.
 |
 */
-
 return $app;
