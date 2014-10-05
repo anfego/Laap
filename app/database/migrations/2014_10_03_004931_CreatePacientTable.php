@@ -32,11 +32,11 @@ class CreatePacientTable extends Migration {
 						->default("");
 						
 			$table
-						-> string("email")
+						->string("email")
 						->default("");
 
 			$table
-						-> string("telephone")
+						->string("telephone")
 						->default("");
 
 			$table
