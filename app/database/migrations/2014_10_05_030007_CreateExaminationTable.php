@@ -12,7 +12,7 @@ class CreateExaminationTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('examination', function(Blueprint $table)
+		Schema::create('examination', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->timestamps();
@@ -48,7 +48,7 @@ class CreateExaminationTable extends Migration {
 						->default('0.00');
 			// contact lenses 
 			$table 
-						->enum('clType' array( 'soft', 'hard', 'N/A')
+						->enum('clType', array( 'soft', 'hard', 'N/A'))
 						->default('N/A');
 			$table
 						->string('cl_right')
@@ -134,7 +134,7 @@ class CreateExaminationTable extends Migration {
 			// Direct Ophthalmoscopy
 			$table
 						->string('dxOpthal')
-						->default('')
+						->default('');
 			// Observations
 			$table
 						->text('observations')
