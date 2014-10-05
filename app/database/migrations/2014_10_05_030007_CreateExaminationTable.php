@@ -20,6 +20,9 @@ class CreateExaminationTable extends Migration {
 						->integer('pacient_id')
 						->unsigned();
 			$table
+						->integer('created_by')
+						->unsigned();
+			$table
 						->string('ocupation')
 						->default('');
 			$table
