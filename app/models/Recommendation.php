@@ -28,6 +28,6 @@ class Recommendation extends Eloquent{
 	 */
 	public function examinations()
 	{
-		return $this-> belongsTo('examination', 'examination_id', 'id');
+		return $this-> belongsTo('Examination', 'examination_id', 'id');
 	}
 }

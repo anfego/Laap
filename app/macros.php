@@ -125,6 +125,16 @@ Form::macro("field", function($options)
 
             break;
         }
+        case "date":
+        {
+            $markup .= Form::label($name, $label, [
+                "class" => "control-label"
+            ]);
+
+            $markup .= Form::input('date', $name, '', $parameters);
+
+            break;
+        }
 
         case "checkbox":
         {

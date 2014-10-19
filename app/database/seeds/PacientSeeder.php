@@ -15,7 +15,7 @@ class PacientSeeder extends DatabaseSeeder
     ];
   
     foreach ($pacients as $pacient) {
-      User::create($pacient);
+      Pacient::create($pacient);
     }
   }
 }

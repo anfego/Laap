@@ -2,52 +2,50 @@
 @extends("layouts.navBar")
 
 @section("content")
+	<h1>Consultorio</h1>
 	<div id='isotopes' class='clickable isotope clearfix'>
-		<div id='laboratorio' class='element'>
-			<h2 class='name'>
-				<i class = "icon-plus-sign"></i>
-					Laboratorio
-			</h2>
+	<div class="center-block row btn-group" >
+	<a href="{{URL::to("consultorio/nuevo")}} " class="btn btn-success btn-lg active pull-left" role="button">Nuevo Paciente</a>
+	</div>
+	@foreach ($pacients as $pacient) 
+		<div id='pacient' class='element pacient' data-symbol='Hg' data-category='lanthanoid'>
+			<h2 class='name'>{{ $pacient->last_name }}</h2>
+			<p id='caption'>Direccion: {{ $pacient->address_home }} </br>
+			Teléfono: {{ $pacient->telephone }} </p>
+			<div id='idCliente'>{{ $pacient->id }} </div>
 		</div>
-		<div id='consultorio' class='element'>
-			<h2 class='name'>
-				<i class = "icon-plus-sign"></i>
-				Consultorio
-			</h2>
-		</div>
-		<div id='optica' class='element'>
-			<h2 class='name'>
-				<i class = "icon-plus-sign"></i>
-				Optica
-			</h2>
-		</div>
-	</div> 
+	@endforeach
+	</div>
 
 @stop
 @section("scripts")
 	<script>
 
-	$(document).ready(function()
-	{
-		$(".element").click(function()
+		$(document).ready(function()
 		{
-			var appName = $(this).attr('id');
-
-			switch(appName)
+			$(".element").click(function()
 			{
-				case "optica":
-					window.location.href = "{{URL::to("optica")}}";
+				var accion = $(this).attr('id');
+				var thisElemtent = $(this);
+
+				switch(accion)
+				{
+					case "pacient":
+						// redirije a la pagina del historial de ordenes del cliente
+						var idPacient = $(this).find('div').text();
+						var url = "{{URL::to("consultorio")}}" ;
+						url = url.concat('/');
+						url = url.concat(idPacient);
+						window.location.href = url;
 					break;
-				case 'consultorio':
-					window.location.href = "{{URL::to("consultorio")}}";
-					break;
-				case "laboratorio":
-					window.location.href = "{{URL::to("lab")}}";
+				case 'crear':
+					window.location.href = "nuevoCliente.php";
 					break;
 				default:
 					alert("ERROR: Accion no valida");
-			}
+
+				}
+			});
 		});
-	});
 	</script>
 @stop

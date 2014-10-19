@@ -28,6 +28,6 @@ class Pacient extends Eloquent{
 	 */
 	public function examinations()
 	{
-		return $this-> hasMany('examination', 'pacient_id', 'id');
+		return $this-> hasMany('Examination', 'pacient_id', 'id');
 	}
 }
