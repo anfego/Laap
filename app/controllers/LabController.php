@@ -72,7 +72,7 @@ class LabController extends BaseController {
                     $newBomProduct = LabBOMItem::whereOrderId($id)->whereProductId($product-> id)->first();
                     if (count($newBomProduct))
                     {
-                        $quantity = $newBomProduct-> quantity + Input::get($product-> id);
+                        $quantity = $newBomProduct-> quantity + Input::get($product-> id);sa
                         if ($quantity <= '0') {
                             LabBOMItem::whereOrderId($id)
                                         -> whereProductId($product-> id)

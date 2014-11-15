@@ -26,8 +26,8 @@ class CreateExaminationTable extends Migration {
 						->string('ocupation')
 						->default('');
 			$table
-						->text('motivation')
-						->default('');
+						->text('motivation');
+						// ->default('');
 			// VL
 			$table
 						->string('vl_right')
@@ -140,8 +140,8 @@ class CreateExaminationTable extends Migration {
 						->default('');
 			// Observations
 			$table
-						->text('observations')
-						->default('');
+						->text('observations');
+						// ->default('');
 		});
 	}
 

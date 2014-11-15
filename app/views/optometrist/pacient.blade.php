@@ -7,7 +7,7 @@
 		<h2>{{ $pacient->last_name}}</h2>
 		<div id='isotopes' class='clickable isotope clearfix'>
 			<div class="center-block row btn-group" >
-			<a href="{{ URL::action('PacientController@index', $pacient->id ) }}" class="btn btn-success btn-lg active col-lg-3" role="button">
+			<a href="{{ URL::action('ExaminationController@create', $pacient->id ) }}" class="btn btn-success btn-lg active col-lg-3" role="button">
 				Nuevo Exámen
 			</a>
 			<div>
@@ -20,13 +20,13 @@
 				</div>
 			@endforeach
 		@else
+			</br>
 			<h2>No hay historial previo</h2>
 		</div>
 		@endif
 	@endif
-
-
 @stop
+
 @section("scripts")
 	<script>
 		$(document).ready(function()

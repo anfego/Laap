@@ -19,14 +19,14 @@ class CreateRecommendationTable extends Migration {
 						->integer('examination_id')
 						->unsigned();
 			$table
-						->text("remission")
-						->default("");
+						->text("remission");
+						// ->default("");
 			$table
-						->text("treatment")
-						->default("");
+						->text("treatment");
+						// ->default("");
 			$table
-						->text("products")
-						->default("");
+						->text("products");
+						// ->default("");
 		});
 	}
 

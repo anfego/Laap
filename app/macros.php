@@ -94,6 +94,16 @@ Form::macro("field", function($options)
 
             break;
         }
+        case "textArea":
+        {
+            $markup .= Form::label($name, $label, [
+                "class" => "control-label"
+            ]);
+
+            $markup .= Form::textarea($name, $value, $parameters);
+
+            break;
+        }
 
         case "password":
         {
@@ -141,6 +151,16 @@ Form::macro("field", function($options)
             $markup .= "<div class='checkbox'>";
             $markup .= "<label>";
             $markup .= Form::checkbox($name, 1, (boolean) $value);
+            $markup .= " " . $label;
+            $markup .= "</label>";
+            $markup .= "</div>";
+            break;
+        }
+        case "radio":
+        {
+            $markup .= "<div class='radio'>";
+            $markup .= "<label>";
+            $markup .= Form::radio($name, 1, (boolean) $value);
             $markup .= " " . $label;
             $markup .= "</label>";
             $markup .= "</div>";

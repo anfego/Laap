@@ -64,6 +64,10 @@ Route::group(["before" => "auth"], function() {
     "as"    =>  "optometrist.pacient",
     "uses"  =>  "PacientController@show"
   ]);
+  Route::get("consultorio/{id}/nuevo", [
+    "as"    =>  "optometrist.examination.new",
+    "uses"  =>  "ExaminationController@create"
+  ]);
   
   Route::get("lab/{id}/nuevaOrden",[
     "as"    =>  "user.newOrder",
