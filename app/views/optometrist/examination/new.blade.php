@@ -7,18 +7,20 @@
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">General</a></li>
-    <li role="presentation"><a href="#vp" aria-controls="vp" role="tab" data-toggle="tab">VP</a></li>
+    <li role="presentation"><a href="#av" aria-controls="av" role="tab" data-toggle="tab">A.V. SC </a></li>
     <li role="presentation"><a href="#contactLenses" aria-controls="contactLenses" role="tab" data-toggle="tab">Lentes de Contacto</a></li>
     <li role="presentation"><a href="#keratometer" aria-controls="keratometer" role="tab" data-toggle="tab">Queratometria</a></li>
     <li role="presentation"><a href="#lensmetric" aria-controls="lensmetric" role="tab" data-toggle="tab">Lensométria</a></li>
-    <li role="presentation"><a href="#cicloRx" aria-controls="cicloRx" role="tab" data-toggle="tab">Rx Ciclopejica</a></li>
-    <li role="presentation"><a href="#subjective" aria-controls="subjective" role="tab" data-toggle="tab">Subjetivo</a></li>
     <li role="presentation"><a href="#rx" aria-controls="rx" role="tab" data-toggle="tab">Rx Final</a></li>
-    <li role="presentation"><a href="#subjective" aria-controls="subjective" role="tab" data-toggle="tab">Oftal. Directa</a></li>
+    <li role="presentation"><a href="#dxOpthal" aria-controls="dxOpthal" role="tab" data-toggle="tab">Oftal. Directa</a></li>
+    <li role="presentation"><a href="#diagnostic" aria-controls="diagnostic" role="tab" data-toggle="tab">Diagnostico</a></li>
+    <li role="presentation"><a href="#plan" aria-controls="plan" role="tab" data-toggle="tab">Plan</a></li>
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
+    
+    <!-- General -->
     <div role="tabpanel" class="tab-pane active" id="general">
       {{ Form::open(array(
         'url' => URL::to("consultorio/nuevoExamen"),
@@ -32,51 +34,64 @@
             "placeholder" => "Ocupación",
             "type"        => "text"
       ]) }}
-      {{ Form::field([
-          "name"        => "motivation",
-          "label"       => "Motivo de Consulta",
-          "placeholder" => "Escriba acá",
-          "type"        => "textArea"
-      ]) }}
+
+       <div class="checkbox">
+        <h3 >Motivo de Consulta</h3>
+        {{ Form::field([
+            "name"        => "motivo1",
+            "label"       => "Control Visual",
+            "value"       => "false",
+            "type"        => "checkbox"
+        ]) }}
+        {{ Form::field([
+            "name"        => "motivo2",
+            "label"       => "Cambio RX.",
+            "value"       => "CambioRX",
+            "type"        => "checkbox"
+        ]) }}
+        {{ Form::field([
+            "name"        => "motivo3",
+            "label"       => "Vision borrosa de lejos.",
+            "value"       => "VisionBorrosaDeLejos",
+            "type"        => "checkbox"
+        ]) }}
+        {{ Form::field([
+            "name"        => "motivo4",
+            "label"       => "Vision borrosa de cerca.",
+            "value"       => "VisionBorrosaDeCerca",
+            "type"        => "checkbox"
+        ]) }}
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseDxOpthal" aria-expanded="true" aria-controls="collapseDxOpthal">
+          <h5>Otro</h5>
+        </a>
+        <div id="collapseDxOpthal" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            {{ Form::field([
+              "name"        => "motivo5",
+              "label"       => "Otro",
+              "placeholder" => "Escriba acá",
+              "type"        => "textArea"
+            ]) }}
+          </div>
+        </div>
+      </div>
     </div>
-    <div role="tabpanel" class="tab-pane" id="vp">  
+    <!-- Agudeza Visual -->  
+    <div role="tabpanel" class="tab-pane" id="av">  
       {{ Form::field([
           "name"        => "vl_right",
-          "label"       => "vl_right",
+          "label"       => "Ojo Derecho",
           "placeholder" => "0.00",
           "type"        => "text"
       ]) }}
       {{ Form::field([
           "name"        => "vl_left",
-          "label"       => "vl_left",
-          "placeholder" => "0.00",
-          "type"        => "text"
-      ]) }}
-      {{ Form::field([
-          "name"        => "vp_right",
-          "label"       => "vp_right",
-          "placeholder" => "0.00",
-          "type"        => "text"
-      ]) }}
-      {{ Form::field([
-          "name"        => "vp_left",
-          "label"       => "vp_left",
-          "placeholder" => "0.00",
-          "type"        => "text"
-      ]) }}
-      {{ Form::field([
-          "name"        => "ph_right",
-          "label"       => "ph_right",
-          "placeholder" => "0.00",
-          "type"        => "text"
-      ]) }}
-      {{ Form::field([
-          "name"        => "ph_left",
-          "label"       => "ph_left",
+          "label"       => "Ojo Izquierdo",
           "placeholder" => "0.00",
           "type"        => "text"
       ]) }}
     </div>
+    <!-- Contact Lenses -->  
     <div role="tabpanel" class="tab-pane" id="contactLenses">
       {{ Form::field([
           "name"        => "clType",
@@ -98,88 +113,75 @@
       ]) }}
       {{ Form::field([
           "name"        => "cl_right",
-          "label"       => "cl_right",
+          "label"       => "Ojo Derecho",
           "placeholder" => "0.00",
           "type"        => "text"
       ]) }}
       {{ Form::field([
           "name"        => "cl_left",
-          "label"       => "cl_left",
+          "label"       => "Ojo Izquierdo",
           "placeholder" => "0.00",
           "type"        => "text"
       ]) }}
     </div>
+    <!-- keratometer -->  
     <div role="tabpanel" class="tab-pane" id="keratometer">
       {{ Form::field([
           "name"        => "kt_right",
-          "label"       => "kt_right",
+          "label"       => "Ojo Derecho",
           "placeholder" => "0.00",
           "type"        => "text"
       ]) }}
       {{ Form::field([
           "name"        => "kt_left",
-          "label"       => "kt_left",
+          "label"       => "Ojo Izquierdo",
           "placeholder" => "0.00",
           "type"        => "text"
       ]) }}
     </div>
+    <!-- lensmetric -->  
     <div role="tabpanel" class="tab-pane" id="lensmetric">
       {{ Form::field([
           "name"        => "lx_right",
-          "label"       => "lx_right",
+          "label"       => "Ojo Derecho",
           "placeholder" => "0.00",
           "type"        => "text"
       ]) }}
       {{ Form::field([
           "name"        => "lx_left",
-          "label"       => "lx_left",
+          "label"       => "Ojo Izquierdo",
           "placeholder" => "0.00",
           "type"        => "text"
       ]) }}
     </div>
-    <div role="tabpanel" class="tab-pane" id="cicloRx">
-      // Cycloplegic Refraction
-      {{ Form::field([
-          "name"        => "cr_right",
-          "label"       => "cr_right",
-          "placeholder" => "0.00",
-          "type"        => "text"
-      ]) }}
-      {{ Form::field([
-          "name"        => "cr_left",
-          "label"       => "cr_left",
-          "placeholder" => "0.00",
-          "type"        => "text"
-      ]) }}
-    </div>
-    <div role="tabpanel" class="tab-pane" id="subjective">
-      {{ Form::field([
-          "name"        => "sub_right",
-          "label"       => "sub_right",
-          "placeholder" => "0.00",
-          "type"        => "text"
-      ]) }}
-      {{ Form::field([
-          "name"        => "sub_left",
-          "label"       => "sub_left",
-          "placeholder" => "0.00",
-          "type"        => "text"
-      ]) }}
-    </div>
+    <!-- RX Final -->  
     <div role="tabpanel" class="tab-pane" id="rx">
       {{ Form::field([
+          "name"        => "cr_right",
+          "label"       => "Con Ciclopegia",
+          "value"       => "1",
+          "type"        => "radio"
+      ]) }}
+      {{ Form::field([
+          "name"        => "cr_right",
+          "label"       => "Sin Ciclopegia",
+          "value"       => "2",
+          "type"        => "radio"
+      ]) }}
+      {{ Form::field([
           "name"        => "rx_right",
-          "label"       => "rx_right",
+          "label"       => "Ojo Derecho",
           "placeholder" => "0.00",
           "type"        => "text"
       ]) }}
       {{ Form::field([
           "name"        => "rx_left",
-          "label"       => "rx_left",
+          "label"       => "Ojo Izquierdo",
           "placeholder" => "0.00",
           "type"        => "text"
       ]) }}
     </div>
+    <!-- Ocula Motility -->  
     <div role="tabpanel" class="tab-pane" id="ocularMotility">
       {{ Form::field([
           "name"        => "hirschberg",
@@ -199,22 +201,122 @@
           "placeholder" => "0",
           "type"        => "text"
       ]) }}
-    </div>
-    <div role="tabpanel" class="tab-pane" id="dxOpthal">
       {{ Form::field([
-          "name"        => "dxOpthal",
-          "label"       => "dxOpthal",
-          "placeholder" => "",
-          "type"        => "text"
-      ]) }}
-      {{ Form::field([
-          "name"        => "observations",
-          "label"       => "Observaciones",
-          "placeholder" => "Observaciones",
+          "name"        => "motilityOther",
+          "label"       => "Otra",
           "type"        => "textArea"
       ]) }}
     </div>
+    <!-- Opthalmos -->  
+    <div role="tabpanel" class="tab-pane" id="dxOpthal">
+      {{ Form::field([
+          "name"        => "dxOpthal",
+          "label"       => "Medios transparentes. Fondo de ojo sano normal. Retina Aplicada",
+          "value"       => "1",
+          "type"        => "checkbox"
+      ]) }}
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapseDxOpthal" aria-expanded="true" aria-controls="collapseDxOpthal">
+        <h5>Observaciones</h5>
+      </a>
+      <div id="collapseDxOpthal" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          {{ Form::field([
+              "name"        => "observations",
+              "label"       => " ",
+              "placeholder" => "Observaciones",
+              "type"        => "textArea"
+          ]) }}
+        </div>
+      </div>
+    </div>
+    <!-- Diagnostic -->  
+    <div role="tabpanel" class="tab-pane" id="diagnostic">
+      {{ Form::field([
+          "name"        => "diagnostic1",
+          "label"       => "Miopía",
+          "value"       => "1",
+          "type"        => "checkbox"
+      ]) }}
+      {{ Form::field([
+          "name"        => "diagnostic2",
+          "label"       => "Hipermetropía",
+          "value"       => "1",
+          "type"        => "checkbox"
+      ]) }}
+      {{ Form::field([
+          "name"        => "diagnostic3",
+          "label"       => "Astígmatismo",
+          "value"       => "1",
+          "type"        => "checkbox"
+      ]) }}
+      {{ Form::field([
+          "name"        => "diagnostic4",
+          "label"       => "Presbicia",
+          "value"       => "1",
+          "type"        => "checkbox"
+      ]) }}
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapseDiagnostic" aria-expanded="true" aria-controls="collapseDiagnostic">
+        <h5>Otro</h5>
+      </a>
+      <div id="collapseDiagnostic" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          {{ Form::field([
+            "name"        => "diagnostic5",
+            "label"       => "Observaciones",
+            "placeholder" => "Observaciones",
+            "type"        => "textArea"
+          ]) }}
+        </div>
+      </div>
+    </div>
+    <!-- Plan -->  
+    <div role="tabpanel" class="tab-pane" id="plan">
+      {{ Form::field([
+          "name"        => "plan1",
+          "label"       => "Se prescribe RX",
+          "value"       => "1",
+          "type"        => "checkbox"
+      ]) }}
+      {{ Form::field([
+          "name"        => "plan2",
+          "label"       => "No se prescribe RX",
+          "value"       => "1",
+          "type"        => "checkbox"
+      ]) }}
+      {{ Form::field([
+          "name"        => "plan3",
+          "label"       => "Control: 1 año",
+          "value"       => "1",
+          "type"        => "checkbox"
+      ]) }}
+      {{ Form::field([
+          "name"        => "plan4",
+          "label"       => "Uso: Permanente",
+          "value"       => "1",
+          "type"        => "checkbox"
+      ]) }}
+      {{ Form::field([
+          "name"        => "plan5",
+          "label"       => "Uso: Prolongado",
+          "value"       => "1",
+          "type"        => "checkbox"
+      ]) }}
+       <a data-toggle="collapse" data-parent="#accordion" href="#collapsePlan" aria-expanded="true" aria-controls="collapsePlan">
+        <h5>Otro</h5>
+      </a>
+      <div id="collapsePlan" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          {{ Form::field([
+            "name"        => "plan7",
+            "label"       => "Observaciones",
+            "placeholder" => "Observaciones",
+            "type"        => "textArea"
+          ]) }}
+        </div>
+      </div>
+    </div>
   </div>
+
 </div>
 
 

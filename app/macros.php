@@ -150,7 +150,7 @@ Form::macro("field", function($options)
         {
             $markup .= "<div class='checkbox'>";
             $markup .= "<label>";
-            $markup .= Form::checkbox($name, 1, (boolean) $value);
+            $markup .= Form::checkbox($name, (boolean) $value);
             $markup .= " " . $label;
             $markup .= "</label>";
             $markup .= "</div>";
