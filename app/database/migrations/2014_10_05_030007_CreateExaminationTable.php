@@ -27,27 +27,14 @@ class CreateExaminationTable extends Migration {
 						->default('');
 			$table
 						->text('motivation');
-						// ->default('');
-			// VL
 			$table
-						->string('vl_right')
+						->text('history');
+			// AV
+			$table
+						->string('av_right')
 						->default('0.00');
 			$table
-						->string('vl_left')
-						->default('0.00');
-			// VP
-			$table
-						->string('vp_right')
-						->default('0.00');
-			$table
-						->string('vp_left')
-						->default('0.00');
-			// PH
-			$table
-						->string('ph_right')
-						->default('0.00');
-			$table
-						->string('ph_left')
+						->string('av_left')
 						->default('0.00');
 			// contact lenses 
 			$table 
@@ -64,84 +51,47 @@ class CreateExaminationTable extends Migration {
 						->string('kt_right')
 						->default('0.00');
 			$table
-						->string('ktX_right')
-						->default('0.00');
-			$table
 						->string('kt_left')
-						->default('0.00');
-			$table
-						->string('ktX_left')
 						->default('0.00');
 			// Lensmetric
 			$table
 						->string('lx_right')
 						->default('0.00');
 			$table
-						->string('lxX_right')
-						->default('0.00');
-			$table
 						->string('lx_left')
 						->default('0.00');
 			$table
-						->string('lxX_left')
+						->string('lx_add')
 						->default('0.00');
+			$table
+						->string('lx_lenses')
+						->default('');
 			// Cycloplegic Refraction
 			$table
-						->string('cr_right')
+						->string('cyclop')
 						->default('0.00');
-			$table
-						->string('crX_right')
-						->default('0.00');
-			$table
-						->string('cr_left')
-						->default('0.00');
-			$table
-						->string('crX_left')
-						->default('0.00');
-			// Subjective
-			$table
-						->string('sub_right')
-						->default('0.00');
-			$table
-						->string('subX_right')
-						->default('0.00');
-			$table
-						->string('sub_left')
-						->default('0.00');
-			$table
-						->string('subX_left')
-						->default('0.00');
-			$table
 			// Final Refraction
 						->string('rx_right')
-						->default('0.00');
-			$table
-						->string('rxX_right')
 						->default('0.00');
 			$table
 						->string('rx_left')
 						->default('0.00');
 			$table
-						->string('rxX_left')
+						->string('rx_add')
 						->default('0.00');
 			// Ocular Motility
 			$table
-						->string('hirschberg')
-						->default('0');
-			$table
-						->string('ppc')
-						->default('0');
-			$table
-						->string('coverTest')
-						->default('0');
+						->string('oc_motility')
+						->default('');
 			// Direct Ophthalmoscopy
 			$table
-						->string('dxOpthal')
-						->default('');
+						->text('dxOpthal')
+			// Diagnostic
+			$table
+						->text('diagnostic');
 			// Observations
 			$table
 						->text('observations');
-						// ->default('');
 		});
 	}
 
