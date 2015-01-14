@@ -1,9 +1,11 @@
 @extends("layouts.navBar")
 
 @section("content")
+  @if(isset($pacient))
+    <h2>{{ $pacient->first_name}}, {{ $pacient->last_name}}</h2>
+  @endif
   <h1>Nuevo Examen</h1>
   <div role="tabpanel">
-
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">General</a></li>
@@ -16,7 +18,6 @@
     <li role="presentation"><a href="#diagnostic" aria-controls="diagnostic" role="tab" data-toggle="tab">Diagnostico</a></li>
     <li role="presentation"><a href="#plan" aria-controls="plan" role="tab" data-toggle="tab">Plan</a></li>
   </ul>
-
   <!-- Tab panes -->
   <div class="tab-content">
     

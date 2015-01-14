@@ -18,9 +18,10 @@ class ExaminationController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create($id)
 	{
-		return View::make('optometrist.examination.new');
+		$pacient = Pacient::find($id);
+		return View::make('optometrist.examination.new', array('pacient' => $pacient));
 	}
 
 

@@ -70,6 +70,7 @@ class CreateExaminationTable extends Migration {
 			$table
 						->string('cyclop')
 						->default('0.00');
+			$table
 			// Final Refraction
 						->string('rx_right')
 						->default('0.00');
@@ -85,7 +86,7 @@ class CreateExaminationTable extends Migration {
 						->default('');
 			// Direct Ophthalmoscopy
 			$table
-						->text('dxOpthal')
+						->text('dxOpthal');
 			// Diagnostic
 			$table
 						->text('diagnostic');
