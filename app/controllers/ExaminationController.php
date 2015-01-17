@@ -21,6 +21,7 @@ class ExaminationController extends \BaseController {
 	public function create($id)
 	{
 		$pacient = Pacient::find($id);
+		echo "Hello Word";
 		return View::make('optometrist.examination.new', array('pacient' => $pacient));
 	}
 

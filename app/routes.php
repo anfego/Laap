@@ -64,11 +64,16 @@ Route::group(["before" => "auth"], function() {
     "as"    =>  "optometrist.pacient",
     "uses"  =>  "PacientController@show"
   ]);
-  Route::get("consultorio/{id}/nuevo", [
+  Route::get("consultorio/{id}/nuevo", function($id){
+    $pacient = Pacient::find($id);
+    return View::make('optometrist.examination.new', array('pacient' => $pacient));
+  });
+
+  Route::post("consultorio/{id}/nuevo", [
     "as"    =>  "optometrist.examination.new",
     "uses"  =>  "ExaminationController@create"
   ]);
-  
+
   Route::get("lab/{id}/nuevaOrden",[
     "as"    =>  "user.newOrder",
     "uses"  =>  "LabController@addOrderTo"

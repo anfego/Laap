@@ -24,7 +24,7 @@
     <!-- General -->
     <div role="tabpanel" class="tab-pane active" id="general">
       {{ Form::open(array(
-        'url' => URL::to("consultorio/nuevoExamen"),
+        'url' => URL::to("consultorio/$pacient->id/nuevo"),
         'class' => 'form-signin',
         'name' => 'connectForm'))
       }}
