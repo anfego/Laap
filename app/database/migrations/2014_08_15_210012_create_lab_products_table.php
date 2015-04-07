@@ -5,33 +5,33 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateLabProductsTable extends Migration {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::create('lab_products', function(Blueprint $table)
-		{
-			$table-> increments('id');
-			$table-> string('name');
-			$table-> decimal('price',6,2);
-			$table-> enum("level", array('standard', 'special'));
-			$table-> enum("status", array('active', 'inactive'));
-			$table-> string("updated_by");
-			$table-> timestamps();
-		});
-	}
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('lab_products', function(Blueprint $table)
+        {
+            $table-> increments('id');
+            $table-> string('name');
+            $table-> decimal('price',6,2);
+            $table-> enum("level", array('standard', 'special'));
+            $table-> enum("status", array('active', 'inactive'));
+            $table-> string("updated_by");
+            $table-> timestamps();
+        });
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::drop('lab_products');
-	}
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('lab_products');
+    }
 
 }

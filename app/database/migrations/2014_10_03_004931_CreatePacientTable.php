@@ -5,61 +5,53 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreatePacientTable extends Migration {
 
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
-  public function up()
-  {
-    Schema::create('pacient', function(Blueprint $table)
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
     {
-      $table->increments("id");
-      $table
-            ->string("personal_id")
-            ->default("");
+        Schema::create('pacient', function(Blueprint $table)
+        {
+            $table  ->increments("id");
+            $table  ->string("personal_id")
+                    ->default("");
 
-      $table
-            ->string("first_name")
-            ->default("N/A") ;
+            $table  ->string("first_name")
+                    ->default("N/A") ;
 
-      $table
-            ->string("last_name")
-            ->default("N/A");
-      
-      $table
-            ->string("address_home")
-            ->default("");
-      
-      $table
-            ->string("address_work")
-            ->default("");
+            $table  ->string("last_name")
+                    ->default("N/A");
             
-      $table
-            ->string("email")
-            ->default("");
+            $table  ->string("address_home")
+                    ->default("");
+            
+            $table  ->string("address_work")
+                    ->default("");
+                        
+            $table  ->string("email")
+                    ->default("");
 
-      $table
-            ->string("telephone")
-            ->default("");
+            $table  ->string("telephone")
+                    ->default("");
 
-      $table
-            ->date("dob")
-            ->nullable()
-            ->default(null);
-      
-      $table-> timestamps();
-    });
-  }
+            $table  ->date("dob")
+                    ->nullable()
+                    ->default(null);
+            
+            $table-> timestamps();
+        });
+    }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
-  public function down()
-  {
-    Schema::drop('pacient');
-  }
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('pacient');
+    }
 
 }

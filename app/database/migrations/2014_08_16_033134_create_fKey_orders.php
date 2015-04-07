@@ -5,30 +5,30 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateFKeyOrders extends Migration {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::table('lab_orders', function(Blueprint $table)
-		{
-			$table->foreign('customer_id')->references('id')->on('lab_customer');
-		});
-	}
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('lab_orders', function(Blueprint $table)
+        {
+            $table->foreign('customer_id')->references('id')->on('lab_customer');
+        });
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::table('lab_orders', function(Blueprint $table)
-		{
-			$table->dropForeign('lab_orders_customer_id_foreign');
-		});
-	}
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('lab_orders', function(Blueprint $table)
+        {
+            $table->dropForeign('lab_orders_customer_id_foreign');
+        });
+    }
 
 }
