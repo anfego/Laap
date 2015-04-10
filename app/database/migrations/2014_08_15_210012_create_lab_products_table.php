@@ -14,13 +14,20 @@ class CreateLabProductsTable extends Migration {
     {
         Schema::create('lab_products', function(Blueprint $table)
         {
-            $table-> increments('id');
-            $table-> string('name');
-            $table-> decimal('price',6,2);
-            $table-> enum("level", array('standard', 'special'));
-            $table-> enum("status", array('active', 'inactive'));
-            $table-> string("updated_by");
-            $table-> timestamps();
+            $table  ->increments('id');
+            
+            $table  ->string('name');
+            
+            $table  ->decimal('price',6,2);
+            
+            $table  ->enum("level", array('standard', 'special'));
+            
+            $table  ->enum("status", array('active', 'inactive'));
+            
+            $table  ->string("updated_by");
+            
+            $table  ->timestamps();
+            
         });
     }
 

@@ -14,13 +14,21 @@ class CreateLabOrdersHistoryTable extends Migration {
     {
         Schema::create('lab_orders_history', function(Blueprint $table)
         {
-            $table-> integer('order_id')-> unsigned();
-            $table-> enum("action", array( 'payment', 'closed', 'opened', 'delivered'));
-            $table-> decimal('balance_old',8,2);
-            $table-> decimal('balance_new',8,2);
-            $table-> decimal('balance_dif',8,2);
-            $table-> string("updated_by");
-            $table-> timestamps();
+            $table  ->integer('order_id')
+                    ->unsigned();
+
+            $table  ->enum("action", array( 'payment', 'closed', 'opened', 'delivered'));
+
+            $table  ->decimal('balance_old',8,2);
+
+            $table  ->decimal('balance_new',8,2);
+
+            $table  ->decimal('balance_dif',8,2);
+
+            $table  ->string("updated_by");
+
+            $table  ->timestamps();
+
         });
     }
 

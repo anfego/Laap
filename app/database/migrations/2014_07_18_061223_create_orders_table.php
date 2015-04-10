@@ -13,14 +13,23 @@ class CreateOrdersTable extends Migration {
     {   
         Schema::create('lab_orders',function(Blueprint $table)
         {
-            $table-> increments("id");
-            $table-> integer("customer_id")-> unsigned();
-            $table-> decimal("total",8,2);
-            $table-> enum("status", array('open', 'closed', 'unpaid', 'paid'));
-            $table-> string("created_by");
-            $table-> date("delivery_date");
-            $table-> decimal("tax",5,2);
-            $table-> Timestamps();
+            $table  ->increments("id");
+
+            $table  ->integer("customer_id")
+                    ->unsigned();
+
+            $table  ->decimal("total",8,2);
+
+            $table  ->enum("status", array('open', 'closed', 'unpaid', 'paid'));
+
+            $table  ->string("created_by");
+
+            $table  ->date("delivery_date");
+
+            $table  ->decimal("tax",5,2);
+
+            $table  ->Timestamps();
+
         });
     }
 
