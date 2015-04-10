@@ -14,8 +14,13 @@ class CreateFKeyLabBom extends Migration {
     {
         Schema::table('lab_bom', function(Blueprint $table)
         {
-            $table-> foreign( 'order_id' )  ->references('id')-> on('lab_orders');
-            $table-> foreign( 'product_id' )->references('id')-> on('lab_products');
+            $table  ->foreign( 'order_id' )  
+                    ->references('id')
+                    ->on('lab_orders');
+            
+            $table  ->foreign( 'product_id' )
+                    ->references('id')
+                    ->on('lab_products');
         });
     }
 
@@ -28,8 +33,8 @@ class CreateFKeyLabBom extends Migration {
     {
         Schema::table('lab_bom', function(Blueprint $table)
         {
-            $table-> dropForeign( 'lab_bom_order_id_foreign' );
-            $table-> dropForeign( 'lab_bom_product_id_foreign' );
+            $table  ->dropForeign( 'lab_bom_order_id_foreign' );
+            $table  ->dropForeign( 'lab_bom_product_id_foreign' );
         });
     }
 
