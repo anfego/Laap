@@ -12,11 +12,11 @@ class CreateFKeyLabOrdersHistory extends Migration {
      */
     public function up()
     {
-        Schema::table('lab_orders_history', function(Blueprint $table)
+        Schema::table('lab_order_history', function(Blueprint $table)
         {
             $table  ->foreign('order_id')
                     ->references('id')
-                    ->on('lab_orders');
+                    ->on('lab_order');
         });
     }
 
@@ -27,9 +27,9 @@ class CreateFKeyLabOrdersHistory extends Migration {
      */
     public function down()
     {
-        Schema::table('lab_orders_history', function(Blueprint $table)
+        Schema::table('lab_order_history', function(Blueprint $table)
         { 
-            $table  ->dropForeign('lab_orders_history_order_id_foreign');
+            $table  ->dropForeign('lab_order_history_order_id_foreign');
         });
     }
 

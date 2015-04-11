@@ -16,7 +16,7 @@ class CreateFKeyLabBom extends Migration {
         {
             $table  ->foreign( 'order_id' )  
                     ->references('id')
-                    ->on('lab_orders');
+                    ->on('lab_order');
             
             $table  ->foreign( 'product_id' )
                     ->references('id')

@@ -11,7 +11,7 @@ class CreateOrdersTable extends Migration {
      */
     public function up()
     {   
-        Schema::create('lab_orders',function(Blueprint $table)
+        Schema::create('lab_order',function(Blueprint $table)
         {
             $table  ->increments("id");
 
@@ -40,7 +40,7 @@ class CreateOrdersTable extends Migration {
      */
     public function down()
     {
-        Schema::drop('lab_orders');
+        Schema::drop('lab_order');
     }
 
 }
