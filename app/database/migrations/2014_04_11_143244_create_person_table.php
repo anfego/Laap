@@ -16,7 +16,7 @@ class CreatePersonTable extends Migration {
         {
             $table  ->increments("id");
             
-            $table  ->string("peson_Id");
+            $table  ->string("person_Id");
 
             $table  ->string("first_name")
                     ->nullable()
