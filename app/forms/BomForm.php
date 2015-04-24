@@ -12,14 +12,14 @@ class BomForm extends BaseForm
     public function isValidForEdit()
     {
         return $this->isValid([
-            "id"   => "exists:lab_products,id",
+            "id"   => "exists:lab_product,id",
         ]);
     }
 
     public function isValidForDelete()
     {
         return $this->isValid([
-            "id" => "exists:lab_products,id"
+            "id" => "exists:lab_product,id"
         ]);
     }
 }

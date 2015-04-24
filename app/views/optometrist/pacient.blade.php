@@ -11,8 +11,8 @@
 				Nuevo Exámen
 			</a>
 			<div>
-		@if(count($examinations))
-			@foreach ($examinations  as $exam) 
+		@if(count($exams))
+			@foreach ($exams  as $exam) 
 				<div id='exam' class='element exam' data-symbol='Hg' data-category='lanthanoid'>
 					<h2 class='name'>{{ $exam->created_by }}</h2>
 					Fecha: {{ $exam->created_at }} </p>

@@ -16,7 +16,7 @@ class CreateRecommendationTable extends Migration {
         {
             $table  ->increments('id');
             
-            $table  ->integer('examination_id')
+            $table  ->integer('exam_id')
                     ->unsigned();
             
             $table  ->text("remission");

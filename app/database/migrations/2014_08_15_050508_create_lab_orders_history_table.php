@@ -12,7 +12,7 @@ class CreateLabOrdersHistoryTable extends Migration {
      */
     public function up()
     {
-        Schema::create('lab_orders_history', function(Blueprint $table)
+        Schema::create('lab_order_history', function(Blueprint $table)
         {
             $table  ->integer('order_id')
                     ->unsigned();
@@ -39,7 +39,7 @@ class CreateLabOrdersHistoryTable extends Migration {
      */
     public function down()
     {
-        Schema::drop('lab_orders_history');
+        Schema::drop('lab_order_history');
     }
 
 }

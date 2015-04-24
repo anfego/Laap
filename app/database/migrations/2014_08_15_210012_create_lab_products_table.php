@@ -12,7 +12,7 @@ class CreateLabProductsTable extends Migration {
      */
     public function up()
     {
-        Schema::create('lab_products', function(Blueprint $table)
+        Schema::create('lab_product', function(Blueprint $table)
         {
             $table  ->increments('id');
             
@@ -38,7 +38,7 @@ class CreateLabProductsTable extends Migration {
      */
     public function down()
     {
-        Schema::drop('lab_products');
+        Schema::drop('lab_product');
     }
 
 }

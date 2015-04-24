@@ -14,7 +14,7 @@ class CreateFKeyExamPerson extends Migration {
     {
         Schema::table('exam', function(Blueprint $table)
         {
-            $table  ->foreign( 'person_id' )  
+            $table  ->foreign('person_id')  
                     ->references('id')
                     ->on('person');
         });
