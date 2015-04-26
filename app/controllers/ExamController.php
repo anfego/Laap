@@ -1,6 +1,6 @@
 <?php
 
-class ExaminationController extends \BaseController {
+class ExamController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.

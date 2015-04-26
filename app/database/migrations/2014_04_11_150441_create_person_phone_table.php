@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLabProductsTable extends Migration {
+class CreatePersonPhoneTable extends Migration {
 
     /**
      * Run the migrations.
@@ -12,24 +12,23 @@ class CreateLabProductsTable extends Migration {
      */
     public function up()
     {
-        Schema::create('lab_product', function(Blueprint $table)
+        Schema::create('person_phone', function($table)
         {
-            $table  ->increments('id');
+            $table  ->increments("id");
             
-            $table  ->string('name');
+            $table  ->integer("person_id")
+                    ->unsigned();
             
-            $table  ->decimal('price',6,2);
+            $table  ->string("phoneName");
             
-            $table  ->enum("level", array('standard', 'special'));
-            
-            $table  ->enum("status", array('active', 'inactive'));
-            
+            $table  ->string("phoneNumber");
+
             $table  ->string("updated_by");
-            
+
             $table  ->timestamps();
-            
         });
     }
+
 
     /**
      * Reverse the migrations.
@@ -38,7 +37,7 @@ class CreateLabProductsTable extends Migration {
      */
     public function down()
     {
-        Schema::drop('lab_product');
+        Schema::drop('person_phone');
     }
 
 }

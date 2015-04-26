@@ -26,8 +26,8 @@ class Recommendation extends Eloquent{
 	 *
 	 * @var array
 	 */
-	public function examinations()
+	public function exams()
 	{
-		return $this-> belongsTo('Examination', 'examination_id', 'id');
+		return $this-> belongsTo('Exam', 'exam_id', 'id');
 	}
 }
