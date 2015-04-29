@@ -41,7 +41,7 @@ class PersonController extends BaseController {
         
         $new-> save();
         
-        return $this-> show($new-> id);
+        return $new-> id;
     }
 
     /**

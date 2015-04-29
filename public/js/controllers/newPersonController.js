@@ -1,9 +1,10 @@
 var NewPersonController = angular.module('NewPersonModule', []);
 
-NewPersonController.controller('NewPersonController', ['$scope','$http', '$log', function($scope, $http, $log){
-    this.person = {}
+NewPersonController.controller('NewPersonController', ['$scope','$http', '$log', '$location', function($scope, $http, $log, $location){
+    var myCtrl = this;
+    myCtrl.person = {}
     this.processForm = function() {
-        $http.post('person',this.person)
+        $http.post('person',myCtrl.person)
         .success(function(data) {
             console.log(data);
             if (!data.success) {
@@ -12,7 +13,8 @@ NewPersonController.controller('NewPersonController', ['$scope','$http', '$log',
                 $scope.errorSuperhero = data.errors.superheroAlias;
             } else {
                 // if successful, bind success message to message
-                $scope.message = data.message;
+                myCtrl.person.id = data.id;
+                $location.path("person/"+ myCtrl.person.id)
             }
 
         })
