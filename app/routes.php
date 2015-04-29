@@ -12,95 +12,27 @@
 */
 
 Route::any("/", [
-  "as"  =>  "user.login",
-  "uses"  =>  "LoginController@login"
+    "as"  =>  "user.login",
+    "uses"  =>  "LoginController@login"
 ]);
 Route::any("/login", [
-  "as"  =>  "user.login",
-  "uses"  =>  "LoginController@login"
+    "as"  =>  "user.login",
+    "uses"  =>  "LoginController@login"
 ]);
 
 Route::group(["before" => "auth"], function() {
-  
-  Route::any("/apps", [
-    "as"  =>  "user.apps",
-    "uses"  =>  "LoginController@apps"
-  ]);
-  
-  Route::any("/lab", [
-    "as"  =>  "user.lab",
-    "uses"  =>  "LabController@index"
-  ]);
-  
-  Route::any("/consultorio", [
-    "as"  =>  "user.consultorio",
-    "uses"  =>  "PacientController@index"
-  ]);
-  
-  Route::get("lab/nuevo", function(){
-    return View::make('lab.new');
-  });
-  
-  Route::get("consultorio/nuevo", function(){
-    return View::make('optometrist.new');
-  });
-  
-  Route::post("lab/nuevo", [
-    "as"    =>  "user.lab",
-    "uses"  =>  "LabController@create"
-  ]);
-  
-  Route::post("consultorio/nuevo", [
-    "as"    =>  "user.consultorio",
-    "uses"  =>  "PacientController@create"
-  ]);
-  
-  Route::get("lab/{id}", [
-    "as"    =>  "lab.customer",
-    "uses"  =>  "LabController@show"
-  ]);
-  
-  Route::get("consultorio/{id}", [
-    "as"    =>  "optometrist.pacient",
-    "uses"  =>  "PacientController@show"
-  ]);
-  Route::get("consultorio/{id}/nuevo", function($id){
-    $pacient = Pacient::find($id);
-    return View::make('optometrist.examination.new', array('pacient' => $pacient));
-  });
+    
+    Blade::setContentTags('<%', '%>');        // for variables and all things Blade
+    Blade::setEscapedContentTags('<%%', '%%>');   // for escaped data
 
-  Route::post("consultorio/{id}/nuevo", [
-    "as"    =>  "optometrist.examination.new",
-    "uses"  =>  "ExaminationController@create"
-  ]);
-
-  Route::get("lab/{id}/nuevaOrden",[
-    "as"    =>  "user.newOrder",
-    "uses"  =>  "LabController@addOrderTo"
-  ]);
-  
-  Route::any("lab/order/{id}", [
-    "as"    =>  "lab.formOrder",
-    "uses"  =>  "LabController@edit"
-  ]);
-  
-  Route::any("lab/order/cerrar/{id}", [
-    "as"    =>  "lab.formOrder",
-    "uses"  =>  "LabController@closeOrder"
-  ]);
-  
-  Route::any("lab/order/entregar/{id}", [
-    "as"    =>  "lab.formOrder",
-    "uses"  =>  "LabController@deliverOrder"
-  ]);
-  
-  Route::any("lab/order/imprimir/{id}", [
-    "as"    =>  "lab.formOrder",
-    "uses"  =>  "LabController@previewOrder"
-  ]);
-  
-  Route::any("lab/order/anular/{id}", [
-    "as"    =>  "lab.formOrder",
-    "uses"  =>  "LabController@deleteOrder"
-  ]);
+    Route::any("/home", [
+        "as"  =>  "user.home",
+        "uses"  =>  "LoginController@home"
+    ]);
+    Route::get("/persons", function() {
+        $persons = Person::all();
+        return  $persons;
+    });
+    Route::get('/person/{id}', 'PersonController@show');
+    Route::post('/person', 'PersonController@create');
 });

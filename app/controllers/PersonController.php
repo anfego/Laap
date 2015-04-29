@@ -23,6 +23,7 @@ class PersonController extends BaseController {
      */
     public function create()
     {
+     
         $new = new Person();
         
         $new-> last_name = Input::get("last_name");
@@ -65,8 +66,7 @@ class PersonController extends BaseController {
                         ->exams()
                         ->get();
         
-        return View::make( "optometrist.pacient", array( "person" => $person,
-                                                        "exams" => $exams));
+        return  array( "person" => $person, "exams" => $exams);
     }
 
 

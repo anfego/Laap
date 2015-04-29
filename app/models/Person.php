@@ -35,6 +35,6 @@ class Person extends Eloquent{
      */
     public function exams()
     {
-        return $this -> hasMany('exams', 'pacient_id', 'id');
+        return $this -> hasMany('Exam', 'person_id', 'id');
     }
 }

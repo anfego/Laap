@@ -1,0 +1,94 @@
+<div class="container" ng-controller="personDetailController as personDtlCtrl">
+
+<div class="panel panel-primary">
+    <div class="panel-heading"> 
+        <div class="row">
+            <div class="col-sm-8">
+                <h2 class="panel-title">Personal Info</h2>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-6 col-md-3">
+                <a href="" class="thumbnail">
+                    <!-- <img src="..." alt="..."> -->
+                </a>
+            </div>
+            <div class="col-md-2 pull-right">
+                <button type="button" class="btn btn-lg pull-right" aria-label="Left Align" ng-click="personDtlCtrl.editPerson(personDtlCtrl.personDtl.personId)">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                </button>
+            <!-- </div>
+            <div class="col-md-2"> -->
+                <button type="button" class="btn btn-lg pull-right" aria-label="Left Align" ng-click="NavBar.addPerson(personDtlCtrl.personDtl)">
+                    <span class="glyphicon glyphicon-open" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-lg pull-right" aria-label="Left Align" ng-click="NavBar.addPerson(personDtlCtrl.personDtl)">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-sm-2">
+                <h4>Name: </h4>
+            </div>
+            <div class="col-sm-6">
+                 {{personDtlCtrl.personDtl.first_name}}
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-sm-2">
+                <h4>Last Name: </h4>
+            </div>
+            <div class="col-sm-6">
+                 {{personDtlCtrl.personDtl.last_name}}
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-sm-2">
+                <h4>Personal Id: </h4>
+            </div>
+            <div class="col-sm-6">
+                 {{personDtlCtrl.personDtl.personal_id}}
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-sm-2">
+                <h4>Date of Birth: </h4>
+            </div>
+            <div class="col-sm-6">
+                 {{personDtlCtrl.personDtl.dob}}
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-sm-2">
+                <h4>Email: </h4>
+            </div>
+            <div class="col-sm-6">
+                 {{personDtlCtrl.personDtl.email}}
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-sm-2">
+                <h4>Telephone: </h4>
+            </div>
+            <div class="col-sm-6">
+                 {{personDtlCtrl.personDtl.telephone}}
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <h4>Last Modification: {{personDtlCtrl.personDtl.updated_at}}</h4>
+    </div>
+</div>
+  
+
+    <div id='isotopes' class='clickable isotope clearfix'>
+        <div ng-repeat="e in personDtlCtrl.personDtl.exams | orderBy:orderProp" id='pacient' class='element pacient'>
+            <h2 class='lastName'>{{ e.result }}</h2>
+            <p class='number'>{{e.date}}</p>
+            <div id='idCliente'>{{e.id}} </div>
+        </div>
+    </div>
+</div>

@@ -23,9 +23,6 @@
         <!-- Container -->
         <div class="container">
 
-            @include("layouts.header")
-            @yield('navBar')
-            
 
             <div class="panel panel-default">
                 <div class="panel-body">

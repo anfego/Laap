@@ -1,0 +1,42 @@
+<div class="container" >
+    <h1>New</h1>
+    <form name="newPersonForm" class="form-horizontal" ng-controller="NewPersonController as newPersonCtrl" ng-submit="newPersonCtrl.processForm()" novalidate>
+        
+        <div class="form-group" ng-class="{'has-error':newPersonForm.first_name.$invalid}">
+            <label class="col-sm-2 control-label">Name:</label> 
+            <div class="col-sm-4">
+                <input class="form-control" name="first_name" ng-model="newPersonCtrl.person.first_name" required>
+            </div>
+        </div>
+        
+        <div class="form-group" ng-class="{'has-error':newPersonForm.last_name.$invalid}">
+            <label class="col-sm-2 control-label">Last Name:</label> 
+            <div class="col-sm-4">
+                <input class="form-control" name="last_name" ng-model="newPersonCtrl.person.last_name" required>
+            </div>
+        </div>
+        
+        <div class="form-group" ng-class="{'has-error':newPersonForm.personal_id.$invalid}">
+            <label class="col-sm-2 control-label">Personal Id:</label> 
+            <div class="col-sm-4">
+                <input class="form-control" name="personal_id" type="number" ng-model="newPersonCtrl.person.personal_id" required />
+            </div>
+        </div>
+        
+        <div class="form-group" ng-class="{'has-error':newPersonForm.dob.$invalid}">
+            <label class="col-sm-2 control-label">Date of Birth:</label> 
+            <div class="col-sm-4">
+                <input class="form-control" name="dob" type="date" ng-model="newPersonCtrl.person.dob" placeholder="yyyy-MM-dd" min="1900-01-01" max="2015-12-31" required />
+            </div>
+        </div>
+        
+        <div class="form-group"  ng-class="{'has-error':newPersonForm.email.$invalid}">
+            <label class="col-sm-2 control-label">Email:</label> 
+            <div class="col-sm-4">
+                <input class="form-control" name="email" type="email" ng-model="newPersonCtrl.person.email" required>
+            </div>
+        </div>
+        
+        <button type="submit" value="submit" class="btn btn-success pull-right" ng-show="newPersonForm.$valid">Save</button>
+    </form>    
+</div> 

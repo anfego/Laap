@@ -1,0 +1,36 @@
+<div class="container" ng-controller="personController as personCtrl">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-lg-16">
+                    <button type="button" class="btn btn-lg pull-right" aria-label="Left Align" ng-click="personCtrl.add()">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </button>
+                </div>    
+            </div>    
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <input type="text" class="form-control pull-left" placeholder="Search" ng-model="searchPerson">
+                </div>
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-default dropdown-toggle pull-right" data-toggle="dropdown" aria-expanded="false">
+                        Order By <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li><a href="" ng-click="personCtrl.orderBy(1)">Last Name</a></li>
+                        <li><a href="" ng-click="personCtrl.orderBy(2)">DoB</a></li>
+                    </ul>
+                </div>
+            </div>
+       
+        <div id='isotopes' class='clickable isotope clearfix'>
+            <div ng-repeat="p in personCtrl.persons | filter:searchPerson | orderBy:personCtrl.orderProp" ng-click="personCtrl.go(p.id)" id='pacient' class='element pacient'>
+                <h2 class='lastName'>{{ p.last_name }}</h2>
+                <h1 class='firstName'>{{ p.first_name }}</h1>
+                <p class='number'>{{p.dob}}</p>
+                <div id='idCliente'>{{p.id}} </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -219,13 +219,13 @@ blockquote {
   font-size: 1.8em;
   color: #000;
 }
-.element .nombre {
+.element .firstName {
   left: 2.5em;
   top: 7.5em;
   font-size: 1.2em;
   color: #000;
 }
-.element .apellido {
+.element .lastName {
   left: 0.5em;
   top: 4.0em;
   font-size: 1.8em;

@@ -28,6 +28,6 @@ class Exam extends Eloquent{
      */
     public function person()
     {
-        return $this-> belongsTo('person', 'person_id', 'id');
+        return $this-> belongsTo('Person', 'person_id', 'id');
     }
 }
