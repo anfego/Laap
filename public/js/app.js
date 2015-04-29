@@ -17,11 +17,11 @@ app.config(['$routeProvider',
         $routeProvider
             .when('/',{
                 templateUrl: 'js/templates/main.html',
-                controller:'personController'
+                controller: 'personController'
             })
             .when('/people',{
                 templateUrl: 'js/templates/people.html',
-                controller:'personController'
+                controller: 'personController'
             })
             .when('/about',{
                 templateUrl: 'js/templates/about.html',
@@ -29,15 +29,16 @@ app.config(['$routeProvider',
             })
             .when('/person/new',{
                 templateUrl: 'js/templates/personNew.html',
-                controller:'personController'
+                controller: 'NewPersonController'
             })
             .when('/person/:personId',{
                 templateUrl: 'js/templates/person.html',
-                controller:'personDetailController'
+                controller: 'personDetailController'
             })
+
             .when('/person/:personId/edit',{
                 templateUrl: 'js/templates/personNew.html',
-                controller:'personDetailController'
+                controller: 'NewPersonController'
             })
             .otherwise({
                 redirectTo: '/'

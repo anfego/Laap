@@ -2,7 +2,8 @@ var personDetailController = angular.module('personDetailControllerModule', []);
 
 personDetailController.controller('personDetailController',['$routeParams',
                                                             '$http',
-                                                            'page', function($routeParams, $http, page){
+                                                            '$location',
+                                                            'page', function($routeParams, $http, $location, page){
 
     var myCtrl = this;    
     myCtrl.personId = $routeParams.personId;
@@ -10,11 +11,11 @@ personDetailController.controller('personDetailController',['$routeParams',
     
     myCtrl.getPerson = function(id){
         $http.get("person/" + id)
-        .success(function(data){            
+            .success(function(data){            
                 myCtrl.personDtl = data.person;
         })
-        .error(function(){
-            myCtrl.personDtl = {'personId' : myCtrl.personId, 'firstName': 'n/a', 'lastName': 'n/a'};            
+            .error(function(){
+                myCtrl.personDtl = {'personId' : myCtrl.personId, 'firstName': 'n/a', 'lastName': 'n/a'};            
         });
     };
     myCtrl.editPerson = function(id){

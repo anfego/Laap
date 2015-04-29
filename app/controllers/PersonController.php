@@ -27,9 +27,9 @@ class PersonController extends BaseController {
      
         $new = new Person();
         
-        $new-> last_name = Input::get("last_name");
+        $new-> last_name = ucwords(strtolower(Input::get("last_name")));
         
-        $new-> first_name = Input::get("first_name");
+        $new-> first_name = ucwords(strtolower(Input::get("first_name")));
         
         $new-> personal_id = Input::get("personal_id");
     
@@ -38,10 +38,16 @@ class PersonController extends BaseController {
         $new-> dob = date("Y-m-d", strtotime((Input::get("dob"))));
 
         $new-> updated_by = Auth::user()->username;
+        try {
+            $new-> save();
+            $success = true;
+        } catch (Exception $e) {
+            $success = false;
+
+        }
         
-        $new-> save();
-        
-        return $new-> id;
+        return array('success' => $success, 
+                     'id' => $new->id );
     }
 
     /**
