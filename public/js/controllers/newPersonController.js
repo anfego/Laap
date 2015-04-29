@@ -30,6 +30,7 @@ NewPersonController.controller('NewPersonController', ['$routeParams',
     myCtrl.getPerson = function(id){
         $http.get("person/" + id)
             .success(function(data){     
+                myCtrl.person = data.person;
                 myCtrl.person.personal_Id = Number(myCtrl.person.personal_Id);
                 var dob = new Date(myCtrl.person.dob);
                 myCtrl.person.dob = dob;
