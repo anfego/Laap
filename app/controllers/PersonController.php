@@ -34,7 +34,7 @@ class PersonController extends BaseController {
     
         $new-> email = Input::get("email");
         
-        $new-> dob = Input::get("dob");
+        $new-> dob = date("Y-m-d", strtotime((Input::get("dob")));
 
         $new-> updated_by = Auth::user()->username;
         
