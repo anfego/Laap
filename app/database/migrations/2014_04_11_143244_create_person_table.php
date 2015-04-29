@@ -34,8 +34,10 @@ class CreatePersonTable extends Migration {
                     ->nullable()
                     ->default(null);
             
-            $table  ->string("updated_by");
+            $table  ->string("updated_by")
+                    ->default('admin');
             
+
             $table  ->timestamps();
         });
     }

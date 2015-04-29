@@ -10,7 +10,8 @@ class PersonSeeder extends DatabaseSeeder
         "first_name"    => "Orlando",
         "last_name"     => "Gomez Duque",
         "dob"           => "1960/02/02",
-        "email"         => "orlandogomez@gmail.com"
+        "email"         => "orlandogomez@gmail.com",
+        "updated_by"    => "seed"
       ]
     ];
   

@@ -35,6 +35,8 @@ class PersonController extends BaseController {
         $new-> email = Input::get("email");
         
         $new-> dob = Input::get("dob");
+
+        $new-> updated_by = Auth::user()->username;
         
         $new-> save();
         
