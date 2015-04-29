@@ -40,7 +40,7 @@ class PersonController extends BaseController {
         
         $new-> save();
         
-        return $this-> index();
+        return $this-> show($new-> id);
     }
 
     /**
