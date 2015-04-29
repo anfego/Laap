@@ -11,8 +11,9 @@ class PersonController extends BaseController {
 
     public function index()
     {
-        $people = Person::all();
-        return View::make("user.consultorio", array('people' => $person ));
+        // $people = Person::all();
+        // return View::make("user.consultorio", array('people' => $person ));
+        return "Index";
     }
 
 
@@ -51,8 +52,24 @@ class PersonController extends BaseController {
      */
     public function edit($id)
     {
-        $form  = new Person();
         $person = Person::findOrFail($id);
+        
+        $person-> last_name = Input::get("last_name");
+        
+        $person-> first_name = Input::get("first_name");
+        
+        $person-> personal_id = Input::get("personal_id");
+    
+        $person-> email = Input::get("email");
+        
+        $person-> dob = date("Y-m-d", strtotime((Input::get("dob"))));
+
+        $person-> updated_by = Auth::user()->username;
+        
+        $person-> save();
+        
+        return $this-> show($person-> id);
+
     }
     /**
      * Display the specified resource.

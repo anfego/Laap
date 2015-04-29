@@ -17,6 +17,10 @@ personDetailController.controller('personDetailController',['$routeParams',
             myCtrl.personDtl = {'personId' : myCtrl.personId, 'firstName': 'n/a', 'lastName': 'n/a'};            
         });
     };
+    myCtrl.editPerson = function(id){
+        $location.path('person/'+ id + "/edit");  
+    }
+
     this.orderProp = 'date';
     myCtrl.getPerson(myCtrl.personId);
     page.setTitle('History');
