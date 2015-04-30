@@ -43,7 +43,7 @@ app.config(['$routeProvider',
             })
             .when('/person/:personId/exam',{
                 templateUrl: 'app/templates/exam.html',
-                controller: 'examController'
+                controller: 'ExamController'
             })
             .otherwise({
                 redirectTo: '/'
