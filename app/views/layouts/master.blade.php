@@ -29,7 +29,7 @@
     <script type="text/javascript" src="js/controllers/newPersonController.js"></script>
     <script type="text/javascript" src="js/controllers/personDetailController.js"></script>
     <script type="text/javascript" src="js/controllers/personDetailController.js"></script>
-    <script type="text/javascript" src="js/controllers/examController.js"></script>
+    <!-- <script type="text/javascript" src="js/controllers/examController.js"></script> -->
     <script type="text/javascript" src="js/controllers/navBarController.js"></script>
 </head>
 <body>

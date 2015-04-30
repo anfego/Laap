@@ -1,7 +1,7 @@
 var app = angular.module('goApp', ['personControllerModule',
                                     'personDetailControllerModule',
                                     'NewPersonControllerModule',
-                                    'ExamControllerModule',
+                                    
                                     'NavBarModule',
                                     'ngRoute']);
 
@@ -43,7 +43,7 @@ app.config(['$routeProvider',
             })
             .when('/person/:personId/exam',{
                 templateUrl: 'app/templates/exam.html',
-                controller: 'ExamController'
+                controller: 'NewPersonController'
             })
             .otherwise({
                 redirectTo: '/'

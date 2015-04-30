@@ -1,6 +1,6 @@
 <div class="container" >
     <form name="examForm" class="form-horizontal" ng-controller="ExamController as examCtrl" ng-submit="examCtrl.save()" novalidate>
-    <h2>{{examCtrl.mode}}</h2>
+        <h2>{{examCtrl.mode}}</h2>
         <div role="tabpanel">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
@@ -18,21 +18,16 @@
             <div class="tab-content">
             <!-- General -->
             <div role="tabpanel" class="tab-pane active" id="general">
-              {{ Form::open(array(
-                'url' => URL::to("consultorio/$pacient->id/nuevo"),
-                'class' => 'form-signin',
-                'name' => 'connectForm'))
-              }}
-              {{ $errors->first("password") }}<br />
-              {{ Form::field([
-                    "name"        => "ocupation",
-                    "label"       => "Ocupación",
-                    "placeholder" => "Ocupación",
-                    "type"        => "text"
-              ]) }}
+                <div class="form-group" ng-class="{'has-error':newPersonForm.ocupation.$invalid}">
+                    <label class="col-sm-2 control-label">Ocupation:</label> 
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="ocupation" ng-model="examCtrl.exam.ocupation" required>
+                    </div>
+                </div>
 
                <div class="checkbox">
                 <h3 >Motivo de Consulta</h3>
+<!--                 
                 {{ Form::field([
                     "name"        => "motivo1",
                     "label"       => "Control Visual",
@@ -57,17 +52,20 @@
                     "value"       => "VisionBorrosaDeCerca",
                     "type"        => "checkbox"
                 ]) }}
+-->
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseDxOpthal" aria-expanded="true" aria-controls="collapseDxOpthal">
                   <h5>Otro</h5>
                 </a>
                 <div id="collapseDxOpthal" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                   <div class="panel-body">
+                    <!-- 
                     {{ Form::field([
                       "name"        => "motivo5",
                       "label"       => "Otro",
                       "placeholder" => "Escriba acá",
                       "type"        => "textArea"
                     ]) }}
+                     -->
                   </div>
                 </div>
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseHistory" aria-expanded="true" aria-controls="collapseHistory">
@@ -75,18 +73,21 @@
                 </a>
                 <div id="collapseHistory" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                   <div class="panel-body">
+                  <!-- 
                     {{ Form::field([
                       "name"        => "history",
                       "label"       => "Familiares y personales",
                       "placeholder" => "Escriba acá",
                       "type"        => "textArea"
                     ]) }}
+                   -->
                   </div>
                 </div>
               </div>
             </div>
             <!-- Agudeza Visual -->  
             <div role="tabpanel" class="tab-pane" id="av">  
+              <!-- 
               {{ Form::field([
                   "name"        => "av_right",
                   "label"       => "Ojo Derecho",
@@ -99,9 +100,11 @@
                   "placeholder" => "0.00",
                   "type"        => "text"
               ]) }}
+               -->
             </div>
             <!-- Contact Lenses -->  
             <div role="tabpanel" class="tab-pane" id="contactLenses">
+              <!-- 
               {{ Form::field([
                   "name"        => "clType",
                   "label"       => "No usa",
@@ -132,9 +135,11 @@
                   "placeholder" => "0.00",
                   "type"        => "text"
               ]) }}
+ -->
             </div>
             <!-- keratometer -->  
             <div role="tabpanel" class="tab-pane" id="keratometer">
+              <!-- 
               {{ Form::field([
                   "name"        => "kt_right",
                   "label"       => "Ojo Derecho",
@@ -147,9 +152,11 @@
                   "placeholder" => "0.00",
                   "type"        => "text"
               ]) }}
+             -->
             </div>
             <!-- lensmetric -->  
             <div role="tabpanel" class="tab-pane" id="lensmetric">
+              <!-- 
               {{ Form::field([
                   "name"        => "lx",
                   "label"       => "No usa",
@@ -180,9 +187,11 @@
                   "placeholder" => "CR. 39",
                   "type"        => "text"
               ]) }}
+ -->
             </div>
             <!-- RX Final -->  
             <div role="tabpanel" class="tab-pane" id="rx">
+<!--               
               {{ Form::field([
                   "name"        => "cyclop",
                   "label"       => "Con Ciclopegia",
@@ -213,9 +222,11 @@
                   "placeholder" => "0.00",
                   "type"        => "text"
               ]) }}
+ -->
             </div>
             <!-- Ocula Motility -->  
             <div role="tabpanel" class="tab-pane" id="ocularMotility">
+              <!-- 
               {{ Form::field([
                   "name"        => "hirschberg",
                   "label"       => "hirschberg",
@@ -239,31 +250,37 @@
                   "label"       => "Otra",
                   "type"        => "textArea"
               ]) }}
+               -->
             </div>
             <!-- Opthalmos -->  
             <div role="tabpanel" class="tab-pane" id="dxOpthal">
+<!--               
               {{ Form::field([
                   "name"        => "dxOpthal1",
                   "label"       => "Medios transparentes. Fondo de ojo sano normal. Retina Aplicada",
                   "value"       => "1",
                   "type"        => "checkbox"
               ]) }}
+ -->
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseOpthal" aria-expanded="true" aria-controls="collapseOpthal">
                 <h5>Otro</h5>
               </a>
               <div id="collapseOpthal" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
+<!--                  
                   {{ Form::field([
                     "name"        => "dxOpthal2",
                     "label"       => "Observaciones",
                     "placeholder" => "Observaciones",
                     "type"        => "textArea"
                   ]) }}
+ -->
                 </div>
               </div>
             </div>
             <!-- Diagnostic -->  
             <div role="tabpanel" class="tab-pane" id="diagnostic">
+              <!-- 
               {{ Form::field([
                   "name"        => "diagnostic1",
                   "label"       => "Miopía",
@@ -288,22 +305,26 @@
                   "value"       => "1",
                   "type"        => "checkbox"
               ]) }}
+ -->
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseDiagnostic" aria-expanded="true" aria-controls="collapseDiagnostic">
                 <h5>Otro</h5>
               </a>
               <div id="collapseDiagnostic" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
+                  <!-- 
                   {{ Form::field([
                     "name"        => "diagnostic5",
                     "label"       => "Observaciones",
                     "placeholder" => "Observaciones",
                     "type"        => "textArea"
                   ]) }}
+ -->
                 </div>
               </div>
             </div>
             <!-- Plan -->  
             <div role="tabpanel" class="tab-pane" id="plan">
+<!--             
               {{ Form::field([
                   "name"        => "plan1",
                   "label"       => "Se prescribe RX",
@@ -334,17 +355,20 @@
                   "value"       => "1",
                   "type"        => "checkbox"
               ]) }}
+ -->
               <a data-toggle="collapse" data-parent="#accordion" href="#collapsePlan" aria-expanded="true" aria-controls="collapsePlan">
                 <h5>Otro</h5>
               </a>
               <div id="collapsePlan" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
+<!--                 
                   {{ Form::field([
                     "name"        => "observations",
                     "label"       => "Observaciones",
                     "placeholder" => "Observaciones",
                     "type"        => "textArea"
                   ]) }}
+ -->
                 </div>
               </div>
             </div>
