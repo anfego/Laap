@@ -31,7 +31,7 @@ NewPersonController.controller('NewPersonController', ['$routeParams',
             })
         } else {
             // edit person
-            $http.put('person',myCtrl.person)
+            $http.put('person/'+ myCtrl.person.id,myCtrl.person)
             .success(function(data) {
                 if (data.success) {
                     myCtrl.person.id = data.id;
