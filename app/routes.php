@@ -21,9 +21,10 @@ Route::any("/login", [
 ]);
 
 Route::group(["before" => "auth"], function() {
-    
-    Blade::setContentTags('<%', '%>');        // for variables and all things Blade
-    Blade::setEscapedContentTags('<%%', '%%>');   // for escaped data
+    // for variables and all things Blade
+    Blade::setContentTags('<%', '%>');
+    // for escaped data
+    Blade::setEscapedContentTags('<%%', '%%>');
 
     Route::any("/home", [
         "as"  =>  "user.home",
