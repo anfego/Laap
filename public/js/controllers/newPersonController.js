@@ -14,23 +14,41 @@ NewPersonController.controller('NewPersonController', ['$routeParams',
     };
 
     this.processForm = function() {
-        $http.post('person',myCtrl.person)
-        .success(function(data) {
-            if (data.success) {
-                myCtrl.person.id = data.id;
-                $location.path("person/"+ myCtrl.person.id)
-            } else {
-                console.log("There was a problem creating person");    
-            };
-        })
-        .error(function(){
-            console.log("No response from");
-        })
+        // checks if person.id NOT exist so it is create person
+        if (myCtrl.personId === -1) {
+            // create person
+            $http.post('person',myCtrl.person)
+            .success(function(data) {
+                if (data.success) {
+                    myCtrl.person.id = data.id;
+                    $location.path("person/"+ myCtrl.person.id)
+                } else {
+                    console.log("There was a problem creating person");    
+                };
+            })
+            .error(function(){
+                console.log("No response from");
+            })
+        } else {
+            // edit person
+            $http.put('person',myCtrl.person)
+            .success(function(data) {
+                if (data.success) {
+                    myCtrl.person.id = data.id;
+                    $location.path("person/"+ myCtrl.person.id)
+                } else {
+                    console.log("There was a problem creating person");    
+                };
+            })
+            .error(function(){
+                console.log("No response from Server");
+            })};
     };
     myCtrl.getPerson = function(id){
         $http.get("person/" + id)
             .success(function(data){     
                 myCtrl.person = data.person;
+                myCtrl.person.id = Number(myCtrl.person.id);
                 myCtrl.person.personal_id = Number(myCtrl.person.personal_id);
                 var dob = new Date(myCtrl.person.dob);
                 myCtrl.person.dob = dob;
@@ -40,7 +58,7 @@ NewPersonController.controller('NewPersonController', ['$routeParams',
         });
     };
     
-    if(myCtrl.personId > 0) {
+    if(myCtrl.personId >= 0) {
         myCtrl.getPerson(myCtrl.personId);
     }
 }]);

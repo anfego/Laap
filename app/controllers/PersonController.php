@@ -74,7 +74,16 @@ class PersonController extends BaseController {
         
         $person-> save();
         
-        return $this-> show($person-> id);
+       try {
+            $person-> save();
+            $success = true;
+        } catch (Exception $e) {
+            $success = false;
+
+        }
+        
+        return array('success' => $success, 
+                     'id' => $person->id );
 
     }
     /**
