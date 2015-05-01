@@ -14,7 +14,7 @@ personController.controller('personController', ['$scope',
             myCtrl.persons = data;
             myCtrl.persons.forEach(function(person){
                 person.color = "pacient"
-                person.color = myCtrl.getColor(person.lastName);
+                person.color = myCtrl.getColor(person.last_name);
             });
         });
     };
@@ -43,11 +43,11 @@ personController.controller('personController', ['$scope',
             case "w":
             case "e":
             case "s":
-                color = "alkaline";
+                color = "alkali";
                 break;
             case "t":
             case "u":
-                color = "lanthanoid-earth";
+                color = "alkaline-earth";
                 break;
             case "i":
             case "o":

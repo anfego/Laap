@@ -24,7 +24,7 @@
             </div>
        
         <div id='isotopes' class='clickable isotope clearfix'>
-            <div ng-repeat="p in personCtrl.persons | filter:searchPerson | orderBy:personCtrl.orderProp" ng-click="personCtrl.go(p.id)" id='pacient' class='element pacient'>
+            <div ng-repeat="p in personCtrl.persons | filter:searchPerson | orderBy:personCtrl.orderProp" ng-click="personCtrl.go(p.id)" id='pacient' class='element' ng-class="p.color">
                 <h2 class='lastName'>{{ p.last_name }}</h2>
                 <h1 class='firstName'>{{ p.first_name }}</h1>
                 <p class='number'>{{p.dob}}</p>
