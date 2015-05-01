@@ -42,8 +42,8 @@ app.config(['$routeProvider',
                 controller: 'NewPersonController'
             })
             .when('/person/:personId/exam',{
-                templateUrl: 'app/templates/exam.html',
-                controller: 'NewPersonController'
+                templateUrl: 'js/templates/exam.html',
+                controller: 'ExamController'
             })
             .otherwise({
                 redirectTo: '/'
