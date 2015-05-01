@@ -46,39 +46,39 @@ personController.controller('personController', ['$scope',
                 color = "alkali";
                 break;
             case "t":
-            case "u":
+            case "o":
+            case "p":
                 color = "alkaline-earth";
                 break;
             case "i":
-            case "o":
-            case "p":
+            case "u":
                 color = "actinoid";
                 break;
             case "h":
+            case "s":
             case "c":
-            case "d":
                 color = "transition";
                 break;
-            case "g":
-            case "s":
+            case "k":
+            case "n":
             case "z":
                 color = "post-transition";
                 break;
-            case "k":
-            case "l":
+            case "v":
             case "j":
                 color = "metalloid";
                 break;
             case "x":
-            case "v":
+            case "g":
             case "b":
                 color = "nonmetal";
                 break;
-            case "n":
             case "y":
-            case "f":
+            case "l":
+            case "d":
                 color = "noble-gas";
                 break;
+            case "f":
             case "m":
             case "a":
                 color = "halogen";
