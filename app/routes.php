@@ -10,6 +10,10 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+// for variables and all things Blade
+Blade::setContentTags('<%', '%>');
+// for escaped data
+Blade::setEscapedContentTags('<%%', '%%>');
 
 Route::any("/", [
     "as"  =>  "user.login",
@@ -21,11 +25,6 @@ Route::any("/login", [
 ]);
 
 Route::group(["before" => "auth"], function() {
-    // for variables and all things Blade
-    Blade::setContentTags('<%', '%>');
-    // for escaped data
-    Blade::setEscapedContentTags('<%%', '%%>');
-
     Route::any("/home", [
         "as"  =>  "user.home",
         "uses"  =>  "LoginController@home"
