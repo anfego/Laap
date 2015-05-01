@@ -54,19 +54,19 @@ personController.controller('personController', ['$scope',
             case "p":
                 color = "actinoid";
                 break;
-            case "s":
+            case "h":
             case "c":
             case "d":
                 color = "transition";
                 break;
             case "g":
-            case "h":
-            case "j":
+            case "s":
+            case "z":
                 color = "post-transition";
                 break;
             case "k":
             case "l":
-            case "z":
+            case "j":
                 color = "metalloid";
                 break;
             case "x":

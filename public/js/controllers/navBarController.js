@@ -2,7 +2,7 @@ var NavBarController = angular.module('NavBarModule', []);
 
 NavBarController.controller('NavBarController', ['$scope', '$http', '$location', 'page', function($scope,$http,$location,page){
     
-    this.tab = 1;
+    this.tab = 0;
     this.waitList = [];
     // Set the value of tab
     this.setTab = function(value){
