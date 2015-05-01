@@ -1,4 +1,4 @@
-var NewPersonController = angular.module('NewPersonModule', []);
+var NewPersonController = angular.module('NewPersonControllerModule', []);
 
 NewPersonController.controller('NewPersonController', ['$routeParams',
                                                        '$http',

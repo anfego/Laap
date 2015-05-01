@@ -1,7 +1,7 @@
 var app = angular.module('goApp', ['personControllerModule',
                                     'personDetailControllerModule',
                                     'NewPersonControllerModule',
-                                    
+                                    'ExamControllerModule',
                                     'NavBarModule',
                                     'ngRoute']);
 
