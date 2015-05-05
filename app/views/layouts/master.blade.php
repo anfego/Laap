@@ -18,7 +18,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js"></script>
     
     <!-- Latest compiled and minified JavaScript -->
-    <script type="text/javascript" src="app/js/ui-bootstrap-tpls-0.13.0.js"></script>
+    <script type="text/javascript" src="js/ui-bootstrap-tpls-0.13.0.js"></script>
        
     <!-- Custom Scripts -->
     <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
