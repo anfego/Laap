@@ -75,5 +75,10 @@ class LoginController extends BaseController {
         Blade::setEscapedContentTags('<%%', '%%>');   // for escaped data
         return View::make("user.home");
     }
+    public function logout()
+    {
+        Auth::logout();
+        return View::make("user.login");
+    }
     
 }

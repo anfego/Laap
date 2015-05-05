@@ -62,7 +62,7 @@
                                 </ul>
                             </li>
                             <!-- Este espacio puede ser usado para el login info -->
-                            <li><a href="logout.php"><%% isset( Auth::user()->username) ? Auth::user()->username : 'Conectar' %%></a></li>
+                            <li><a href="<% URL::action('LoginController@logout')%>"><%% isset( Auth::user()->username) ? Auth::user()->username : 'Conectar' %%></a></li>
                           </ul>
             
             
