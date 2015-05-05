@@ -3,6 +3,8 @@ var app = angular.module('goApp', ['personControllerModule',
                                     'NewPersonControllerModule',
                                     'ExamControllerModule',
                                     'NavBarModule',
+                                    'ui.bootstrap',
+                                    'DatepickerModule',
                                     'ngRoute']);
 
 app.factory('page', function(){
