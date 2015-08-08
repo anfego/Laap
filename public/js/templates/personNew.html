@@ -28,13 +28,12 @@
             <div class="col-sm-4">
                 <div ng-controller="DatepickerCtrl">
                     <p class="input-group">
-                      <input name="dob" type="date" class="form-control" datepicker-popup ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required/>
+                      <input name="dob" type="date" class="form-control" ng-model="newPersonCtrl.person.dob" datepicker-popup ng-model="dt" is-open="opened" min-date="DatepickerCtrl.minDate" max-date="DatepickerCtrl.today" datepicker-options="dateOptions" ng-required="true" close-text="Close" required/>
                       <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                       </span>
                     </p>
                 </div>
-                <button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
             </div>
         </div>
         

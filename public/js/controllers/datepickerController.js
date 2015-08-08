@@ -1,22 +1,18 @@
 angular.module('DatepickerModule', ['ui.bootstrap']);
 angular.module('DatepickerModule').controller('DatepickerCtrl', function ($scope) {
   $scope.today = function() {
-    $scope.dt = new Date();
+    $scope.dob = new Date();
   };
   $scope.today();
 
   $scope.clear = function () {
-    $scope.dt = null;
-  };
-
-  // Disable weekend selection
-  $scope.disabled = function(date, mode) {
-    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+    $scope.dob = null;
   };
 
   $scope.toggleMin = function() {
     $scope.minDate = $scope.minDate ? null : new Date();
   };
+  $scope.minDate = "1990-01-01";
   $scope.toggleMin();
 
   $scope.open = function($event) {
@@ -31,8 +27,8 @@ angular.module('DatepickerModule').controller('DatepickerCtrl', function ($scope
     startingDay: 1
   };
 
-  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-  $scope.format = $scope.formats[0];
+  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate', 'yyyy-MM-dd'];
+  $scope.format = $scope.formats[4];
 
   var tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
