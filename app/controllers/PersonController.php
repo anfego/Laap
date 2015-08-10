@@ -55,7 +55,6 @@ class PersonController extends BaseController {
         $person-> email = Input::get("email");
         $person-> dob = date("Y-m-d", strtotime((Input::get("dob"))));
         $person-> updated_by = Auth::user()->username;
-        $person-> save();
         try {
             $person-> save();
             $success = true;
