@@ -33,8 +33,19 @@ Route::group(["before" => "auth"], function() {
         $persons = Person::all();
         return  $persons;
     });
+    
+    // Person - Patient controller
     Route::get('/person/{id}', 'PersonController@show');
     Route::post('/person', 'PersonController@create');
     Route::put('/person/{id}', 'PersonController@edit');
+
+    // Exam controller
+    Route::post('/exam/{personId}/new', 'ExamController@create');
+    Route::post('/exam/{personId}', 'ExamController@store');
+    Route::get('/exam/{examId}', 'ExamController@show');
+    Route::post('/exam/{examId}/edit', 'ExamController@edit');
+    Route::delete('/exam/{examId}/delete', 'ExamController@destroy');
+    
+    // logout
     Route::any('/logout', 'LoginController@logout');
 });
