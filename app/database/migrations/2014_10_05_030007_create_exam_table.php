@@ -28,9 +28,11 @@ class CreateExamTable extends Migration {
                     ->nullable()
                     ->default(null);
             
-            $table  ->text('motivation');
+            $table  ->text('motivation')
+                    ->nullable();
             
-            $table  ->text('history');
+            $table  ->text('history')
+                    ->nullable();
 
         // AV
             $table  ->string('av_right')
@@ -42,9 +44,10 @@ class CreateExamTable extends Migration {
                     ->default(null);
 
         // contact lenses 
-            $table  ->integer('cl_Type')
-                    ->unsigned();
-            
+            $table  ->string('cl_Type')
+                    ->nullable()
+                    ->default(null);
+                    
             $table  ->string('cl_right')
                     ->nullable()
                     ->default(null);
@@ -75,8 +78,9 @@ class CreateExamTable extends Migration {
                     ->nullable()
                     ->default(null);
             //lenses type
-            $table  ->integer('lx_lenses')
-                    ->unsigned();
+            $table  ->string('lx_lenses')
+                    ->nullable()
+                    ->default(null);
 
         // Cycloplegic Refraction
             $table  ->string('cyclop')
@@ -102,13 +106,16 @@ class CreateExamTable extends Migration {
                     ->default(null);
 
         // Direct Ophthalmoscopy
-            $table  ->text('dx_Opthal');
+            $table  ->text('dx_Opthal')
+                    ->nullable();
 
         // Diagnostic
-            $table  ->text('diagnostic');
+            $table  ->text('diagnostic')
+                    ->nullable();
 
         // Observations
-            $table  ->text('observations');
+            $table  ->text('observations')
+                    ->nullable();
         });
     }
 

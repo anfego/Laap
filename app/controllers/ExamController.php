@@ -24,7 +24,6 @@ class ExamController extends BaseController {
 			$exam = new Exam();
 			$exam->person_id = $personId;
 			$exam->ocupation = Input::get("ocupation");
-			$exam->ocupation = Input::get("ocupation");
 			$exam->motivation = Input::get("motivation");
 			$exam->history = Input::get("history");
 			$exam->av_right = Input::get("av_right");
@@ -51,12 +50,15 @@ class ExamController extends BaseController {
 			try {
 				$exam->save();
 				$success = true;
+				$msg = 'Created';
 			}
 			catch (Exception $e) {
 				$success = false;
+				$msg = $e->getMessage();
 			}
 			return array('success' => $success,
-						 ' id'=> $exam->id);	
+						 'id'=> $exam->id,
+						 'msg'=> $msg);	
 		}
 		return App::abort(404);
 	}

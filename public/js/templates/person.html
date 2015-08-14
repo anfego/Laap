@@ -84,8 +84,9 @@
 
     <div id='isotopes' class='clickable isotope clearfix'>
         <div ng-repeat="e in personDtlCtrl.personDtl.exams | orderBy:orderProp" id='pacient' class='element pacient'>
-            <h2 class='lastName'>{{ e.result }}</h2>
-            <p class='number'>{{e.date}}</p>
+            <h2 class='lastName'>O.D: {{ e.rx_right }}</h2>
+            <h2 class='lastName'>O.I: {{ e.rx_left }}</h2>
+            <p class='number'>{{e.updated_at}}</p>
             <div id='idCliente'>{{e.id}} </div>
         </div>
     </div>

@@ -2,115 +2,43 @@
     <form name="examForm" class="form-horizontal" ng-controller="ExamController as examCtrl" ng-submit="examCtrl.save()" novalidate>
         <h2>{{examCtrl.mode}}</h2>
         <div role="tabpanel">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active">
-                    <a href="#general"
-                        aria-controls="general"
-                        role="tab"
-                        data-toggle="tab">
-                        General
-                    </a>
-                </li>
-                <li role="presentation">
-                    <a href="#av"
-                        aria-controls="av"
-                        role="tab"
-                        data-toggle="tab">
-                        A.V. SC 
-                    </a>
-                </li>
-                <li role="presentation">
-                    <a href="#contactLenses"
-                        aria-controls="contactLenses"
-                        role="tab"
-                        data-toggle="tab">
-                        Lentes de Contacto
-                    </a>
-                </li>
-                <li role="presentation">
-                    <a href="#keratometer"
-                        aria-controls="keratometer"
-                        role="tab"
-                        data-toggle="tab">
-                        Queratometria
-                    </a>
-                </li>
-                <li role="presentation">
-                    <a href="#lensmetric"
-                        aria-controls="lensmetric"
-                        role="tab"
-                        data-toggle="tab">
-                        Lensométria
-                    </a>
-                </li>
-                <li role="presentation">
-                    <a href="#rx"
-                        aria-controls="rx"
-                        role="tab"
-                        data-toggle="tab">
-                        Rx Final
-                    </a>
-                </li>
-                <li role="presentation">
-                    <a href="#dxOpthal"
-                        aria-controls="dxOpthal"
-                        role="tab"
-                        data-toggle="tab">
-                        Oftalm. Directa
-                    </a>
-                </li>
-                <li role="presentation">
-                    <a href="#diagnostic"
-                        aria-controls="diagnostic"
-                        role="tab"
-                        data-toggle="tab">
-                        Diagnostico
-                    </a>
-                </li>
-                <li role="presentation">
-                    <a href="#plan"
-                        aria-controls="plan"
-                        role="tab"
-                        data-toggle="tab">
-                        Plan
-                    </a>
-                </li>
-            </ul>
             <!-- Tab panes -->
             <div class="tab-content">
                 <!-- General -->
-                <div role="tabpanel" class="tab-pane active" id="general">
-                    <div class="form-group" ng-class="{'has-error':newPersonForm.ocupation.$invalid}">
-                        <label class="col-sm-2 control-label">Ocupation:</label> 
+                <h3>General</h3>
+                    <div class="form-group" ng-class="{'has-error':examForm.ocupation.$invalid}">
+                        <label class="col-sm-2 control-label">Ocupation</label> 
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="ocupation" ng-model="examCtrl.exam.ocupation" required>
+                            <input type="text"
+                                class="form-control"
+                                name="ocupation"
+                                ng-model="examCtrl.exam.ocupation" 
+                                >
                         </div>
                     </div>
-                    <h3 >Motivo de Consulta</h3>
-                    <select class="form-control">
-                        <option value="control">Control Visual</option>
-                        <option value="cambio">Cambio RX</option>
-                        <option value="lejos">Vision borrosa de lejos</option>
-                        <option value="cerca">Vision borrosa de cerca</option>
-                        <option value="otro">otro</option>
-                    </select>
-                    <textarea class="form-control" rows="3"></textarea>
-                    <a data-toggle="collapse" 
-                        data-parent="#accordion"
-                        href="#collapseHistory"
-                        aria-expanded="true"
-                        aria-controls="collapseHistory">
-                        <h5>Antecedentes</h5>
-                    </a>
-                    <div id="collapseHistory" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                        <div class="panel-body">
-                            <textarea class="form-control" rows="3"></textarea>
+                    <div class="form-group" ng-class="{'has-error':examForm.av_right.$invalid}">
+                        <label class="col-sm-2 control-label">Motivo de Consulta</label> 
+                        <div class="col-sm-4">
+                            <textarea class="form-control"
+                                name="motivation"
+                                ng-model="examCtrl.exam.motivation"
+                                rows="3">
+                            </textarea>
                         </div>
                     </div>
-                </div>
+                
+                    <div class="form-group" ng-class="{'has-error':examForm.av_right.$invalid}">
+                        <label class="col-sm-2 control-label">Antecedentes</label> 
+                        <div class="col-sm-4">
+                            <textarea class="form-control"
+                                name="history"
+                                ng-model="examCtrl.exam.history"
+                                rows="3">
+                            </textarea>
+                        </div>
+                    </div>
                 <!-- Agudeza Visual -->  
-                <div role="tabpanel" class="tab-pane" id="av">
+                <h3>Agudeza Visual</h3>
                     <div class="form-group" ng-class="{'has-error':examForm.av_right.$invalid}">
                         <label class="col-sm-2 control-label">Right Eye</label> 
                         <div class="col-sm-4">
@@ -119,7 +47,7 @@
                                 name="av_right"
                                 ng-model="examCtrl.exam.av_right"
                                 placeholder="0.00"
-                                required>
+                                >
                             </input>
                         </div>
                     </div>
@@ -131,19 +59,13 @@
                                 name="av_left"
                                 ng-model="examCtrl.exam.av_left"
                                 placeholder="0.00"
-                                required>
+                                >
                             </input>
                         </div>
                     </div>
-                </div>
+                
                 <!-- Contact Lenses -->  
-                <div role="tabpanel" class="tab-pane" id="cl">
-                    <h3>Contact Lenses</h3>
-                    <select class="form-control">
-                        <option value="n/a">N/A</option>
-                        <option value="hard">Hard</option>
-                        <option value="soft">Soft</option>
-                    </select>
+                <h3>Contact Lenses</h3>
                     <div class="form-group" ng-class="{'has-error':examForm.cl_right.$invalid}">
                         <label class="col-sm-2 control-label">Right Eye</label> 
                         <div class="col-sm-4">
@@ -152,7 +74,7 @@
                                 name="cl_right"
                                 ng-model="examCtrl.exam.cl_right"
                                 placeholder="0.00"
-                                required>
+                                >
                             </input>
                         </div>
                     </div>
@@ -164,13 +86,13 @@
                                 name="cl_left"
                                 ng-model="examCtrl.exam.cl_left"
                                 placeholder="0.00"
-                                required>
+                                >
                             </input>
                         </div>
                     </div>
-                </div>
+                
                 <!-- keratometer -->  
-                <div role="tabpanel" class="tab-pane" id="kt">
+                <h3>keratometer</h3>
                     <div class="form-group" ng-class="{'has-error':examForm.kt_right.$invalid}">
                         <label class="col-sm-2 control-label">Right Eye</label> 
                         <div class="col-sm-4">
@@ -179,7 +101,7 @@
                                 name="kt_right"
                                 ng-model="examCtrl.exam.kt_right"
                                 placeholder="0.00"
-                                required>
+                                >
                             </input>
                         </div>
                     </div>
@@ -191,13 +113,13 @@
                                 name="kt_left"
                                 ng-model="examCtrl.exam.kt_left"
                                 placeholder="0.00"
-                                required>
+                                >
                             </input>
                         </div>
                     </div>
-                </div>
+                
                 <!-- lensmetric -->  
-                <div role="tabpanel" class="tab-pane" id="lx">
+                <h3>Lensometria</h3>
                     <div class="form-group" ng-class="{'has-error':examForm.lx_right.$invalid}">
                         <label class="col-sm-2 control-label">Right Eye</label> 
                         <div class="col-sm-4">
@@ -206,7 +128,7 @@
                                 name="lx_right"
                                 ng-model="examCtrl.exam.lx_right"
                                 placeholder="+2.00-2.50x15" 
-                                required>
+                                >
                             </input>
                         </div>
                     </div>
@@ -218,7 +140,7 @@
                                 name="lx_left"
                                 ng-model="examCtrl.exam.lx_left"
                                 placeholder="+2.00-2.50x15" 
-                                required>
+                                >
                             </input>
                         </div>
                     </div>
@@ -227,16 +149,16 @@
                         <div class="col-sm-4">
                             <input type="text"
                                 class="form-control"
-                                name="lx_left"
+                                name="lx_add"
                                 ng-model="examCtrl.exam.lx_add"
                                 placeholder="2.00" 
-                                required>
+                                >
                             </input>
                         </div>
                     </div>
-                </div>
+                
                 <!-- RX Final -->  
-                <div role="tabpanel" class="tab-pane" id="rx">
+                <h3>RX Final</h3>
                     <div class="form-group" ng-class="{'has-error':examForm.rx_right.$invalid}">
                         <label class="col-sm-2 control-label">Right Eye</label> 
                         <div class="col-sm-4">
@@ -245,7 +167,7 @@
                                 name="rx_right"
                                 ng-model="examCtrl.exam.rx_right"
                                 placeholder="+2.00-2.50x15" 
-                                required>
+                                >
                             </input>
                         </div>
                     </div>
@@ -257,7 +179,7 @@
                                 name="rx_left"
                                 ng-model="examCtrl.exam.rx_left"
                                 placeholder="+2.00-2.50x15" 
-                                required>
+                                >
                             </input>
                         </div>
                     </div>
@@ -266,138 +188,70 @@
                         <div class="col-sm-4">
                             <input type="text"
                                 class="form-control"
-                                name="rx_left"
+                                name="rx_add"
                                 ng-model="examCtrl.exam.rx_add"
                                 placeholder="2.00" 
-                                required>
+                                >
                             </input>
                         </div>
                     </div>
-                </div>
-                <!-- Ocula Motility -->  
-                <div role="tabpanel" class="tab-pane" id="ocularMotility">
-                    <div class="form-group" ng-class="{'has-error':examForm.hirschberg.$invalid}">
-                        <label class="col-sm-2 control-label">Hirschberg</label> 
+                
+                <!-- Ocular Motility -->  
+                <h3>Motilidad Ocular</h3>
+                    <div class="form-group" ng-class="{'has-error':examForm.oc_motility.$invalid}">
+                        <label class="col-sm-2 control-label">Motilidad Ocular</label> 
                         <div class="col-sm-4">
                             <input type="text"
                                 class="form-control"
-                                name="hirschberg"
-                                ng-model="examCtrl.exam.hirschberg"
-                                placeholder="0" 
-                                required>
+                                name="oc_motility"
+                                ng-model="examCtrl.exam.oc_motility"
+                                >
                             </input>
                         </div>
                     </div>
-                    <div class="form-group" ng-class="{'has-error':examForm.ppc.$invalid}">
-                        <label class="col-sm-2 control-label">Ppc</label> 
-                        <div class="col-sm-4">
-                            <input type="text"
-                                class="form-control"
-                                name="ppc"
-                                ng-model="examCtrl.exam.ppc"
-                                placeholder="0" 
-                                required>
-                            </input>
-                        </div>
-                    </div>
-                    <div class="form-group" ng-class="{'has-error':examForm.coverTest.$invalid}">
-                        <label class="col-sm-2 control-label">Cover Test</label> 
-                        <div class="col-sm-4">
-                            <input type="text"
-                                class="form-control"
-                                name="coverTest"
-                                ng-model="examCtrl.exam.coverTest"
-                                placeholder="0"
-                                required>
-                            </input>
-                        </div>
-                    </div>
-                    <div class="form-group" ng-class="{'has-error':examForm.other.$invalid}">
-                        <label class="col-sm-2 control-label">Other</label> 
-                        <div class="col-sm-4">
-                            <input type="text"
-                                class="form-control"
-                                name="mo_other"
-                                ng-model="examCtrl.exam.mo_other"
-                                placeholder="0" 
-                                required>
-                            </input>
-                        </div>
-                    </div>
-                </div>
+                    
                 <!-- Opthalmos -->  
-                <div role="tabpanel" name="dxOpthal1" class="tab-pane" id="dxOpthal">
-                    <div class="form-group">
-                        <div class="checkbox" ng-model="examCtrl.exam.dxOpthal1">
-                            <label>
-                                <input type="checkbox"
-                                    Medios transparentes. Fondo
-                                    de ojo sano
-                                    normal. Retina Aplicada>
-                                </input>
-                            </label>
+                <h3>Oftalmoscopia</h3>
+                    <div class="form-group" ng-class="{'has-error':examForm.dx_Opthal.$invalid}">
+                        <label class="col-sm-2 control-label">Directa</label>  
+                            <div class="col-sm-4">
+                            <input type="text"
+                                class="form-control"
+                                name="dx_Opthal"
+                                ng-model="examCtrl.exam.dx_Opthal"
+                                placeholder="0" 
+                                >
+                            </input>
                         </div>
                     </div>
-                    <div class="form-group" ng-class="{'has-error':examForm.ppc.$invalid}">
+                
+                <!-- Observations -->
+                    <div class="form-group" ng-class="{'has-error':examForm.observations.$invalid}">
                         <label class="col-sm-2 control-label">Observation</label> 
                         <div class="col-sm-4">
-                        <input type="text"
-                            class="form-control"
-                            name="observation"
-                            ng-model="examCtrl.observation">
-                        </input>
-                       <textarea class="form-control" name="observation" ng-model="examCtrl.observation"> rows="3"></textarea>
+                            <textarea class="form-control" 
+                                name="observation"
+                                ng-model="examCtrl.exam.observation"
+                                rows="3">
+                            </textarea>
+                        </div>
                     </div>
-                </div>
+                
                 <!-- Diagnostic -->  
-                <div role="tabpanel" class="tab-pane" id="diagnostic">
-                    <div class="form-group" ng-class="{'has-error':newPersonForm.ocupation.$invalid}">
-                        <label class="col-sm-2 control-label">Diagnostico:</label> 
+                    <div class="form-group" ng-class="{'has-error':examForm.diagnostic.$invalid}">
+                        <label class="col-sm-2 control-label">Diagnostico</label> 
                         <div class="col-sm-4">
-                            <select class="form-control">
-                                <option value="miopia">Miopia</option>
-                                <option value="hipermetropia">Hipermetropia</option>
-                                <option value="astigmatismo">Astígmatismo</option>
-                                <option value="presbicia">Presbicia</option>
-                            </select>
+                            <textarea class="form-control"
+                                name="diagnostic"
+                                ng-model="examCtrl.exam.diagnostic"
+                                rows="3">
+                            </textarea>
                         </div>
                     </div>
-                    <div id="collapseDiagnostic" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                        <div class="panel-body">
-                            <div class="form-group" ng-class="{'has-error':examForm.ppc.$invalid}">
-                                <label class="col-sm-2 control-label">Observaciones</label> 
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="observation" ng-model="examCtrl.observation"></input>
-                                    <textarea class="form-control" name="observation" ng-model="examCtrl.observation"> rows="3"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 
                 <!-- Plan -->  
-                <div role="tabpanel" class="tab-pane" id="plan">
-                    <div class="form-group" ng-class="{'has-error':newPersonForm.ocupation.$invalid}">
-                        <label class="col-sm-2 control-label">Diagnostico:</label> 
-                        <div class="col-sm-4">
-                            <select class="form-control">
-                                <option value="plan1">Se prescribe RX</option>
-                                <option value="hipermetropia">No se prescribe RX</option>
-                                <option value="astigmatismo">Control: 1 año</option>
-                                <option value="presbicia">Uso: Permanente</option>
-                                <option value="presbicia">Uso: Prolongado</option>
-                            </select>
-                        </div>
-                    </div>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapsePlan" aria-expanded="true" aria-controls="collapsePlan">
-                        <h5>Otro</h5>
-                    </a>
-                    <div id="collapsePlan" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                        <div class="panel-body"></div>
-                    </div>
-                </div>
             </div>
         </div>
         <button type="submit" value="submit" class="btn btn-success pull-right" ng-show="examForm.$valid">Save</button>
     </form>    
-</div>
+</div> 

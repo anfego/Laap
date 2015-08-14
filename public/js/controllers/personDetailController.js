@@ -14,6 +14,7 @@ personDetailController.controller('personDetailController',['$routeParams',
         $http.get('person/' + id)
             .success(function(data){            
                 myCtrl.personDtl = data.person;
+                myCtrl.personDtl.exams = data.exams;
         })
             .error(function(){
                 myCtrl.personDtl = {};            

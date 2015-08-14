@@ -16,7 +16,8 @@ ExamController.controller('ExamController',['$routeParams',
         myCtrl.examId = $routeParams.examId;
         myCtrl.mode = "Edit";
         myCtrl.getExam(myCtrl.examId);
-    } else if ($routeParams.personId !== undefined) {
+    } 
+    else if ($routeParams.personId !== undefined) {
         myCtrl.personId =  $routeParams.personId;
         myCtrl.mode = "New Exam";
     }
@@ -35,9 +36,20 @@ ExamController.controller('ExamController',['$routeParams',
     }
     myCtrl.save = function(){
         if (myCtrl.personId > -1) {
-            $location.path('exam/'+ myCtrl.personId);  
+            $http.post('exam/'+ myCtrl.personId+'/new',myCtrl.exam)
+            .success(function(data) {
+                if (data.success) {
+                    myCtrl.exam.id = data.id;
+                    $location.path("person/"+ myCtrl.personId)
+                    console.log("Exam Created");    
+                } else {
+                    console.log("There was a problem creating exam");    
+                };
+            })
+            .error(function(){
+                console.log("No response from service");
+            })};
         };
-    };
     
     page.setTitle('GOApp::Exam');
 }]);
