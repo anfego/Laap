@@ -38,6 +38,7 @@ Route::group(["before" => "auth"], function() {
     Route::get('/person/{id}', 'PersonController@show');
     Route::post('/person', 'PersonController@create');
     Route::put('/person/{id}', 'PersonController@edit');
+    Route::post('/personSearch', 'PersonController@search');
 
     // Exam controller
     Route::post('/exam/{personId}/new', 'ExamController@create');

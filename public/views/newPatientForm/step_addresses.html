@@ -1,0 +1,24 @@
+<h2>Ingrese Dirección</h2>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="form-group">
+            <label class="control-label">Tipo</label>
+            <input name="postalCode" class="form-control" type="text" ng-model="user.postalCode" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Dirección</label>
+            <input name="streetAddress" class="form-control" type="text" ng-model="user.streetAddress" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Ciudad</label>
+            <input name="city" class="form-control" type="text" ng-model="user.city" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Departamento</label>
+            <input name="state" class="form-control" type="text" ng-model="user.state" />
+        </div>
+    </div>
+</div>
+<a ui-sref="patients.nuevoPaciente.step_generalInfo" class="btn btn-default">Anterior</a>
+<a ui-sref="patients.nuevoPaciente.step_contact" class="btn btn-primary">Siguiente</a>

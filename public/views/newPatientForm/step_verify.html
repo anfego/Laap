@@ -1,0 +1,53 @@
+<h2>Verificar Informacion</h2>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="form-group">
+            <label class="control-label">Nombre:</label>
+            <p class="form-control-static">{{ user.first_Name }}</p>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Apellidos:</label>
+            <p class="form-control-static">{{ user.last_Name }}</p>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Numero de Identificacion:</label>
+            <p class="form-control-static">{{ user.personal_Id }}</p>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Fecha de Nacimiento:</label>
+            <p class="form-control-static">{{ user.dob }}</p>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Fecha de Nacimiento:</label>
+            <p class="form-control-static">{{ user.dob }}</p>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Direccion:</label>
+            <p class="form-control-static">
+                {{ user.streetAddress }}
+                <br /> {{ user.city }}, {{ user.state }}
+            </p>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Contacto:</label>
+            <p class="form-control-static">
+                Numero Casa
+                <br /> {{ contact.homePhone }} <br /> 
+                Numero Trabajo
+                <br /> {{ contact.workPhone }} <br /> 
+                Numero Celular
+                <br /> {{ contact.cellPhone }} <br /> 
+            </p>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Direccion:</label>
+            <p class="form-control-static">
+                {{ user.streetAddress }}
+                <br /> {{ user.city }}, {{ user.state }}
+            </p>
+        </div>
+    </div>
+</div>
+<a ui-sref="patients.nuevoPaciente.step_contact" class="btn btn-default">Anterior</a>
+<button type="submit" class="btn btn-primary">Guardar</button>

@@ -1,0 +1,117 @@
+<div class="pageheader">
+    <h1>Buscar Paciente</h1>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">Usted esta en:</span>
+        <ol class="breadcrumb">
+            <li><a href="index.html">Tablero</a>
+            </li>
+            <li>Pacientes</li>
+            <li class="active">Buscar</li>
+        </ol>
+    </div>
+</div>
+<section id="main-content" class="animated fadeInRight" ng-controller="searchPersonCtrl">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Parametros de busqueda</h3> 
+                    <div class="actions pull-right">
+                        <i data-fullscreen-widget class="fa fa-expand"></i>
+                        <i data-widget-toggle class="fa fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <!-- pass in the variable if our form is valid or invalid -->
+                    <form name="patientSearch" ng-submit="processForm()" novalidate>
+                        <!-- First Name -->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input type="text" name="firstName" class="form-control" ng-model="patient.firstName" required>
+                            </div>
+                        </div>
+
+                        <!-- Last Name -->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Apellidos</label>
+                                <input type="text" name="lastName" class="form-control" ng-model="patient.lastName" required>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Personal Id -->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Documento de Identidad</label>
+                                <input type="text" name="username" class="form-control" ng-model="patient.username" ng-minlength="3" ng-maxlength="8">
+                            </div>
+                        </div>
+
+                        <!-- DOB -->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Fecha de Nacimiento</label>
+                                <input type="text" class="form-control" data-mask="99/99/9999" placeholder="" required ng-model="patient.dob">
+                                
+                                <span class="help-block">dd/mm/yyyy</span>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Resultados</h3>
+                    <div class="actions pull-right">
+                        <i data-fullscreen-widget class="fa fa-expand"></i>
+                        <i data-widget-toggle class="fa fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped" datatable="">
+                            <thead>
+                                <tr>
+                                    <th>Documento Id</th>
+                                    <th>Nombre</th>
+                                    <th>Apellidos</th>
+                                    <th>Fecha De Nacimiento</th>
+                                    <th>Ultima Visita</th>
+                                    <th>Puntos</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                     
+                            <tbody>
+                                <tr ng-repeat="record in patientResults"> 
+                                    <td>{{ record.personal_id }}</td>
+                                    <td>{{ record.first_name }}</td>
+                                    <td>{{ record.last_name }}</td>
+                                    <td>{{ record.dob }}</td>
+                                    <td>{{ record.updated_at }}</td>
+                                    <td>500</td>
+                                    <td>
+                                        <i ng-click="addToWaitList(record)" class="icon-user pull-right"></i>
+                                        <i ng-click="addToSession(record)" class="icon-mouse pull-right"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

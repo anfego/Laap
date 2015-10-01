@@ -32,11 +32,14 @@ class PersonController extends BaseController {
         try {
             $new-> save();
             $success = true;
+            $serviceMsg = "Person Added";
         }
         catch (Exception $e) {
             $success = false;
+            $serviceMsg = "An exception occured while adding new person record";
         }
-        return array('success' => $success, 
+        return array('success' => $success,
+                     'serviceMsg' => $serviceMsg, 
                      'id' => $new->id );
     }
 
@@ -57,12 +60,14 @@ class PersonController extends BaseController {
         $person-> updated_by = Auth::user()->username;
         try {
             $person-> save();
-            $success = true;
+            $serviceMsg = "Person Changes Saved";
         } 
         catch (Exception $e) {
             $success = false;
+            $serviceMsg = "An exception occured while editing person record";
         }
-        return array('success' => $success, 
+        return array('success' => $success,
+                     'serviceMsg' => $serviceMsg, 
                      'id' => $person->id );
     }
     /**
@@ -80,5 +85,62 @@ class PersonController extends BaseController {
                         ->get();
         
         return  array( "person" => $person, "exams" => $exams);
+    }
+
+    /**
+     * Search for a resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function search()
+    {
+        $toSearch = new Person();
+        $results = [];
+        $searchType = ucwords(strtolower(Input::get("searchType")));
+        if (!is_null($searchType)) {
+            // if parametric search is requested
+            $toSearch-> last_name = ucwords(strtolower(Input::get("lastName")));
+            $toSearch-> first_name = ucwords(strtolower(Input::get("firstName")));
+            $toSearch-> personal_id = Input::get("personalId");
+            if (! Input::get("dob") == null ) {
+                $toSearch-> dob = date("Y-m-d", strtotime((Input::get("dob"))));
+            }
+            try {
+                if ($toSearch->dob === null) {
+                    $results = Person::where('last_name', 'LIKE', '%'.$toSearch->last_name.'%')
+                                        ->where('first_name', 'LIKE', '%'.$toSearch->first_name.'%')
+                                        ->where('personal_id', 'LIKE', '%'.$toSearch->personal_id.'%')
+                                        ->get();
+                } else {
+                    $results = Person::where('last_name', 'LIKE', '%'.$toSearch->last_name.'%')
+                                        ->where('first_name', 'LIKE', '%'.$toSearch->first_name.'%')
+                                        ->where('personal_id', 'LIKE', '%'.$toSearch->personal_id.'%')
+                                        ->where('dob', $toSearch->dob)
+                                        ->get();
+                }
+                $serviceMsg = 'Search executed';
+                $success = true;
+            } catch (Exception $e) {
+                $serviceMsg = 'Problems executing search';
+                $success = false;
+            }
+        }
+        else {
+            // Get all records
+            try {
+                $results = Person::All();
+                $serviceMsg = 'Search All executed';
+                $success = true;
+            } catch (Exception $e) {
+                $serviceMsg = 'Problems executing search';
+                $success = false;   
+            }
+
+        }
+
+        return  array( "results" => $results, 
+                       "serviceMsg" => $serviceMsg,
+                       "success" => $success);
     }
 }

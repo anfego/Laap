@@ -1,0 +1,26 @@
+<h2>Ingrese Informacion General</h2>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Nombre</label>
+            <input name="firstName" class="form-control" type="text" required ng-model="user.first_name" />
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Apellidos</label>
+            <input name="lastName" class="form-control" type="text" required ng-model="user.last_name" />
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Numero de Identificacion</label>
+            <input name="personalId" class="form-control" type="number" required ng-model="user.personal_id" />
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Fecha de Nacimiento</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" data-mask="99/99/9999" placeholder="" required ng-model="user.dob">
+                <span class="help-block">dd/mm/yyyy</span>
+            </div>
+        </div>
+    </div>
+</div>
+<a ui-sref="patients.nuevoPaciente.step_addresses" class="btn btn-primary">Siguiente</a>

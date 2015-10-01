@@ -1,0 +1,20 @@
+<h2>Ingrese Contacto</h2>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="form-group">
+            <label class="control-label">Numero Casa</label>
+            <input name="homePhone" class="form-control" type="phone" ng-model="contact.homePhone" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Numero Trabajo</label>
+            <input name="workPhone" class="form-control" type="phone" ng-model="contact.workPhone" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Numero Celular</label>
+            <input name="cellPhone" class="form-control" type="phone" ng-model="contact.cellPhone" />
+        </div>
+    </div>
+</div>
+<a ui-sref="patients.nuevoPaciente.step_addresses" class="btn btn-default">Anterior</a>
+<a ui-sref="patients.nuevoPaciente.step_verify" class="btn btn-primary">Siguiente</a>

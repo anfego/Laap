@@ -1,0 +1,30 @@
+<div class="pageheader">
+    <h1>Tablero</h1>
+    <p class="description">Bienvenido a GaleriaOptica.com</p>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">Estas aqui:</span>
+        <ol class="breadcrumb">
+            <li class="active">Tablero</li>
+        </ol>
+    </div>
+</div>
+<section id="main-content" class="animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12 col-lg-6">
+            <div class="panel panel-solid-info" ng-controller="patientSessionCtrl">
+                <div class="panel-heading">
+                    <i class="icon-user"></i>
+                    <h3 class="panel-title">En session</h3>
+                    <div class="actions pull-right">
+                        <i data-fullscreen-widget class="fa fa-expand"></i>
+                        <i data-widget-toggle  class="fa fa-chevron-down"></i>
+                        <i data-widget-close class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="panel-body" ng-repeat = "patient in patientList">
+                    <span class="title text-center">{{ patient.first_name }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
