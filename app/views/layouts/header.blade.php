@@ -14,7 +14,7 @@
 	
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Inicio</a></li>
+				<li class="active"><a href="#">Inicio Test</a></li>
 				<li><a href=" {{URL::to("apps") }} ">Apps</a></li>
 				<li><a href="#contact">Perfil</a></li>
 				<li class="dropdown">
