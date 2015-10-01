@@ -69,7 +69,13 @@ class LoginController extends BaseController {
             ];
     }
 
-    public function home()
+    public function frontPage()
+    {
+        Blade::setContentTags('<%', '%>');              // for variables and all things Blade
+        Blade::setEscapedContentTags('<%%', '%%>');   // for escaped data
+        return View::make("user.frontPage");
+    }
+    public function portal()
     {
         Blade::setContentTags('<%', '%>');              // for variables and all things Blade
         Blade::setEscapedContentTags('<%%', '%%>');   // for escaped data

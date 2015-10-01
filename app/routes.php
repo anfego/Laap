@@ -16,8 +16,8 @@ Blade::setContentTags('<%', '%>');
 Blade::setEscapedContentTags('<%%', '%%>');
 
 Route::any("/", [
-    "as"  =>  "user.login",
-    "uses"  =>  "LoginController@login"
+    "as"  =>  "user.frontPage",
+    "uses"  =>  "LoginController@frontPage"
 ]);
 Route::any("/login", [
     "as"  =>  "user.login",
@@ -27,7 +27,7 @@ Route::any("/login", [
 Route::group(["before" => "auth"], function() {
     Route::any("/home", [
         "as"  =>  "user.home",
-        "uses"  =>  "LoginController@home"
+        "uses"  =>  "LoginController@portal"
     ]);
     Route::get("/persons", function() {
         $persons = Person::all();
