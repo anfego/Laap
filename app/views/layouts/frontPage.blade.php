@@ -103,8 +103,8 @@
                                 <li>Y mucho mas!</li>
                             </ul>
                         </div>
-                        <div class="hidden-xs hidden-sm col-md-7 col-lg-7">
-                            <img src="assets/img/boyGlasses2.png" class="wow fadeInRight" alt="laptop">
+                        <div class="hidden-xs hidden-sm col-md-6 col-lg-6">
+                            <img src="assets/img/boyGlasses60.png" class="wow fadeInRight" alt="gafas">
                         </div>
                         <div class="col-xs-6 col-sm-4 hidden-md hidden-lg">
                             <img src="assets/img/mobile.png" class="wow fadeInRight" alt="mobile">
