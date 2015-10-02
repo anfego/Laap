@@ -97,7 +97,6 @@
                                 <li>Servicio de Optometria</li>
                                 <li>Refracciones</li>
                                 <li>Tratamientos de Baja Vision</li>
-                                <li>Especialistas Tecnicos</li>
                                 <li>Lentes especiales</li>
                                 <li>Monturas oftalmicas</li>
                                 <li>Y mucho mas!</li>
@@ -107,7 +106,7 @@
                             <img src="assets/img/boyGlasses60.png" class="wow fadeInRight" alt="gafas">
                         </div>
                         <div class="col-xs-6 col-sm-4 hidden-md hidden-lg">
-                            <img src="assets/img/mobile.png" class="wow fadeInRight" alt="mobile">
+                            <img src="assets/img/boyGlasses60.png" class="wow fadeInRight" alt="mobile">
                         </div>
                     </div>
                 </div>
