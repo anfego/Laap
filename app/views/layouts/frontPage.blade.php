@@ -48,7 +48,7 @@
                     </button>
                     <!--logo start-->
                     <div class="brand">
-                        <a href="index.html" class="logo">
+                        <a href="javascript:void(0)" class="logo">
                             <!-- <i class="fa-google"></i> -->
                             <div class="hidden-xs hidden-sm col-sm-4 col-sm-4">
                             <img src="assets/img/GOLogo80.png" alt="laptop">
@@ -58,6 +58,10 @@
                     <!--logo end-->
                 </div>
                 <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a href="login">Portal</a>
+                        </li>
+                    </ul>
                     <ul class="nav navbar-nav pull-right" id="main-menu">
                         <li><a href="#intro">Inicio</a>
                         </li>
@@ -70,8 +74,6 @@
                         <li><a href="#team">Personal</a>
                         </li>
                         <li><a href="#contact">Contacto</a>
-                        </li>
-                        <li><a href="../portal/index.html">Portal</a>
                         </li>
                     </ul>
                 </div>
