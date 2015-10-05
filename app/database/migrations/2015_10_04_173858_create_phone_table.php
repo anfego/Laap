@@ -14,7 +14,7 @@ class CreatePhoneTable extends Migration {
     {
         Schema::create('phone', function(Blueprint $table)
         {
-            $table->increments('id');
+            $table ->increments('id');
             
             $table ->integer("person_id")
                    ->unsigned();
@@ -36,6 +36,9 @@ class CreatePhoneTable extends Migration {
             
             $table ->boolean('primary')
                    ->default(false);
+
+            $table ->string("updated_by")
+                   ->default('admin');
 
             $table ->timestamps();
         });

@@ -30,6 +30,9 @@ class CreateEmailTable extends Migration {
             $table ->boolean('active')
                    ->default(true);
 
+            $table  ->string("updated_by")
+                    ->default('admin');
+
             $table ->timestamps();
         });
     }

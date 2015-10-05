@@ -14,7 +14,7 @@ class CreateAddressTable extends Migration {
     {
         Schema::create('address', function(Blueprint $table)
         {
-            $table->increments('id');
+            $table ->increments('id');
             
             $table ->integer("person_id")
                    ->unsigned();
@@ -43,7 +43,10 @@ class CreateAddressTable extends Migration {
             $table ->boolean('primary')
                    ->default(false);
 
-            $table ->timestamps();      
+            $table  ->string("updated_by")
+                    ->default('admin');
+
+            $table ->timestamps(); 
         });
     }
 
