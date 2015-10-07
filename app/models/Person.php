@@ -37,4 +37,16 @@ class Person extends Eloquent{
     {
         return $this -> hasMany('Exam', 'person_id', 'id');
     }
+    public function phones() 
+    {
+        return $this -> hasMany('Phone', 'person_id', 'id');
+    }
+    public function addresses() 
+    {
+        return $this -> hasMany('Address', 'person_id', 'id');
+    }
+    public function emails()
+    {
+        return $this -> hasMany('Email', 'person_id', 'id');
+    }
 }
