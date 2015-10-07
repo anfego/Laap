@@ -24,7 +24,7 @@ class PhoneSeeder extends DatabaseSeeder
                 "updated_by"    => "seed"
             ],
             [
-                "person_id"     => "2",
+                "person_id"     => "11",
                 "ref_name"      => "Trabajo",
                 "area_code"     => "574",
                 "phone"         => "3381146",
@@ -33,7 +33,7 @@ class PhoneSeeder extends DatabaseSeeder
                 "updated_by"    => "seed"
             ],
             [
-                "person_id"     => "3",
+                "person_id"     => "21",
                 "ref_name"      => "Oficina",
                 "area_code"     => "576",
                 "phone"         => "3131631",
@@ -42,7 +42,7 @@ class PhoneSeeder extends DatabaseSeeder
                 "updated_by"    => "seed"
             ],
             [
-                "person_id"     => "3",
+                "person_id"     => "21",
                 "ref_name"      => "Casa",
                 "area_code"     => "576",
                 "phone"         => "1313513",
@@ -51,7 +51,7 @@ class PhoneSeeder extends DatabaseSeeder
                 "updated_by"    => "seed"
             ],
             [
-                "person_id"     => "3",
+                "person_id"     => "21",
                 "ref_name"      => "Celular",
                 "area_code"     => "300",
                 "phone"         => "9846332",

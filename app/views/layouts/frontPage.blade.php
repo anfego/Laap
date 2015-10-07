@@ -480,7 +480,7 @@
                         </div>
                         <div class="col-sm-4 col-md-4 col-lg-4 text-center">
                             <div class="contact-info">
-                                <i class="fa fa-twitter"></i>
+                                <i class="fa fa-instagram"></i>
                                 <span>@galeriaoptica</span>
                             </div>
                         </div>
@@ -535,7 +535,7 @@
                     <p class="copy">Galeria Optica Pereira &copy; 2015</p>
                 </div>
                 <div class="col-xs-8 col-sm-6 col-md-6 col-lg-6 text-right">
-                    <span>Siganos en </span>  <a href="javascript:void(0)" class="social facebook"><i class="fa fa-facebook"></i></a> <a href="javascript:void(0)" class="social twitter"><i class="fa fa-twitter"></i></a>
+                    <span>Siganos en </span><a href="javascript:void(0)" class="social facebook"><i class="fa fa-facebook"></i></a> <a href="javascript:void(0)" class="social twitter"><i class="fa fa-instagram"></i></a>
                 </div>
             </div>
     </footer>

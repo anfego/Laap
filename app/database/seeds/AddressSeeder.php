@@ -6,7 +6,7 @@ class AddressSeeder extends DatabaseSeeder
     {
         $addreses = [
             [
-                "person_id"     => "1",
+                "person_id"     => "21",
                 "ref_name"      => "Casa",
                 "state"         => "Risaralda",
                 "city"          => "Pereira",
@@ -30,7 +30,7 @@ class AddressSeeder extends DatabaseSeeder
                 "updated_by"    => "seed"
             ],
             [
-                "person_id"     => "2",
+                "person_id"     => "11",
                 "ref_name"      => "Trabajo",
                 "state"         => "Antioquia",
                 "city"          => "Medellin",
@@ -42,7 +42,7 @@ class AddressSeeder extends DatabaseSeeder
                 "updated_by"    => "seed"
             ],
             [
-                "person_id"     => "3",
+                "person_id"     => "21",
                 "ref_name"      => "Oficina",
                 "state"         => "Risaralda",
                 "city"          => "Pereira",
@@ -54,7 +54,7 @@ class AddressSeeder extends DatabaseSeeder
                 "updated_by"    => "seed"
             ],
             [
-                "person_id"     => "3",
+                "person_id"     => "21",
                 "ref_name"      => "Casa",
                 "state"         => "Risaralda",
                 "city"          => "Pereira",
@@ -66,7 +66,7 @@ class AddressSeeder extends DatabaseSeeder
                 "updated_by"    => "seed"
             ],
             [
-                "person_id"     => "3",
+                "person_id"     => "21",
                 "ref_name"      => "Trabajo",
                 "state"         => "Risaralda",
                 "city"          => "Pereira",

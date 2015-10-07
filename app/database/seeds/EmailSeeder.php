@@ -20,7 +20,7 @@ class EmailSeeder extends DatabaseSeeder
                 "updated_by"    => "seed"
             ],
             [
-                "person_id"     => "2",
+                "person_id"     => "11",
                 "ref_name"      => "Personal",
                 "email"         => "andres.castillo@gmail.com",
                 "active"        => true,

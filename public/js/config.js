@@ -13,6 +13,13 @@ function config($stateProvider, $urlRouterProvider) {
             url: "/ui",
             templateUrl: "views/common.html",
         })
+        .state('profile', {
+            url: "/perfil",
+            templateUrl: "views/pages-profile.html",
+            data: {
+                pageTitle: 'Perfil del Paciente'
+            }
+        })
         .state('forms', {
             abstract: true,
             url: "/forms",

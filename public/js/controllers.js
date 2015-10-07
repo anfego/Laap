@@ -1,17 +1,30 @@
 app.service("patientLoad", function () {
     var patientLoad = this;
-    patientLoad.patientList = [];
+    patientLoad.sessionList = [];
+    patientLoad.patient = {};
 
-    patientLoad.addPatient = function (patient) {
-        patientLoad.patientList.push(patient);
+    patientLoad.addToSession = function (patient) {
+        patientLoad.sessionList.push(patient);
     } 
 
+    patientLoad.getFromSession = function() {
+        return patientLoad.sessionList;
+    }
+
+    patientLoad.setPatient = function(patient) {
+        return patientLoad.patient = patient;
+    }
+    
     patientLoad.getPatient = function() {
-        return patientLoad.patientList;
+        return patientLoad.patient;
     }
 
 });
 
+app.service("userCredentials", function () {
+    var user = this;
+    user.username = "";
+});
 app.controller('MainCtrl', function($scope) {
 
 });
@@ -1224,7 +1237,7 @@ app.controller('sparklineCtrlsparklineCtrl', function($scope) {
 
 });
 
-app.controller('searchPersonCtrl', ['$scope','$http','patientLoad', function($scope, $http, patientLoad) {
+app.controller('searchPersonCtrl', ['$scope','$http', '$state','patientLoad', function($scope, $http, $state, patientLoad) {
     $scope.patientSearch = {};
     $scope.patientResults = [];
     
@@ -1248,12 +1261,14 @@ app.controller('searchPersonCtrl', ['$scope','$http','patientLoad', function($sc
     }
     // Load patient to session
     $scope.addToSession = function(patient){
-        alert("addToSession");
-        patientLoad.addPatient(patient);
+        patientLoad.addToSession(patient);
+        alert("Paciente en sesion");
     }
     // Redirect user to patient profile 
     $scope.openProfile = function(patient){
-        alert("openProfile");
+        patientLoad.setPatient(patient);
+        // redirect user to patient profile page
+        $state.go('profile');
     }
 
 }]);
@@ -1275,11 +1290,29 @@ function newPersonCtrl($scope, $http) {
                 };
             })
             .error(function(){
-                console.log("No response from");
+                console.log("No response from service");
             })
      
     };    
 }
+app.controller('patientCtrl', ['$scope', '$http', 'patientLoad', function($scope, $http, patientLoad) {
+    $scope.patient = {};
+    $scope.patient = patientLoad.getPatient();
+    // get patien info from rest service
+    $http.get('patient/'+ $scope.patient.id)
+        .success(function(data) {
+            if (data.success) {
+                $scope.patient.exams = data.exams;
+                $scope.patient.phones = data.phones;
+                $scope.patient.emails = data.emails;
+            } else{
+                console.log("Error fetching data");
+            };
+        })
+        .error(function() {
+            console.log("No response from service");
+        })
+}])
 
 
 function wizardCtrl($scope) {

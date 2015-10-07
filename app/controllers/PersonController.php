@@ -22,9 +22,9 @@ class PersonController extends BaseController {
     public function create()
     {
         $new = new Person();
-        $new-> last_name = ucwords(strtolower(Input::get("last_name")));
-        $new-> first_name = ucwords(strtolower(Input::get("first_name")));
-        $new-> personal_id = Input::get("personal_id");
+        $new-> last_name = ucwords(strtolower(Input::get("lastName")));
+        $new-> first_name = ucwords(strtolower(Input::get("firstName")));
+        $new-> personal_id = Input::get("personalId");
         $new-> email = Input::get("email");
         $new-> dob = date("Y-m-d", strtotime((Input::get("dob"))));
         $new-> updated_by = Auth::user()->username;
@@ -83,8 +83,24 @@ class PersonController extends BaseController {
         $exams = Person::find($id)
                         ->exams()
                         ->get();
+
+        $phones = Person::find($id)
+                        ->phones()
+                        ->get();
         
-        return  array( "person" => $person, "exams" => $exams);
+        $emails = Person::find($id)
+                        ->emails()
+                        ->get();
+        
+        $addresses = Person::find($id)
+                           ->addresses()
+                           ->get();
+        
+        return  array( "person" => $person,
+                       "phones" => $phones,
+                       "emails" => $emails,
+                       "addresses" => $addresses,
+                       "exams" => $exams);
     }
 
     /**

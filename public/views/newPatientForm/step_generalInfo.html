@@ -4,15 +4,16 @@
     <div class="col-lg-8">
         <div class="form-group">
             <label class="col-sm-3 control-label">Nombre</label>
-            <input name="firstName" class="form-control" type="text" required ng-model="user.first_name" />
+            <input name="firstName" class="form-control" type="text" required ng-model="user.firstName" />
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-class="{ 'has-error' : user.lastName.$invalid && !user.lastName.$pristine }">
             <label class="col-sm-3 control-label">Apellidos</label>
-            <input name="lastName" class="form-control" type="text" required ng-model="user.last_name" />
+            <input name="lastName" class="form-control" type="text" required ng-model="user.lastName">
+            <p ng-show="user.lastName.$invalid && !user.lastName.$pristine" class="help-block">You name is required.</p>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">Numero de Identificacion</label>
-            <input name="personalId" class="form-control" type="number" required ng-model="user.personal_id" />
+            <input name="personalId" class="form-control" type="number" required ng-model="user.personalId" />
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">Fecha de Nacimiento</label>

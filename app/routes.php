@@ -49,5 +49,6 @@ Route::group(["before" => "auth"], function() {
     
     // logout
     Route::any('/logout', 'LoginController@logout');
+    Route::get('/username', 'LoginController@getUsername');
     Route::any('/frontPage', 'LoginController@frontPage');
 });

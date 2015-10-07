@@ -103,8 +103,9 @@
                                     <td>{{ record.updated_at }}</td>
                                     <td>500</td>
                                     <td>
-                                        <i ng-click="addToWaitList(record)" class="icon-user pull-right"></i>
-                                        <i ng-click="addToSession(record)" class="icon-mouse pull-right"></i>
+                                        <i ng-click="openProfile(record)" class="icon-user pull-right"></i> 
+                                        <i ng-click="addToWaitList(record)" class="icon-clock"></i> 
+                                        <i ng-click="addToSession(record)" class="icon-list pull-left"></i> 
                                     </td>
                                 </tr>
                             </tbody>
