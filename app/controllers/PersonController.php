@@ -25,7 +25,6 @@ class PersonController extends BaseController {
         $new-> last_name = ucwords(strtolower(Input::get("lastName")));
         $new-> first_name = ucwords(strtolower(Input::get("firstName")));
         $new-> personal_id = Input::get("personalId");
-        $new-> email = Input::get("email");
         $new-> dob = date("Y-m-d", strtotime((Input::get("dob"))));
         $new-> updated_by = Auth::user()->username;
 
