@@ -29,7 +29,8 @@ class LoginController extends BaseController {
 
                 if (Auth::attempt($credentials))
                 {
-                    return Redirect::route("user.home");
+                    $return = Redirect::route("user.home")->withCookie(Cookie::make('name', 'value', 6969))
+                    return $return;
                 }
 
                 return Redirect::back()->withErrors([
