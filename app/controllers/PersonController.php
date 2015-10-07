@@ -29,15 +29,10 @@ class PersonController extends BaseController {
         $new-> dob = date("Y-m-d", strtotime((Input::get("dob"))));
         $new-> updated_by = Auth::user()->username;
 
-        try {
-            $new-> save();
-            $success = true;
-            $serviceMsg = "Person Added";
-        }
-        catch (Exception $e) {
-            $success = false;
-            $serviceMsg = "An exception occured while adding new person record";
-        }
+        $new-> save();
+        $success = true;
+        $serviceMsg = "Person Added";
+    
         return array('success' => $success,
                      'serviceMsg' => $serviceMsg, 
                      'id' => $new->id );
