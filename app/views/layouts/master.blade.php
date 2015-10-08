@@ -139,6 +139,18 @@
     <script src="js/config.js"></script>
     <script src="js/directives.js"></script>
     <script src="js/controllers.js"></script>
+    <script type="text/javascript">
+        app.service("userCredentials", function () {
+            var userCredentials = this; 
+            userCredentials.user = {};
+            userCredentials.user.username = "<% Auth::user()->prefered_name %>";
+            userCredentials.user.title = "<% Auth::user()->title %>";
+            
+            userCredentials.getUser = function() {
+                return userCredentials.user;
+            }
+        });
+    </script>
 
 </body>
 </html>

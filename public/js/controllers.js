@@ -21,10 +21,6 @@ app.service("patientLoad", function () {
 
 });
 
-app.service("userCredentials", function () {
-    var user = this;
-    user.username = "";
-});
 app.controller('MainCtrl', function($scope) {
 
 });
@@ -1237,10 +1233,10 @@ app.controller('sparklineCtrlsparklineCtrl', function($scope) {
 
 });
 
-app.controller('searchPersonCtrl', ['$scope','$http', '$state','patientLoad', function($scope, $http, $state, patientLoad) {
+app.controller('searchPersonCtrl', ['$scope','$http', '$state','patientLoad', 'userCredentials', function($scope, $http, $state, patientLoad, userCredentials) {
     $scope.patientSearch = {};
     $scope.patientResults = [];
-    
+    var my = userCredentials.getUsername();
     $scope.processForm = function() {
         // search person
         $http.post('personSearch',$scope.patient)
@@ -1314,6 +1310,10 @@ app.controller('patientCtrl', ['$scope', '$http', 'patientLoad', function($scope
         })
 }])
 
+app.controller('userCtrl', ['$scope', 'userCredentials', function($scope, userCredentials) {
+    $scope.user = {};
+    $scope.user = userCredentials.getUser();
+}])
 
 function wizardCtrl($scope) {
     $scope.user = {};
