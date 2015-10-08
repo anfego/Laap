@@ -1236,7 +1236,6 @@ app.controller('sparklineCtrlsparklineCtrl', function($scope) {
 app.controller('searchPersonCtrl', ['$scope','$http', '$state','patientLoad', 'userCredentials', function($scope, $http, $state, patientLoad, userCredentials) {
     $scope.patientSearch = {};
     $scope.patientResults = [];
-    var my = userCredentials.getUsername();
     $scope.processForm = function() {
         // search person
         $http.post('personSearch',$scope.patient)
