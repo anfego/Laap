@@ -22,6 +22,34 @@
                 <span class="help-block">dd/mm/yyyy</span>
             </div>
         </div>
+        <div class="form-group">
+            <label class="control-label">Numero Casa</label>
+            <input name="homePhone" class="form-control" type="phone" ng-model="contact.homePhone" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Numero Trabajo</label>
+            <input name="workPhone" class="form-control" type="phone" ng-model="contact.workPhone" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Numero Celular</label>
+            <input name="cellPhone" class="form-control" type="phone" ng-model="contact.cellPhone" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Tipo</label>
+            <input name="postalCode" class="form-control" type="text" ng-model="user.postalCode" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Dirección</label>
+            <input name="streetAddress" class="form-control" type="text" ng-model="user.streetAddress" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Ciudad</label>
+            <input name="city" class="form-control" type="text" ng-model="user.city" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Departamento</label>
+            <input name="state" class="form-control" type="text" ng-model="user.state" />
+        </div>      
     </div>
 </div>
-<a ui-sref="patients.nuevoPaciente.step_addresses" class="btn btn-primary">Siguiente</a>
+<a ui-sref="patients.nuevoPaciente.step_verify" class="btn btn-primary">Siguiente</a>
