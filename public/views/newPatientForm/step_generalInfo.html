@@ -1,53 +1,108 @@
 <h2>Ingrese Informacion General</h2>
 
 <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-8 form-horizontal">
         <div class="form-group">
-            <label class="col-sm-3 control-label">Nombre</label>
-            <input name="firstName" class="form-control" type="text" required ng-model="user.firstName" />
+            <label class="col-sm-3 control-label">Nombre(s):</label>
+            <div class="col-sm-4">
+                <input name="firstName" class="form-control" type="text" required ng-model="user.firstName" />
+            </div>
         </div>
         <div class="form-group" ng-class="{ 'has-error' : user.lastName.$invalid && !user.lastName.$pristine }">
-            <label class="col-sm-3 control-label">Apellidos</label>
-            <input name="lastName" class="form-control" type="text" required ng-model="user.lastName">
-            <p ng-show="user.lastName.$invalid && !user.lastName.$pristine" class="help-block">You name is required.</p>
+            <label class="col-sm-3 control-label">Apellido(s):</label>
+            <div class="col-sm-4">
+                <input name="lastName" class="form-control" type="text" required ng-model="user.lastName">
+            </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">Numero de Identificacion</label>
-            <input name="personalId" class="form-control" type="number" required ng-model="user.personalId" />
+            <label class="col-sm-3 control-label">Tipo de Identificacion:</label>
+            <div class="col-sm-4">
+                <input name="personalIdType" class="form-control" type="text" required ng-model="user.personalIdType" />
+            </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">Fecha de Nacimiento</label>
-            <input type="text" class="form-control" data-mask="99/99/9999" placeholder="" required ng-model="user.dob">
-            <span class="help-block">dd/mm/yyyy</span>
+            <label class="col-sm-3 control-label">Numero de Identificacion:</label>
+            <div class="col-sm-4">
+                <input name="personalId" class="form-control" type="number" required ng-model="user.personalId" />
+            </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">Numero Casa</label>
-            <input name="homePhone" class="form-control" type="phone" ng-model="contact.homePhone" />
+            <label class="col-sm-3 control-label">Fecha de Nacimiento:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" data-mask="99/99/9999" placeholder="" required ng-model="user.dob">
+                <span class="help-block">dd/mm/yyyy</span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-sm-3">
+                <span class="label label-info pull-right">Telefono</span>
+            </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">Numero Trabajo</label>
-            <input name="workPhone" class="form-control" type="phone" ng-model="contact.workPhone" />
+            <label class="col-sm-3 control-label">Tipo:</label>
+            <div class="col-sm-4">
+                <input name="phoneType" class="form-control" type="text" ng-model="user.contact.phone.type" />
+            </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">Numero Celular</label>
-            <input name="cellPhone" class="form-control" type="phone" ng-model="contact.cellPhone" />
+            <label class="col-sm-3 control-label">Numero:</label>
+            <div class="col-sm-4">
+                <input name="phoneValue" class="form-control" type="number" required ng-model="user.contact.phone.phoneNumber" />
+            </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">Tipo</label>
-            <input name="postalCode" class="form-control" type="text" ng-model="user.postalCode" />
+            <div class="col-sm-3">
+                <span class="label label-info pull-right">Correo Electronico</span>
+            </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">Dirección</label>
-            <input name="streetAddress" class="form-control" type="text" ng-model="user.streetAddress" />
+            <label class="col-sm-3 control-label">Tipo:</label>
+            <div class="col-sm-4">
+                <input name="emailType" class="form-control" type="text" ng-model="user.contact.email.type" />
+            </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">Ciudad</label>
-            <input name="city" class="form-control" type="text" ng-model="user.city" />
+            <label class="col-sm-3 control-label">Correo Electronico:</label>
+            <div class="col-sm-4">
+                <input name="emailValue" class="form-control" type="email" required ng-model="user.contact.email.emailAddress" />
+            </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">Departamento</label>
-            <input name="state" class="form-control" type="text" ng-model="user.state" />
-        </div>      
+            <div class="col-sm-3">
+                <span class="label label-info pull-right">Direccion</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Tipo:</label>
+            <div class="col-sm-4">
+                <input name="addressType" class="form-control" type="text" ng-model="user.address.type" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Dirección:</label>
+            <div class="col-sm-4">
+                <input name="streetAddress" class="form-control" type="text" ng-model="user.address.streetAddress" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Ciudad:</label>
+            <div class="col-sm-4">
+                <input name="city" class="form-control" type="text" ng-model="user.address.city" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Departamento:</label>
+            <div class="col-sm-4">
+                <input name="state" class="form-control" type="text" ng-model="user.address.state" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Pais:</label>
+            <div class="col-sm-4">
+                <input name="country" class="form-control" type="text" ng-model="user.address.country" />
+            </div>
+        </div>
     </div>
 </div>
 <a ui-sref="patients.nuevoPaciente.step_verify" class="btn btn-primary">Siguiente</a>

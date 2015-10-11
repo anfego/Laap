@@ -1272,8 +1272,29 @@ app.controller('patientSessionCtrl', ['$scope','patientLoad', function($scope, p
 }]);
 
 function newPersonCtrl($scope, $http) {
-    $scope.user = {};
-    $scope.contact = {};
+    $scope.user = { "firstName": "",
+                    "lastName": "",
+                    "personalId": "",
+                    "personalIdType": "Cedula",
+                    "dob": "",
+                    "contact": {
+                        "phone": {
+                            "type": "",
+                            "phoneNumber": ""
+                        },
+                        "email": {
+                            "type": "",
+                            "emailAddress": ""
+                        }
+                    },
+                    "address": {
+                        "type": "",
+                        "streetAddress": "",
+                        "city": "Pereira",
+                        "state": "Risaralda",
+                        "country": "Colombia"
+                    }};
+
     $scope.processForm = function () {
         // create user
         $http.post('person',$scope.user)
