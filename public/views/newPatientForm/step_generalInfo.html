@@ -5,31 +5,31 @@
         <div class="form-group">
             <label class="col-sm-3 control-label">Nombre(s):</label>
             <div class="col-sm-4">
-                <input name="firstName" class="form-control" type="text" required ng-model="user.firstName" />
+                <input name="firstName" class="form-control" type="text" required ng-model="user.generalInfo.firstName" />
             </div>
         </div>
-        <div class="form-group" ng-class="{ 'has-error' : user.lastName.$invalid && !user.lastName.$pristine }">
+        <div class="form-group" ng-class="{ 'has-error' : user.generalInfo.lastName.$invalid && !user.generalInfo.lastName.$pristine }">
             <label class="col-sm-3 control-label">Apellido(s):</label>
             <div class="col-sm-4">
-                <input name="lastName" class="form-control" type="text" required ng-model="user.lastName">
+                <input name="lastName" class="form-control" type="text" required ng-model="user.generalInfo.lastName">
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">Tipo de Identificacion:</label>
             <div class="col-sm-4">
-                <input name="personalIdType" class="form-control" type="text" required ng-model="user.personalIdType" />
+                <input name="personalIdType" class="form-control" type="text" required ng-model="user.generalInfo.personalIdType" />
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">Numero de Identificacion:</label>
             <div class="col-sm-4">
-                <input name="personalId" class="form-control" type="number" required ng-model="user.personalId" />
+                <input name="personalId" class="form-control" type="number" required ng-model="user.generalInfo.personalId" />
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">Fecha de Nacimiento:</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" data-mask="99/99/9999" placeholder="" required ng-model="user.dob">
+                <input type="text" class="form-control" data-mask="99/99/9999" placeholder="" required ng-model="user.generalInfo.dob">
                 <span class="help-block">dd/mm/yyyy</span>
             </div>
         </div>

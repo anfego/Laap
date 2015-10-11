@@ -1272,11 +1272,14 @@ app.controller('patientSessionCtrl', ['$scope','patientLoad', function($scope, p
 }]);
 
 function newPersonCtrl($scope, $http) {
-    $scope.user = { "firstName": "",
-                    "lastName": "",
-                    "personalId": "",
-                    "personalIdType": "Cedula",
-                    "dob": "",
+    $scope.user = { "generalInfo": {
+                        "id": "",
+                        "firstName": "",
+                        "lastName": "",
+                        "personalId": "",
+                        "personalIdType": "Cedula",
+                        "dob": ""
+                    },
                     "contact": {
                         "phone": {
                             "type": "",
@@ -1301,8 +1304,12 @@ function newPersonCtrl($scope, $http) {
             .success(function(data) {
                 console.log(data.serviceMsg);    
                 if (data.success) {
-                    // $scope.user.id = data.id;
+                    $scope.user.id = data.id;
+                    alert("Informacion Guardada");
                     // $location.path("person/"+ $scope.user.id)
+                }
+                else{
+                    alert("Error: " + data.serviceMsg);
                 };
             })
             .error(function(){

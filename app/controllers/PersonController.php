@@ -21,20 +21,127 @@ class PersonController extends BaseController {
      */
     public function create()
     {
-        $new = new Person();
-        $new-> last_name = ucwords(strtolower(Input::get("lastName")));
-        $new-> first_name = ucwords(strtolower(Input::get("firstName")));
-        $new-> personal_id = Input::get("personalId");
-        $new-> dob = date("Y-m-d", strtotime((Input::get("dob"))));
-        $new-> updated_by = Auth::user()->username;
+        $resource = Input::all();
 
-        $new-> save();
-        $success = true;
-        $serviceMsg = "Person Added";
+        $newPatient = new Person();
+        if(array_key_exists('generalInfo', $resource)) 
+        {
+            if(array_key_exists('lastName', $resource['generalInfo'])) {
+                $newPatient -> last_name = ucwords(strtolower($resource['generalInfo']['lastName']));
+            }
+            if(array_key_exists('firstName', $resource['generalInfo'])) {
+                $newPatient -> first_name = ucwords(strtolower($resource['generalInfo']["firstName"]));
+            }
+            if(array_key_exists('personalId', $resource['generalInfo'])) {
+                $newPatient -> personal_id = $resource['generalInfo']["personalId"];
+            }
+            if(array_key_exists('dob', $resource['generalInfo'])) {
+                $newPatient -> dob = date("Y-m-d", strtotime($resource['generalInfo']["dob"]));
+            }
+            $newPatient -> updated_by = Auth::user() -> username;
+        }
+        if (!empty($newPatient -> last_name) && ! empty($newPatient -> first_name)) 
+        {
+            $newPatient -> save();
+            $serviceMsg = "Person Added";
+            
+            // Get Patient Phone
+            $newPatientPhone = new Phone();
+            $newPatientPhone -> person_id = $newPatient -> id;
+            if(array_key_exists('contact', $resource)) 
+            {
+                if(array_key_exists('phone', $resource['contact'])) 
+                {
+                    if(array_key_exists('type', $resource['contact']['phone'])) {
+                        $newPatientPhone -> ref_name = ucwords(strtolower($resource['contact']['phone']['type']));
+                    }
+                    if(array_key_exists('areaCode', $resource['contact']['phone'])) {
+                        $newPatientPhone -> area_code = $resource['contact']['phone']['areaCode'];
+                    }
+                    if(array_key_exists('phoneNumber', $resource['contact']['phone'])) {
+                        $newPatientPhone -> phone = $resource['contact']['phone']['phoneNumber'];
+                    }
+                    $newPatientPhone -> active = true;
+                    $newPatientPhone -> primary = true;
+                    $newPatientPhone -> updated_by = Auth::user() -> username;
+                    
+                    if (!empty($newPatientPhone -> phone)) 
+                    {
+                        $newPatientPhone -> save();
+                    }
+                }
+
+
+                // Get Patient email
+                $newPatientEmail = new Email();
+                $newPatientEmail -> person_id = $newPatient -> id;
+                if(array_key_exists('email', $resource['contact']))
+                {
+                    if(array_key_exists('type', $resource['contact']['email'])) {
+                        $newPatientEmail -> ref_name = ucwords(strtolower($resource['contact']['email']['type']));
+                    }
+                    if(array_key_exists('emailAddress', $resource['contact']['email'])) {
+                        $newPatientEmail -> email = $resource['contact']['email']['emailAddress'];
+                    }
+                    $newPatientEmail -> active = true;
+                    $newPatientEmail -> updated_by = Auth::user() -> username;
+                    
+                    if (!empty($newPatientEmail -> email)) 
+                    {
+                        $newPatientEmail -> save();
+                    }
+                }
+            }
+
+            
+            // Get Patient Address
+            $newPatientAddress = new Address();
+            $newPatientAddress -> person_id = $newPatient -> id;
+            if(array_key_exists('address', $resource)) 
+            {
+                
+                if(array_key_exists('type', $resource['address'])) {
+                    $newPatientAddress -> ref_name = ucwords(strtolower($resource['address']['type']));
+                }
+                if(array_key_exists('state', $resource['address'])) {
+                    $newPatientAddress -> state = ucwords(strtolower($resource['address']['state']));
+                }
+                if(array_key_exists('city', $resource['address'])) {
+                    $newPatientAddress -> city = ucwords(strtolower($resource['address']['city']));
+                }
+                if(array_key_exists('streetAddress', $resource['address'])) {
+                    $newPatientAddress -> street_l1 = ucwords(strtolower($resource['address']['streetAddress']));
+                }
+                if(array_key_exists('streetAddress2', $resource['address'])) {
+                    $newPatientAddress -> street_l2 = ucwords(strtolower($resource['address']['streetAddress2']));
+                }
+                if(array_key_exists('streetAddress3', $resource['address'])) {
+                    $newPatientAddress -> street_l3 = ucwords(strtolower($resource['address']['streetAddress3']));
+                }
+                $newPatientAddress -> active = true;
+                $newPatientAddress -> primary = true;
+                $newPatientAddress -> updated_by = Auth::user() -> username;
+            
+                // TODO: add country to if statement
+                // $newPatientAddress -> country = ucwords(strtolower($resource['address']['country']));
+                if (!empty($newPatientAddress -> street_l1) && 
+                    !empty($newPatientAddress -> city) &&
+                    !empty($newPatientAddress -> state)) 
+                {
+                    $newPatientAddress -> save();
+                }
+            }
+            $success = true;
+        }
+        else
+        {
+            $serviceMsg = "Patient name must be defided";
+            $success = false;
+        }
     
         return array('success' => $success,
                      'serviceMsg' => $serviceMsg, 
-                     'id' => $new->id );
+                     'id' => $newPatient->id );
     }
 
     /**

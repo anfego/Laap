@@ -5,25 +5,25 @@
         <div class="form-group">
             <label class="col-sm-3 control-label">Numero de Identificacion:</label>
             <div class="col-sm-4">
-                <p class="form-control-static">{{ user.personalId }}</p>
+                <p class="form-control-static">{{ user.generalInfo.personalId }}</p>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">Nombre(s):</label>
             <div class="col-sm-4">
-                <p class="form-control-static">{{ user.firstName }}</p>
+                <p class="form-control-static">{{ user.generalInfo.firstName }}</p>
             </div>
         </div>
-        <div class="form-group" ng-class="{ 'has-error' : user.lastName.$invalid && !user.lastName.$pristine }">
+        <div class="form-group" ng-class="{ 'has-error' : user.generalInfo.lastName.$invalid && !user.generalInfo.lastName.$pristine }">
             <label class="col-sm-3 control-label">Apellido(s):</label>
             <div class="col-sm-4">
-                <p class="form-control-static">{{ user.lastName }}</p>
+                <p class="form-control-static">{{ user.generalInfo.lastName }}</p>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">Fecha de Nacimiento:</label>
             <div class="col-sm-4">
-                <p class="form-control-static">{{ user.dob }}</p>
+                <p class="form-control-static">{{ user.generalInfo.dob }}</p>
             </div>
         </div>
         <div class="form-group">
