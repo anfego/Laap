@@ -109,6 +109,9 @@ class PersonController extends BaseController {
                 if(array_key_exists('city', $resource['address'])) {
                     $newPatientAddress -> city = ucwords(strtolower($resource['address']['city']));
                 }
+                if(array_key_exists('country', $resource['address'])) {
+                    $newPatientAddress -> country = ucwords(strtolower($resource['address']['country']));
+                }
                 if(array_key_exists('streetAddress', $resource['address'])) {
                     $newPatientAddress -> street_l1 = ucwords(strtolower($resource['address']['streetAddress']));
                 }

@@ -19,6 +19,7 @@ class Address extends Eloquent{
                                 'ref_name',
                                 'state',
                                 'city',
+                                'country',
                                 'street_l1',
                                 'street_l2',
                                 'street_l3',

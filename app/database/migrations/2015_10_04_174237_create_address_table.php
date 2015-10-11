@@ -27,6 +27,8 @@ class CreateAddressTable extends Migration {
             
             $table ->string("city");
             
+            $table ->string("country");
+            
             $table ->string("street_l1");
             
             $table ->string("street_l2")
