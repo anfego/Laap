@@ -2,6 +2,7 @@
 
 <div class="row">
     <div class="col-lg-8 form-horizontal">
+        <!-- General Info -->
         <div class="form-group">
             <label class="col-sm-3 control-label">Nombre(s):</label>
             <div class="col-sm-4">
@@ -17,7 +18,11 @@
         <div class="form-group">
             <label class="col-sm-3 control-label">Tipo de Identificacion:</label>
             <div class="col-sm-4">
-                <input name="personalIdType" class="form-control" type="text" required ng-model="user.generalInfo.personalIdType" />
+                <select name="selectIdType" class="form-control" ng-model="user.generalInfo.personalIdType">
+                    <option ng-repeat="type in idTypes" value="{{type}}" ng-selected="user.generalInfo.personalIdType == type"> 
+                        {{type}}
+                    </option>
+                </select>
             </div>
         </div>
         <div class="form-group">
@@ -33,7 +38,7 @@
                 <span class="help-block">dd/mm/yyyy</span>
             </div>
         </div>
-        
+        <!-- Phone -->
         <div class="form-group">
             <div class="col-sm-3">
                 <span class="label label-info pull-right">Telefono</span>
@@ -42,7 +47,11 @@
         <div class="form-group">
             <label class="col-sm-3 control-label">Tipo:</label>
             <div class="col-sm-4">
-                <input name="phoneType" class="form-control" type="text" ng-model="user.contact.phone.type" />
+                <select name="selectPhoneType" class="form-control" ng-model="user.contact.phone.type">
+                    <option ng-repeat="type in phoneTypes" value="{{type}}" ng-selected="user.contact.phone.type == type"> 
+                        {{type}}
+                    </option>
+                </select>
             </div>
         </div>
         <div class="form-group">
@@ -59,9 +68,14 @@
         <div class="form-group">
             <label class="col-sm-3 control-label">Tipo:</label>
             <div class="col-sm-4">
-                <input name="emailType" class="form-control" type="text" ng-model="user.contact.email.type" />
+                <select name="selectEmailType" class="form-control" ng-model="user.contact.email.type">
+                    <option ng-repeat="type in emailTypes" value="{{type}}" ng-selected="user.contact.email.type == type"> 
+                        {{type}}
+                    </option>
+                </select>
             </div>
         </div>
+        <!-- Email -->
         <div class="form-group">
             <label class="col-sm-3 control-label">Correo Electronico:</label>
             <div class="col-sm-4">
@@ -76,9 +90,14 @@
         <div class="form-group">
             <label class="col-sm-3 control-label">Tipo:</label>
             <div class="col-sm-4">
-                <input name="addressType" class="form-control" type="text" ng-model="user.address.type" />
+                <select name="selectAddressType" class="form-control" ng-model="user.address.type">
+                    <option ng-repeat="type in addressTypes" value="{{type}}" ng-selected="user.address.type == type"> 
+                        {{type}}
+                    </option>
+                </select>
             </div>
         </div>
+        <!-- Postal Address -->
         <div class="form-group">
             <label class="col-sm-3 control-label">Dirección:</label>
             <div class="col-sm-4">
@@ -99,10 +118,10 @@
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">Pais:</label>
-            <div class="col-sm-4">
-                <input name="country" class="form-control" type="text" ng-model="user.address.country" />
-            </div>
+                <div class="col-sm-4">
+                    <country-select data-ng-model="user.address.country"></country-select>
+                </div>
         </div>
+    <a ui-sref="patients.nuevoPaciente.step_verify" class="btn btn-primary">Siguiente</a>
     </div>
 </div>
-<a ui-sref="patients.nuevoPaciente.step_verify" class="btn btn-primary">Siguiente</a>

@@ -133,6 +133,8 @@
     <script src="js/plugins/editors/textAngular.min.js"></script>
     <!-- fullscreen  -->
     <script src="js/plugins/fullscreen/jquery.fullscreen-min.js"></script>
+    <!-- country  -->
+    <script src="js/plugins/country/angular.country-select.js"></script>
 
     <!-- Angular Script -->
     <script src="js/app.js"></script>

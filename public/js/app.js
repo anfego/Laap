@@ -10,5 +10,6 @@ var app = angular.module('neuboard', [
     'tien.clndr',
     'textAngular',
     'ui.switchery',
-    'gridshore.c3js.chart'
+    'gridshore.c3js.chart',
+    'countrySelect'
 ])
