@@ -35,7 +35,7 @@
             <label class="col-sm-3 control-label">Fecha de Nacimiento:</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" data-mask="99/99/9999" placeholder="" required ng-model="user.generalInfo.dob">
-                <span class="help-block">dd/mm/yyyy</span>
+                <span class="help-block">dd/mm/yyyy</span>Edad (<span>{{ calculateAge(user.generalInfo.dob) }}</span>)
             </div>
         </div>
         <!-- Phone -->

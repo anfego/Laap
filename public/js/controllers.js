@@ -1283,7 +1283,8 @@ function newPersonCtrl($scope, $http) {
                         "lastName": "",
                         "personalId": "",
                         "personalIdType": "",
-                        "dob": ""
+                        "dob": "05/16/1986",
+                        "age": ""
                     },
                     "contact": {
                         "phone": {
@@ -1320,7 +1321,14 @@ function newPersonCtrl($scope, $http) {
                 console.log("No response from service");
             })
      
-    };    
+    }
+    $scope.calculateAge = function(formatedDate) { 
+        // birthday is a date
+        var birthday = new Date(formatedDate);
+        var ageDifMs = Date.now() - birthday.getTime();
+        var ageDate = new Date(ageDifMs); // miliseconds from epoch
+        return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }  
 }
 app.controller('patientCtrl', ['$scope', '$http', 'patientLoad', function($scope, $http, patientLoad) {
     $scope.patient = {};
