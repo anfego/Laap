@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">Tipo de Identificacion:</label>
+            <label class="col-sm-3 control-label">Tipo de Identificación:</label>
             <div class="col-sm-4">
                 <select name="selectIdType" class="form-control" ng-model="user.generalInfo.personalIdType">
                     <option ng-repeat="type in idTypes" value="{{type}}" ng-selected="user.generalInfo.personalIdType == type"> 
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">Numero de Identificacion:</label>
+            <label class="col-sm-3 control-label">Numero de Identificación:</label>
             <div class="col-sm-4">
                 <input name="personalId" class="form-control" type="number" required ng-model="user.generalInfo.personalId" />
             </div>
@@ -41,7 +41,7 @@
         <!-- Phone -->
         <div class="form-group">
             <div class="col-sm-3">
-                <span class="label label-info pull-right">Telefono</span>
+                <span class="label label-info pull-right">Teléfono</span>
             </div>
         </div>
         <div class="form-group">
@@ -55,14 +55,14 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">Numero:</label>
+            <label class="col-sm-3 control-label">Número:</label>
             <div class="col-sm-4">
                 <input name="phoneValue" class="form-control" type="number" required ng-model="user.contact.phone.phoneNumber" />
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-3">
-                <span class="label label-info pull-right">Correo Electronico</span>
+                <span class="label label-info pull-right">Correo Electrónico</span>
             </div>
         </div>
         <div class="form-group">
@@ -77,7 +77,7 @@
         </div>
         <!-- Email -->
         <div class="form-group">
-            <label class="col-sm-3 control-label">Correo Electronico:</label>
+            <label class="col-sm-3 control-label">Correo Electrónico:</label>
             <div class="col-sm-4">
                 <input name="emailValue" class="form-control" type="email" required ng-model="user.contact.email.emailAddress" />
             </div>
@@ -117,7 +117,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">Pais:</label>
+            <label class="col-sm-3 control-label">País:</label>
                 <div class="col-sm-4">
                     <country-select data-ng-model="user.address.country"></country-select>
                 </div>
