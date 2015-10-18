@@ -8,7 +8,7 @@ return [
         "galadriel"
     ],
     "QA" => [
-        "RD0003FF423241"
+        "RD0003FF4207CF"
     ],
     "production" => [
         "RD0003FF425529"
