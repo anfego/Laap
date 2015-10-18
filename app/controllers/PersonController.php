@@ -199,12 +199,14 @@ class PersonController extends BaseController {
         $addresses = Person::find($id)
                            ->addresses()
                            ->get();
+        $success = true;
         
         return  array( "person" => $person,
                        "phones" => $phones,
                        "emails" => $emails,
                        "addresses" => $addresses,
-                       "exams" => $exams);
+                       "exams" => $exams,
+                       "success" => $success);
     }
 
     /**

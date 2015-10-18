@@ -26,5 +26,41 @@
                 </div>
             </div>
         </div>
+        <!-- Calendar -->
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="calendar-block"  ng-controller="calCtrl">
+                        <tien-clndr class="clndr-ang" tien-clndr-object="clndr" tien-clndr-events="events" tien-clndr-options="options">
+                            <div class="clndr-ang-controls">
+                                <div class="clndr-ang-previous-button" ng-click="clndr.back()">
+                                    &lsaquo;
+                                </div>
+                                <div class="month">
+                                    {{month}}
+                                </div>
+                                <div class="clndr-ang-next-button" ng-click="clndr.forward()">
+                                    &rsaquo;
+                                </div>
+                            </div>
+                            <div class="clndr-ang-grid">
+                                <div class="days-of-the-week">
+                                    <div class="header-day" ng-repeat="day in daysOfTheWeek track by $index">
+                                        {{day}}
+                                    </div>
+                                </div>
+                                <div class="days">
+                                    <div class="{{day.classes}}" ng-repeat="day in days">
+                                        <div class="event-indicator" ng-show="day.events.length" ng-click="showEvents(day.events)">{{day.events.length}}</div>
+                                            {{day.day}}
+                                    </div>
+                                </div>
+                            </div>
+                        </tien-clndr>
+                    </div>
+               </div>
+            </div>
+        </div>
+        
     </div>
 </section>

@@ -35,7 +35,7 @@ Route::group(["before" => "auth"], function() {
     });
     
     // Person - Patient controller
-    Route::get('/person/{id}', 'PersonController@show');
+    Route::get('/patient/{id}', 'PersonController@show');
     Route::post('/person', 'PersonController@create');
     Route::put('/person/{id}', 'PersonController@edit');
     Route::post('/personSearch', 'PersonController@search');

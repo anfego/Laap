@@ -1336,14 +1336,21 @@ function newPersonCtrl($scope, $http) {
     }  
 }
 app.controller('patientCtrl', ['$scope', '$http', 'patientLoad', function($scope, $http, patientLoad) {
-    $scope.patient = {};
+    $scope.patient = {
+                        "info":{},
+                        "exams":[{}],
+                        "phones":[{}],
+                        "emails":[{}]
+                    };
     $scope.patient = patientLoad.getPatient();
     // get patien info from rest service
     $http.get('patient/'+ $scope.patient.id)
         .success(function(data) {
             if (data.success) {
+                $scope.patient.info = data.person;
                 $scope.patient.exams = data.exams;
                 $scope.patient.phones = data.phones;
+                $scope.patient.addresses = data.addresses;
                 $scope.patient.emails = data.emails;
             } else{
                 console.log("Error fetching data");
