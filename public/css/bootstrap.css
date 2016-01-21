@@ -1151,8 +1151,14 @@ mark,
 .text-muted {
   color: #777;
 }
+.text-white {
+  color: #fff;
+}
 .text-primary {
   color: #428bca;
+}
+.text-blue {
+  color: #00148C;
 }
 a.text-primary:hover {
   color: #3071a9;
@@ -1184,6 +1190,10 @@ a.text-danger:hover {
 .bg-primary {
   color: #fff;
   background-color: #428bca;
+}
+.bg-blue {
+  color: #fff;
+  background-color: #00148C;
 }
 a.bg-primary:hover {
   background-color: #3071a9;

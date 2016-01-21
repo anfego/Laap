@@ -85,7 +85,7 @@
             <div class="container">
                 <div class="hero">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-8 col-md-5 col-lg-5 wow pulse">
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 wow pulse">
                             <header>
                                 <h1>Asesoria Personalizada.</h1>
                             </header>
@@ -95,11 +95,11 @@
                                 <li>La mejor calidad garantizada</li>
                             </ul>
                         </div>
-                        <div class="hidden-xs hidden-sm col-md-6 col-lg-6">
-                            <img src="assets/img/boyGlasses60.png" class="wow fadeInRight" alt="gafas">
+                        <div class="hidden-xs hidden-sm col-md-6 col-lg-8">
+                            <img src="assets/img/go_02.jpg" class="wow fadeInRight" alt="gafas">
                         </div>
-                        <div class="col-xs-6 col-sm-4 hidden-md hidden-lg">
-                            <img src="assets/img/boyGlasses60.png" class="wow fadeInRight" alt="mobile">
+                        <div class="col-xs-4 col-sm-4 hidden-xs hidden-md hidden-lg">
+                            <img src="assets/img/go_02.jpg" class="wow fadeInRight" alt="mobile">
                         </div>
                     </div>
                 </div>
@@ -113,11 +113,11 @@
     <section id="features">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-12">
                     <header>
-                        <h1>Quienes somos.</h1>
-                        <div class="spacer"></div>
-                        <p class="text-muted">Galeria Optica es una empresa enfocada a la salud visual, establecida desde 1998 garantiza productos de calidad y diagnosticos precisos.</p>
+                        <h1 class="white-color">Quienes somos.</h1>
+                        <div class="spacer white-color"></div>
+                        <p class="white-color">Galeria Optica es una empresa enfocada a la salud visual, establecida desde 1998 garantiza productos de calidad y diagnosticos precisos.</p>
                     </header>
                 </div>
             </div>
@@ -129,11 +129,11 @@
     <section id="pricing">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-12 text-center blue-color">
                     <header>
-                        <h1>Nuestros Servicios</h1>
-                        <div class="spacer"></div>
-                        <p class="text-muted">Ofrecemos todos los servicios de optometria y optica.</p>
+                        <h1 class="blue-color">Nuestros Servicios</h1>
+                        <div class="spacer blue-color"></div>
+                        <p class="blue-color">Ofrecemos todos los servicios de optometria y optica.</p>
                     </header>
                 </div>
             </div>
@@ -144,13 +144,13 @@
                             <li class="plan wow zoomIn">
                                 <ul class="planContainer">
                                     <li class="title">
-                                        <h2>Lentes Opticos</h2>
+                                        <h2 class="blue-color">Lentes Opticos</h2>
                                     </li>
                                     <li>
                                         <ul class="options">
-                                            <li>Transition<span></span>
-                                            <li>Crizal<span></span>
-                                            <li>Progresivos<span></span>
+                                            <li class="blue-color">Transition<span></span>
+                                            <li class="blue-color">Crizal<span></span>
+                                            <li class="blue-color">Progresivos<span></span>
                                             </li>
                                         </ul>
                                     </li>

@@ -2097,6 +2097,15 @@ body.fullscreen-widget-active .panel .panel-heading .actions > .fa-times {
 .default-color {
   color: #909aa0;
 }
+#white-color {
+  color: #fff;
+}
+#blue-color {
+  color: #00148C;
+}
+#gray-color {
+  color: #5d5d5d;
+}
 .primary-color {
   color: #556b8d;
 }
