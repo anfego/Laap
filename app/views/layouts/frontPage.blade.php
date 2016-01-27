@@ -17,8 +17,6 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/simple-line-icons.css">
-    <!-- CSS Animate -->
-    <link rel="stylesheet" href="assets/css/animate.css">
     <!-- Carousel -->
     <link rel="stylesheet" href="assets/js/plugins/carousel/owl.carousel.css">
     <!-- Custom styles for this theme -->
@@ -49,27 +47,28 @@
                     <!--logo start-->
                     <div class="brand">
                         <a href="javascript:void(0)" class="logo">
-                            <!-- <i class="fa-google"></i> -->
                             <div class="hidden-xs hidden-sm col-sm-4 col-sm-4">
                             <img src="assets/img/GOLogo80.png" alt="laptop">
                         </div>
-                            <span>Galeria</span>Optica</a>
+                            <span>Galer&iacute;a&nbsp;</span>Optica</a>
                     </div>
                     <!--logo end-->
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav pull-right">
+                    <!-- TODO: crear link para aplicacion  -->
+                    <!--Portal  -->
+                    <!-- <ul class="nav navbar-nav pull-right">
                         <li><a href="login">Portal</a>
                         </li>
-                    </ul>
+                    </ul> -->
                     <ul class="nav navbar-nav pull-right" id="main-menu">
                         <li><a href="#intro">Inicio</a>
                         </li>
-                        <li><a href="#features">Conocenos</a>
+                        <li><a href="#weare">Con&oacute;cenos</a>
                         </li>
-                        <li><a href="#pricing">Servicios</a>
+                        <li><a href="#Servicios">Servicios</a>
                         </li>
-                        <li><a href="#contact">Contacto</a>
+                        <li><a href="#contact">Cont&aacute;cto</a>
                         </li>
                     </ul>
                 </div>
@@ -77,48 +76,61 @@
         </div>
     </header>
 
-
-    <!-- Intro section
+    <!-- Testimonials Sections
     ================================================== -->
-    <section id="intro">
-        <div class="overlay-bg">
+    <section id="testimonials">
+        <div class="inner">
             <div class="container">
-                <div class="hero">
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 wow pulse">
-                            <header>
-                                <h1>Asesoria Personalizada.</h1>
-                            </header>
-                            <ul class="features">
-                                <li>Personal siempre atento a cualquier inquietud</li>
-                                <li>Cientos de opciones para elegir</li>
-                                <li>La mejor calidad garantizada</li>
-                            </ul>
-                        </div>
-                        <div class="hidden-xs hidden-sm col-md-6 col-lg-8">
-                            <img src="assets/img/go_02.jpg" class="wow fadeInRight" alt="gafas">
-                        </div>
-                        <div class="col-xs-4 col-sm-4 hidden-xs hidden-md hidden-lg">
-                            <img src="assets/img/go_02.jpg" class="wow fadeInRight" alt="mobile">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div id="testimonial-wrapper">
+
+                            <div class="item">
+                                <p>Personal siempre atento a cualquier inquietud</p>
+                                <div class="client-info">
+                                    <div class="name"></div>
+                                    <div class="position">Nuestro Servicio</div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p>Cientos de opciones para elegir</p>
+                                <div class="client-info">
+                                    <div class="name"></div>
+                                    <div class="position">Nuestros Productos</div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p>La mejor calidad garantizada</p>
+                                <div class="client-info">
+                                    <div class="name"></div>
+                                    <div class="position">Nuestro Objetivo</div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
-
-
     <!-- Conocenos Section
     ================================================== -->
-    <section id="features">
+    <section id="weare">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <header>
                         <h1 class="white-color">Quienes somos.</h1>
-                        <div class="spacer white-color"></div>
-                        <p class="white-color">Galeria Optica es una empresa enfocada a la salud visual, establecida desde 1998 garantiza productos de calidad y diagnosticos precisos.</p>
+                        <div class="spacer"></div>
                     </header>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 wow pulse">
+                    <p class="white-color">Galeria Optica es una empresa enfocada a la salud visual, establecida desde 1998 garantiza productos de calidad y diagnosticos precisos.</p>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <img src="assets/img/optotipo.png" class="wow fadeInRight" alt="gafas">
+                    </div>
+                </div>
+                <div class="hidden-xs col-sm-4 col-md-6 col-lg-8">
+                    <img src="assets/img/Quienes_somos.jpg" class="wow fadeInRight" alt="gafas">
                 </div>
             </div>
         </div>
@@ -126,110 +138,56 @@
 
     <!-- Servicios Section
     ================================================== -->
-    <section id="pricing">
+    <section id="features">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center blue-color">
+                <div class="col-lg-12 text-center">
                     <header>
-                        <h1 class="blue-color">Nuestros Servicios</h1>
-                        <div class="spacer blue-color"></div>
-                        <p class="blue-color">Ofrecemos todos los servicios de optometria y optica.</p>
+                        <h1>Nuestros Servicios</h1>
+                        <div class="spacer"></div>
                     </header>
                 </div>
             </div>
             <div class="row">
-                <div id="pricePlans">
-                    <div class="col-md-3">
-                        <ul id="plan1">
-                            <li class="plan wow zoomIn">
-                                <ul class="planContainer">
-                                    <li class="title">
-                                        <h2 class="blue-color">Lentes Opticos</h2>
-                                    </li>
-                                    <li>
-                                        <ul class="options">
-                                            <li class="blue-color">Transition<span></span>
-                                            <li class="blue-color">Crizal<span></span>
-                                            <li class="blue-color">Progresivos<span></span>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- End ul#plans -->
+                <div class="col-sm-3 text-center wow fadeInUp">
+                    <div class="icon-wrapper">
+                        <p class="icon-circle">
+                            <i class="icon icon-screen-smartphone"></i>
+                        </p>
                     </div>
-
-                    <div class="col-md-3">
-                        <ul id="plan2">
-                            <li class="plan wow zoomIn">
-                                <ul class="planContainer">
-                                    <li class="title">
-                                        <h2>Gafas de Sol</h2>
-                                    </li>
-                                    </li>
-                                        <ul class="options">
-                                            <li>RayBan<span></span>
-                                            <li>Oklay<span></span>
-                                            <li>Vougue<span></span>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- End ul#plans -->
+                    <h3>Lentes Opticos</h3>
+                    <p>Aeterno volumus recusabo vel id, id usu facilisi accusata, in quod inermis rationibus mea.</p>
+                </div>
+                <div class="col-sm-3 text-center wow fadeInUp">
+                    <div class="icon-wrapper">
+                        <p class="icon-circle">
+                            <i class="icon icon-graph"></i>
+                        </p>
                     </div>
-
-                    <div class="col-md-3">
-                        <ul id="plan3">
-                            <li class="plan wow zoomIn">
-                                <ul class="planContainer">
-                                    <li class="title">
-                                        <h2>Examen de Optometria</h2>
-                                    </li>
-                                    <li>
-                                        <ul class="options">
-                                            <li>Ultima Tecnologia</li>
-                                            <li>Integridad</li>
-                                            <li>Diagnositico Acertado</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- End ul#plans -->
+                    <h3>Gafas de Sol</h3>
+                    <p>Aeterno volumus recusabo vel id, id usu facilisi accusata, in quod inermis rationibus mea.</p>
+                </div>
+                <div class="col-sm-3 text-center wow fadeInUp">
+                    <div class="icon-wrapper">
+                        <p class="icon-circle">
+                            <i class="icon fa fa-html5"></i>
+                        </p>
                     </div>
-
-                    <div class="col-md-3">
-                        <ul id="plan4">
-                            <li class="plan wow zoomIn">
-                                <ul class="planContainer">
-                                    <li class="title">
-                                        <h2>Laboratorio Optico</h2>
-                                    </li>
-                                    <li>
-                                        <ul class="options">
-                                            <li>Computarizado</li>
-                                            <li>Altos Estandares de Calidad</li>
-                                            <li>Procesos Certficicados</li>
-                                            <li>Tecnicos Capacitidos</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- End ul#plans -->
+                    <h3>Exam&eacute;n de Optometr&iacute;a</h3>
+                    <p>Aeterno volumus recusabo vel id, id usu facilisi accusata, in quod inermis rationibus mea.</p>
+                </div>
+                <div class="col-sm-3 text-center wow fadeInUp">
+                    <div class="icon-wrapper">
+                        <p class="icon-circle">
+                            <i class="icon fa fa-google"></i>
+                        </p>
                     </div>
-
+                    <h3>Laboratorio Optico</h3>
+                    <p>Aeterno volumus recusabo vel id, id usu facilisi accusata, in quod inermis rationibus mea.</p>
                 </div>
             </div>
-
         </div>
-
     </section>
-
-
 
     <!-- Contact
     ================================================== -->

@@ -684,10 +684,8 @@ fieldset[disabled] .btn-warning.active {
   position: relative;
 }
 #intro .spacer {
-  height: 2px;
-  width: 40px;
-  margin: 20px auto;
-  background: #27b6af;
+  height: 5px;
+  background: #FFF;
 }
 #intro .hero {
   position: relative;
@@ -782,7 +780,7 @@ fieldset[disabled] .btn-warning.active {
   }
 }
 #features {
-  background: #5D5D5D;
+  background: #F0F3F6;
   padding: 75px 0;
 }
 #features .spacer {
@@ -807,6 +805,34 @@ fieldset[disabled] .btn-warning.active {
   text-align: center;
 }
 #features .icon-circle .icon {
+  font-size: 2.5em;
+  padding: 20px;
+  display: inline-block;
+}
+#weare {
+  background: #5D5D5D;
+  padding: 75px 0;
+}
+#weare .spacer {
+  height: 4px;
+  background: #fff;
+}
+#weare header {
+  margin-bottom: 75px;
+}
+#weare .icon-wrapper {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+#weare .icon-circle {
+  padding: 5px 0;
+  border: solid thin #788093;
+  border-radius: 500px;
+  width: 85px;
+  height: 85px;
+  text-align: center;
+}
+#weare .icon-circle .icon {
   font-size: 2.5em;
   padding: 20px;
   display: inline-block;
@@ -947,19 +973,19 @@ fieldset[disabled] .btn-warning.active {
   border: 2px solid #27b6af;
 }
 #testimonials {
-  background: url(../img/galeriaOpticaPerfil.jpg) 50% 0 no-repeat fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url(../img/go_02.jpg) 50% 1px no-repeat fixed;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
+  background-color: rgba(255, 203, 0, 0.8);
   color: white;
   height: 300px;
 }
 #testimonials .inner {
-  background-color: #27b6af;
+  background-color: rgba(207, 165, 1, 0.32);
   width: 100%;
   height: 100%;
-  background-color: rgba(30, 153, 146, 0.5);
 }
 #testimonials .item {
   width: 100%;
