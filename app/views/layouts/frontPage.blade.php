@@ -62,11 +62,11 @@
                         </li>
                     </ul> -->
                     <ul class="nav navbar-nav pull-right" id="main-menu">
-                        <li><a href="#intro">Inicio</a>
+                        <li><a href="#testimonials">Inicio</a>
                         </li>
                         <li><a href="#weare">Con&oacute;cenos</a>
                         </li>
-                        <li><a href="#Servicios">Servicios</a>
+                        <li><a href="#features">Servicios</a>
                         </li>
                         <li><a href="#contact">Cont&aacute;cto</a>
                         </li>
@@ -141,9 +141,9 @@
     <section id="features">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-12">
                     <header>
-                        <h1>Nuestros Servicios</h1>
+                        <h1 class="blue-color">Nuestros Servicios</h1>
                         <div class="spacer"></div>
                     </header>
                 </div>
@@ -194,11 +194,11 @@
     <section id="contact">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <div class="col-sm-12 col-md-12 col-lg-12">
                     <header>
                         <h1>Contactenos</h1>
                         <div class="spacer"></div>
-                        <p>Queremos brindarle el mejor servicio, cuentenos sus inquietudes y sugerecias. Siganos en las redes sociales para enterarse de nuestras ultimas novedades</p>
+                        <p class="text-center white-color"></br>Queremos brindarle el mejor servicio, cuentenos sus inquietudes y sugerecias. Siganos en las redes sociales para enterarse de nuestras ultimas novedades</p>
                     </header>
                 </div>
             </div>

@@ -11,7 +11,7 @@ html {
   font-size: 100%;
 }
 body {
-  color: #ffffff;
+  color: #000;
   background: #fff;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 100%;
@@ -645,17 +645,17 @@ fieldset[disabled] .btn-warning.active {
 }
 .navbar-wrapper .navbar-nav > li a:hover {
   background: none;
-  color: #27b6af;
+  color: #00148C;
 }
 .navbar-wrapper .navbar-default .navbar-nav > .active > a,
 .navbar-wrapper .navbar-default .navbar-nav > .active > a:hover,
 .navbar-wrapper .navbar-default .navbar-nav > .active > a:focus {
-  color: #27b6af;
+  color: #00148C;
   background-color: #fff;
 }
 .navbar-wrapper .navbar-default .navbar-toggle {
-  background-color: #27b6af;
-  border-color: #27b6af;
+  background-color: #FAC700;
+  border-color: #FAC700;
 }
 .navbar-wrapper .navbar-default .navbar-toggle .icon-bar {
   background-color: #fff;
@@ -784,10 +784,8 @@ fieldset[disabled] .btn-warning.active {
   padding: 75px 0;
 }
 #features .spacer {
-  height: 2px;
-  width: 40px;
-  margin: 20px auto;
-  background: #27b6af;
+  height: 4px;
+  background: #00148C;
 }
 #features header {
   margin-bottom: 75px;
@@ -1203,9 +1201,7 @@ fieldset[disabled] .btn-warning.active {
   color: #fff;
 }
 #contact .spacer {
-  height: 2px;
-  width: 40px;
-  margin: 20px auto;
+  height: 4px;
   background: #fff;
 }
 #contact .contact-info {
